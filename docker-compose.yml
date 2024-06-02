@@ -1,0 +1,9 @@
+services:
+  django:
+    build:
+      context: ./.
+    entrypoint: poetry run /app/entrypoint.sh/
+    volumes:
+      - ./.:/app
+    ports:
+      - "8000:8000"
