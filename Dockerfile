@@ -8,8 +8,5 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # ensure Python output is sent directly to the terminal without buffering
 ENV PYTHONUNBUFFERED=1
 
-RUN pip install --upgrade pip
-COPY ./prod_requirements.txt .
-RUN pip install -r prod_requirements.txt
-
 COPY . .
+RUN poetry install
