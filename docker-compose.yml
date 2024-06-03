@@ -3,7 +3,30 @@ services:
     build:
       context: ./.
     entrypoint: poetry run /app/entrypoint.sh/
+      # - sleep
+      # - infinity
     volumes:
       - ./.:/app
     ports:
       - "8000:8000"
+    environment:
+      - DB_USER=root
+      - DB_PASSWORD=secret
+      - DB_HOST=db
+  db:
+    image: postgis/postgis:13-3.1-alpine
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+    ports:
+      # If you have postgres installed on your system, please change the port number
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+volumes:
+  pg_data:
