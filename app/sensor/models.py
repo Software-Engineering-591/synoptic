@@ -5,8 +5,8 @@ import uuid
 
 
 class Sensor(models.Model):
-    sensor_point = geomodels.PointField()
-    main_carstring = models.CharField(max_length=255)
+    point = geomodels.PointField()
+    name = models.CharField(max_length=255)
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
     def __str__(self):
