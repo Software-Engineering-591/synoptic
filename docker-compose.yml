@@ -2,7 +2,7 @@ services:
   django:
     build:
       context: ./.
-    entrypoint: poetry run /app/entrypoint.sh/
+    entrypoint: /app/entrypoint.sh
       # - sleep
       # - infinity
     volumes:
