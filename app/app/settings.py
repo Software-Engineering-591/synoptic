@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_htmx',
     'django_browser_reload',
-    'django.contrib.gis' 'public',
+    'django.contrib.gis',
+    'public',
     'manager',
     'sensor',
 ]
