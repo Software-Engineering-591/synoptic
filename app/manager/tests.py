@@ -86,11 +86,3 @@ class WaterReadingTest(TestCase):
 
         for water in dirty:
             self.assertFalse(water.clean_condition())
-
-    # def test_age(self):
-    #     # Test the age field.
-    #     alice = MyModel.objects.get(name='Alice')
-    #     bob = MyModel.objects.get(name='Bob')
-
-    #     self.assertEqual(alice.age, 30)
-    #     self.assertEqual(bob.age, 15)
