@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.forms import AuthenticationForm
-
+from .models import WaterReading, Sensor
 
 class login_form(AuthenticationForm):
     ## Fields for login form, seems for username, to enforce clientside, need a camal cased maxLength html attribute to enforce
@@ -16,3 +16,8 @@ class login_form(AuthenticationForm):
 
     class Meta:
         fields = ('username', 'password')
+
+class addSensorForm(forms.ModelForm):
+    class Meta:
+        model = Sensor
+        fields = ['name', 'point']

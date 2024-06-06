@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<script src="{% static 'add_sensor.js' %}" defer></script>
+
+{% endblock %}
+
+{% block body %}
+
+{{ form }}
+<div id="map" style="width: 500px; height: 500px;"></div>
+
+
+
+{% endblock body %}
+
