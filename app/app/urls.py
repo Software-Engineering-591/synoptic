@@ -17,8 +17,9 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.i18n import i18n_patterns
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     # Used for browser hot reload
     path('__reload__/', include('django_browser_reload.urls')),
     path('sudo/', admin.site.urls),
@@ -28,4 +29,4 @@ urlpatterns = [
     path('deeznuts/', include('sensor.urls')),
     # Don't know what domain sensor will be on
     # Tommy pick one you prefer
-]
+)

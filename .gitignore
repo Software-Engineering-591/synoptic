@@ -3,3 +3,4 @@
 
 # But do not ignore __init__.py, even though it's in the migrations folder
 !**/migrations/__init__.py
+/.venv/*
