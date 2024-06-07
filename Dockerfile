@@ -1,6 +1,6 @@
 FROM python:3.12-alpine
 
-RUN apk add --no-cache poetry geos gdal 
+RUN apk add --no-cache poetry geos gdal gettext
 
 WORKDIR /app
 # prevent Python from writing .pyc files
