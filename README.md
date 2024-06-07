@@ -48,5 +48,15 @@ The `sensor` app deals with sensor-related functionality.
 
 Feel free to explore each app's directory for more details on their specific functionality and implementation.
 
+
+## Making Language Specific Pages
+
+`django-admin makemessages -a` to create/update django.po for the languages
+
+`django-admin compilemessages -a` to compile the language for user submission.
+
+> [!TIP]
+> Make sure you are in the same directory as manage.py when running the above commands.
+
 > [!NOTE] 
 > This README was written with copilot so best not include it in final submission
