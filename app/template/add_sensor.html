@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<script src="{% static 'add_sensor.js' %}" defer></script>
+<script type="application/javascript">
+    const data = JSON.parse("{{data | escapejs}}")
+    console.log("Parsed Data:", data);
+</script>
+
+{% endblock %}
+
+{% block body %}
+
+{{ form }}
+<div id="map" style="width: 500px; height: 500px;"></div>
+<p id="lol"> </p> 
+{% endblock body %}
+
