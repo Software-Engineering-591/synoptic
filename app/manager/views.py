@@ -28,6 +28,8 @@ def adminView(request):
     
 
 def mapView(request):
+    if not request.user.is_authenticated:
+         return redirect('login')
     form = addSensorForm()
     points = Sensor.objects.values_list('point', flat=True)
     points_list = [{'lat': point.y, 'lon': point.x} for point in points]

@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.forms import AuthenticationForm
+from django.forms import ModelForm
 from .models import WaterReading, Sensor
 
 class login_form(AuthenticationForm):
@@ -17,11 +18,28 @@ class login_form(AuthenticationForm):
     class Meta:
         fields = ('username', 'password')
 
-class addSensorForm(forms.Form):
-    name = forms.CharField()
-    uuid = forms.UUIDField()
-    level = forms.FloatField()
-    orp = forms.FloatField()  # oxidation reduction potential
-    ph = forms.FloatField()
-    bod = forms.FloatField()
-    temperature = forms.FloatField # Celsius
+class addSensorForm(ModelForm):
+    class Meta:
+        model = WaterReading
+        fields = ['level', 'orp', 'ph', 'bod', 'temperature']
+        widgets = {
+            'level' : forms.NumberInput(
+                attrs = {'class' : 'w-full h-full', 'placeholder' : 'level', 'max' : '5'}
+            ),
+            'orp' : forms.NumberInput(
+                attrs = {'class' : 'w-full h-full'}
+            ),
+            'bod' : forms.NumberInput(
+                attrs = {'class' : 'w-full h-full'}
+            ),
+            'temperature' : forms.NumberInput(
+                attrs = {'class' : 'w-full h-full'}
+            )
+        }
+
+    
+
+    #level = forms.FloatField(
+    #    max_value=1000,
+    #    widget=forms.NumberInput(attrs={'class' : 'caret-pink-500 w-full'})
+    #)

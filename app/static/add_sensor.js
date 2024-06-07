@@ -25,7 +25,9 @@ markers.forEach(element => {
     console.log(element.getLatLng().lat)
     as = document.getElementById('lol')
     as.innerHTML = element.getLatLng().lat;
-    fetch(`?lat=${element.getLatLng().lat}}`)
+    document.getElementById('map_modal').close();
+    fetch(`?lat=${element.getLatLng().lat}&longitude=${element.getLatLng().lng}}`)
+    
 })
 })
     
