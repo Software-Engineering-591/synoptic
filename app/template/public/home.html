@@ -1,9 +1,11 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block head %}
     <title>Hello Everyone</title>
 {% endblock head %}
 {% block body %}
     <main>
-        Hello
+        <h1>{% trans "Heading" %}</h1>
+        <p>{% trans "Body" %}</p>
     </main>
 {% endblock body %}
