@@ -7,19 +7,18 @@ from django.contrib.gis.geos import Point
 
 class WaterReadingTest(TestCase):
     def setUp(self):
-        # This method is run before each test.
         sensor = Sensor.objects.create(point=Point(0, 0), name='Sensor 1')
-        reading = WaterReading.objects.create(
+        clean = WaterReading.objects.create(
             level=1.5,
-            orp=250,  # clean
+            orp=250,
             ph=7,
             bod=1.2,
             temperature=24.4,
             sensor=sensor,
         )
 
-        # Create multiple records
-        readings = [
+        # Create multiple unclean readings
+        unclean_reading = [
             WaterReading(
                 level=1.5,
                 orp=190,  # orp lower than 200
@@ -71,9 +70,11 @@ class WaterReadingTest(TestCase):
         ]
 
         # Bulk create the records
-        WaterReading.objects.bulk_create(readings)
+        WaterReading.objects.bulk_create(unclean_reading)
 
-        self.clean_id = reading.id
+        self.clean_id = clean.id
+        # for some reason, type hinting is not working here,
+        # but this is an attribute of the class
 
     def test_is_clean(self):
         clean = WaterReading.objects.get(id=self.clean_id)
