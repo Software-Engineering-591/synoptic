@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'public',
     'manager',
     'sensor',
+    'leaflet',
 ]
 
 MIDDLEWARE = [
