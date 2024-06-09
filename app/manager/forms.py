@@ -27,16 +27,16 @@ class addSensorForm(ModelForm):
                 attrs = {'class' : 'w-full h-full', 'placeholder' : 'level', 'max' : '5'}
             ),
             'orp' : forms.NumberInput(
-                attrs = {'class' : 'w-full h-full'}
+                attrs = {'class' : 'w-full h-full', 'placeholder' : 'orp'}
             ),
             'bod' : forms.NumberInput(
-                attrs = {'class' : 'w-full h-full'}
+                attrs = {'class' : 'w-full h-full', 'placeholder' : 'bod'}
             ),
             'temperature' : forms.NumberInput(
-                attrs = {'class' : 'w-full h-full'}
+                attrs = {'class' : 'w-full h-full', 'placeholder' : 'temperature'}
             ),
             'ph' : forms.NumberInput(
-                attrs= {'class' : 'w-full h-full'}
+                attrs= {'class' : 'w-full h-full', 'placeholder' : 'pH'}
             )
         }
 class latandlon(forms.Form):

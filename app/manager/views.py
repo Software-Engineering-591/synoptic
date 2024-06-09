@@ -35,9 +35,13 @@ def mapView(request):
     points = Sensor.objects.values_list('point', flat=True)
     points_list = [{'lat': point.y, 'lon': point.x} for point in points]
     data = json.dumps(points_list, cls=DjangoJSONEncoder)
-    
+    sensor = None
     form = addSensorForm()
     latform = latandlon()
+    fetched_lat = request.GET.get('lat')
+    fetched_lon = request.GET.get('longitude')
+    if fetched_lat and fetched_lon:
+        sensor = Sensor.objects.get(point=Point(float(fetched_lon), float(fetched_lat)))
 
     if request.method == 'POST':
         
@@ -67,6 +71,6 @@ def mapView(request):
             latform = latandlon()
             return render(request, 'add_sensor.html', {'form' : form, 'data' : data, 'lat_form' : latform})
     else:
-        return render(request, 'add_sensor.html', {'form' : form, 'data' : data, 'lat_form' : latform})
+        return render(request, 'add_sensor.html', {'form' : form, 'data' : data, 'lat_form' : latform, 'sensor' : sensor})
 
 

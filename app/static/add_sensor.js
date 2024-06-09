@@ -21,13 +21,12 @@ for (i=0; i < data.length; i++) {
 markers.forEach(element => {
     element.on('click', (e) =>
 {
-    as = document.getElementById('lol')
-    as.innerHTML = element.getLatLng().lat;
+    lat = document.getElementById('lat')
+    lon = document.getElementById('lon')
     fetch(`?lat=${element.getLatLng().lat}&longitude=${element.getLatLng().lng}`)
-    document.getElementById('lat').value = element.getLatLng().lat
-    document.getElementById('lon').value = element.getLatLng().lng
-
-    document.getElementById('map_modal').close();
+    lat.value = element.getLatLng().lat
+    lon.value = element.getLatLng().lng
+    lon.innerHTML = element.getLatLng().lon
     
 })
 })
