@@ -4,7 +4,6 @@ from manager.models import WaterReading
 from sensor.models import Sensor
 # Create your views here.
 
-
 class HomeView(TemplateView):
     template_name = 'public/home.html'
 
@@ -15,3 +14,6 @@ class HomeView(TemplateView):
                 for sensor in Sensor.objects.all()
             )
         }
+
+class SettingsView(TemplateView):
+    template_name = 'public/settings.html'
