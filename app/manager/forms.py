@@ -43,10 +43,9 @@ class latandlon(forms.Form):
     lat = forms.FloatField(
         widget = forms.NumberInput(attrs={'id' : 'lat'})
     )
-    longitude = forms.FloatField(
-        widget = forms.NumberInput(attrs={'id' : 'longitude'})
+    lon = forms.FloatField(
+        widget = forms.NumberInput(attrs={'id' : 'lon'})
     )
-    
 
     #level = forms.FloatField(
     #    max_value=1000,

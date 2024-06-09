@@ -3,8 +3,9 @@
 {% block body %}
 <body class="w-full h-full">
 
-</body>
 {% block form %}
+<div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card-body">
 <form method="post">
     {% csrf_token %}
     <label class="input input-bordered flex items-center gap-2">
@@ -59,8 +60,16 @@
     </label>
 
     <button class=" btn btn-sm btn-success"  onclick="document.getElementById('map_modal').showModal()">Add funds</button>
+    <input type="disabled" id="lat" name="lat" readonly>
+    <input type="hidden" id="lon" name="lon">
+
+
     <button type="submit">submit</button>
     <p id="lol"> </p> 
+</body>
+
+</div>
+</div>
 </form>
 
 {% endblock form %}

@@ -39,3 +39,12 @@ class WaterReading(models.Model):
             and (6.5 <= self.ph <= 8.5)
             and (1 <= self.bod <= 2)
         )
+
+    @staticmethod
+    def from_current(sensor: Sensor):
+        """
+        Get latest reading from sensor
+
+        Can return None in the case that it hasn't made a reading.
+        """
+        return WaterReading.objects.filter(sensor=sensor).order_by('-timestamp').first()

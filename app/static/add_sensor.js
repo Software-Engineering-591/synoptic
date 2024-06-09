@@ -16,19 +16,17 @@ for (i=0; i < data.length; i++) {
     markers.push(markerz);
    
 }
-console.log(markers)
 
 
 markers.forEach(element => {
     element.on('click', (e) =>
 {
-    console.log(element.getLatLng().lat)
     as = document.getElementById('lol')
     as.innerHTML = element.getLatLng().lat;
     fetch(`?lat=${element.getLatLng().lat}&longitude=${element.getLatLng().lng}`)
-    document.getElementById('lat').value = element.getLatLng().lat;
-    document.getElementById('longitude').value = element.getLatLng().lng;
-    
+    document.getElementById('lat').value = element.getLatLng().lat
+    document.getElementById('lon').value = element.getLatLng().lng
+
     document.getElementById('map_modal').close();
     
 })
