@@ -16,6 +16,8 @@ psycopg = "^3.1.19"
 django-matplotlib = "^0.1"
 matplotlib = "^3.9.0"
 pydantic = "^2.7.3"
+requests = "^2.32.3"
+django-tz-detect = "^0.5.0"
 
 [tool.poetry.scripts]
 app = "app.run:main"

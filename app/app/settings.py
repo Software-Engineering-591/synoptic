@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'manager',
     'sensor',
     'leaflet',
+    'tz_detect',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_htmx.middleware.HtmxMiddleware',
     'django_browser_reload.middleware.BrowserReloadMiddleware',
+    'tz_detect.middleware.TimezoneMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -134,6 +136,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+TZ_DETECT_COUNTRIES = ('GB', 'KH', 'US')
 
 LANGUAGES = (
     ('en', _('English')),
