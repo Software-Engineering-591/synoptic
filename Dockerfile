@@ -1,4 +1,5 @@
-FROM python:3.12-alpine
+FROM python:3.12-alpine3.19 
+# 3.20 has a bug with poetry, Stupid!
 
 RUN apk add --no-cache poetry geos gdal gettext
 

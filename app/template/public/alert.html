@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load i18n tz tz_detect %}
+{% block head %}
+    <title>Home | Pu Ngao</title>
+{% endblock head %}
+{% block body %}
+    {% tz_detect %}
+    <main class="h-screen">
+        <!-- <div class="absolute inset-0 flex justify-center items-center">wtf</div> -->
+        <div class="h-1/4 text-center font-bold">
+            <h1>{{ city.name }}</h1>
+            <h1>{{ weathers.0.main.temp }}°C</h1>
+            <h1>{% now "f a" %}</h1>
+        </div>
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>Weather</th>
+                    <th>Temperature</th>
+                    <th>Time</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for weather in weathers %}
+                    <tr>
+                        <td>
+                            <div class="flex items-center gap-3">
+                                <div class="avatar">
+                                    <div class="mask mask-squircle w-12 h-12">
+                                        <img src="https://openweathermap.org/img/wn/{{ weather.weather.0.icon }}@2x.png"
+                                             alt="" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="font-bold">{{ weather.weather.0.main }}</div>
+                                    <div class="text-sm opacity-50">{{ weather.weather.0.description }}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <b>{{ weather.main.temp }}°C</b>
+                        </td>
+                        <td>{{ weather.dt_txt|date:"f a" }}</td>
+                        <th>
+                            <button class="btn btn-ghost btn-xs">details</button>
+                        </th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+{% endblock body %}
