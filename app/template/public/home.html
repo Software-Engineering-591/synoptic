@@ -1,9 +1,76 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block head %}
-    <title>Hello Everyone</title>
+    <title>Home | Pu Ngao</title>
 {% endblock head %}
 {% block body %}
     <main>
-        Hello World from!
+        <div>
+            <button class="btn btn-outline btn-block btn-error flex-grow ">Alert</button>
+        </div>
+        <div>
+            <p class="text-3xl font-bold mt-5 ml-3">Pu Ngao</p>
+        </div>
+        <section>
+            <div class="overflow-x-auto mt-20 h-auto w-auto place-items-center bg-gra">
+                <table class="table">
+                    <!-- head -->
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Sensor</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for sensor, current_reading in s_and_wr %}
+                            <!-- row -->
+                            <tr class="hover">
+                                <th>{{ forloop.counter }}</th>
+                                <td>{{ sensor }}</td>
+                                {% if current_reading is not None %}
+                                    {% if current_reading.clean_condition %}
+                                        <td class="text-success">Drinkable</td>
+                                    {% else %}
+                                        <td class="text-error">Contaminated</td>
+                                    {% endif %}
+                                {% else %}
+                                    <td class="text-info">Gathering</td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <p class="font-bold ml-auto flex justify-end mr-10">Last Updated 12:30 PM</p>
+            </div>
+        </section>
+        <section>
+            <div>
+                <p class="font-bold text-1xl ml-3 mb-3 mt-10">Info</p>
+            </div>
+            <div class="collapse collapse-plus bg-base-200">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title text-xl font-medium">Sanitization</div>
+                <div class="collapse-content">
+                    <p>{% trans "block-body-1" %}</p>
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-200">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title text-xl font-medium">Purification Techniques</div>
+                <div class="collapse-content">
+                    <p>.......</p>
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-200">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title text-xl font-medium">Contanminated Water</div>
+                <div class="collapse-content">
+                    <p>......</p>
+                </div>
+            </div>
+        </section>
     </main>
 {% endblock body %}
