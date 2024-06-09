@@ -5,7 +5,6 @@ from sensor.models import Sensor
 from .weatherapi import get_weather_data
 # Create your views here.
 
-
 class HomeView(TemplateView):
     template_name = 'public/home.html'
 
@@ -16,7 +15,6 @@ class HomeView(TemplateView):
                 for sensor in Sensor.objects.all()
             )
         }
-
 
 class AlertView(TemplateView):
     template_name = 'public/alert.html'
@@ -35,3 +33,7 @@ class AlertView(TemplateView):
             return {'weathers': m.list[:4], 'city': m.city}
         print("Couldn't get weather data")
         return {'weathers': None, 'city': None}
+
+class SettingsView(TemplateView):
+    template_name = 'public/settings.html'
+
