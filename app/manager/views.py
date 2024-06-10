@@ -176,7 +176,7 @@ def adminView(request):
             if user is not None:
                     login(request, user)
                     ## This should be changed to admin dashboard
-                    return redirect('add_sensor')
+                    return redirect('dashboard')
             else:
                 return render(request, 'admin_login.html', {'form' : attempt})
         else:
