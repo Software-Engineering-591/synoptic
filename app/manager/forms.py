@@ -36,7 +36,7 @@ class addSensorForm(ModelForm):
                 attrs = {'class' : 'w-full h-full', 'placeholder' : 'temperature'}
             ),
             'ph' : forms.NumberInput(
-                attrs= {'class' : 'w-full h-full', 'placeholder' : 'pH'}
+                attrs= {'class' : 'w-full h-full', 'placeholder' : 'pH', 'max' : '14'}
             )
         }
 class latandlon(forms.Form):
@@ -46,8 +46,3 @@ class latandlon(forms.Form):
     lon = forms.FloatField(
         widget = forms.NumberInput(attrs={'id' : 'lon'})
     )
-
-    #level = forms.FloatField(
-    #    max_value=1000,
-    #    widget=forms.NumberInput(attrs={'class' : 'caret-pink-500 w-full'})
-    #)

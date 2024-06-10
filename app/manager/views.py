@@ -19,7 +19,8 @@ def adminView(request):
 
             if user is not None:
                     login(request, user)
-                    return render(request, 'add_sensor.html')
+                    ## This should be changed to admin dashboard
+                    return redirect('add_sensor')
             else:
                 return render(request, 'admin_login.html', {'form' : attempt})
         else:
@@ -32,11 +33,11 @@ def adminView(request):
 def add_sensor_view(request):
     if not request.user.is_authenticated:
          return redirect('login')
-    
     form = addSensorForm()
     latform = latandlon()
     ## grabbing all of the points into a list and then converting points to json
     points = Sensor.objects.values_list('point', flat=True)
+    ## Getting point attributes from a list of points from sensor objects
     points_list = [{'lat': point.y, 'lon': point.x} for point in points]
     ## dumping json converted data
     data = json.dumps(points_list, cls=DjangoJSONEncoder)
@@ -53,6 +54,7 @@ def add_sensor_view(request):
             fetched_lat = latform.cleaned_data['lat']
             fetched_lon = latform.cleaned_data['lon']
            
+            ## Creating new water reading object
             Waterreading = WaterReading.objects.create(
                 level = form.cleaned_data['level'],
                 orp = form.cleaned_data['orp'],
@@ -62,13 +64,16 @@ def add_sensor_view(request):
                 sensor = Sensor.objects.get(point=Point(fetched_lon, fetched_lat)),
                 timestamp = timezone.now()
             )
+            ## Saving the new object
             Waterreading.save()
-            return render(request, 'add_sensor.html', {'form' : form, 'data' : data})
+            return render(request, 'add_sensor.html' , {'form' : form, 'data' : data, 'lat_form' : latform})
         else:
             form = addSensorForm()
             latform = latandlon()
-            return render(request, 'add_sensor.html', {'form' : form, 'data' : data, 'lat_form' : latform})
+            return render(request, 'add_sensor.html', {'form' : form, 'data' : data,
+                                                        'lat_form' : latform})
     else:
-        return render(request, 'add_sensor.html', {'form' : form, 'data' : data, 'lat_form' : latform})
+        return render(request, 'add_sensor.html', {'form' : form, 'data' : data,
+                                                    'lat_form' : latform})
 
 

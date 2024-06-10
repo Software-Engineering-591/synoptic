@@ -6,15 +6,14 @@ var map = L.map('map').setView([12.577656, 106.935126], 13)
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var a = null
 
 for (i=0; i < data.length; i++) {
     var marker = data[i];
     lat = marker.lat;
     lon = marker.lon;
-    let markerz = L.marker([lat, lon]).addTo(map);
-    markerz.bindPopup("Water sensor:" + lat + " " + lon );
-    markers.push(markerz);
+    let this_marker = L.marker([lat, lon]).addTo(map);
+    this_marker.bindPopup("Water sensor:" + lat + " " + lon );
+    markers.push(this_marker);
    
 }
 
@@ -24,7 +23,6 @@ markers.forEach(element => {
 {
     lat = document.getElementById('lat')
     lon = document.getElementById('lon')
-    element = redIcon
     fetch(`?lat=${element.getLatLng().lat}&longitude=${element.getLatLng().lng}`)
     lat.value = element.getLatLng().lat
     lon.value = element.getLatLng().lng
