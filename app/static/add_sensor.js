@@ -1,4 +1,5 @@
 const markers = [];
+
 var map = L.map('map').setView([12.577656, 106.935126], 13)
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -12,7 +13,7 @@ for (i=0; i < data.length; i++) {
     lat = marker.lat;
     lon = marker.lon;
     let markerz = L.marker([lat, lon]).addTo(map);
-    markerz.bindPopup("hello");
+    markerz.bindPopup("Water sensor:" + lat + " " + lon );
     markers.push(markerz);
    
 }
@@ -23,6 +24,7 @@ markers.forEach(element => {
 {
     lat = document.getElementById('lat')
     lon = document.getElementById('lon')
+    element = redIcon
     fetch(`?lat=${element.getLatLng().lat}&longitude=${element.getLatLng().lng}`)
     lat.value = element.getLatLng().lat
     lon.value = element.getLatLng().lng
