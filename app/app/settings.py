@@ -148,6 +148,10 @@ LOCALE_PATHS = [
     BASE_DIR / 'locale/',
 ]
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -164,3 +168,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+LEAFLET_CONFIG = {'DEFAULT_CENTER': (12.5873620, 106.9245478), 'DEFAULT_ZOOM': 16}
