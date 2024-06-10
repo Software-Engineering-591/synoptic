@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect  # noqa: F401
 import io
 import base64
 import matplotlib.pyplot as plt
-from sensor.models import Sensor
 from django.utils.translation import gettext as _
 from django.contrib.auth import authenticate, login
 from manager.forms import Loginform, Addensorform, Latandlon

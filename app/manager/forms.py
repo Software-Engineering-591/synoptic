@@ -4,10 +4,12 @@ from django.forms import ModelForm
 from .models import WaterReading
 
 class Loginform(AuthenticationForm):
-    ## Fields for login form, seems for username, to enforce clientside, need a camal cased maxLength html attribute to enforce
+    ## Fields for login form, seems for username, to enforce clientside
+    # , need a camal cased maxLength html attribute to enforce
     username = forms.CharField(
         max_length = 50,
-        widget=forms.TextInput(attrs={'class': 'w-full caret-pink-500', 'placeholder' : 'username',
+        widget=forms.TextInput(attrs={'class': 'w-full caret-pink-500', 
+                                      'placeholder' : 'username',
                                        'maxLength' : '50'})
     )
     password = forms.CharField(
