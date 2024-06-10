@@ -1,5 +1,5 @@
 from django.contrib import admin  # noqa: F401
-from .models import WaterReading
-# Register your models here.
+from .models import  WaterReading
 
-admin.site.register(WaterReading)
+# Register your models here.
+admin.site.register([WaterReading])

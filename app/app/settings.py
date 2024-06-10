@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'manager',
     'sensor',
     'leaflet',
+    'tz_detect',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_htmx.middleware.HtmxMiddleware',
     'django_browser_reload.middleware.BrowserReloadMiddleware',
+    'tz_detect.middleware.TimezoneMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -135,6 +137,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+TZ_DETECT_COUNTRIES = ('GB', 'KH', 'US')
+
 LANGUAGES = (
     ('en', _('English')),
     ('kh', _('Khmer')),
@@ -144,12 +148,18 @@ LOCALE_PATHS = [
     BASE_DIR / 'locale/',
 ]
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+STATIC_URL = '/static/'
 
-STATIC_URL = 'static/'
-
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -158,3 +168,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+LEAFLET_CONFIG = {'DEFAULT_CENTER': (12.5873620, 106.9245478), 'DEFAULT_ZOOM': 16}

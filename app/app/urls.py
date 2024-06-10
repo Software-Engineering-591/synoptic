@@ -22,6 +22,7 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = i18n_patterns(
     # Used for browser hot reload
     path('__reload__/', include('django_browser_reload.urls')),
+    path('tz_detect/', include('tz_detect.urls')),
     path('sudo/', admin.site.urls),
     path('', include('public.urls')),
     path('manager/', include('manager.urls')),
