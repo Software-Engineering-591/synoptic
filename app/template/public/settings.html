@@ -1,26 +1,34 @@
 {% extends "base.html" %}
 {% block head %}
-    <title>Hello Everyone</title>
+    <title>Accessibility Settings</title>
 {% endblock head %}
 {% block body %}
-    <main>
-        Accessibility Settings
-        <div class="form-control">
-            <label class="label cursor-pointer gap-4">
-              <span class="label-text">Light</span>
-              <input type="radio" name="theme-radios" class="radio theme-controller" value="light"/>
-            </label>
-          </div>
-          <div class="form-control">
-            <label class="label cursor-pointer gap-4">
-              <span class="label-text">Dark</span>
-              <input type="radio" name="theme-radios" class="radio theme-controller" value="sunset"/>
-            </label>
-          </div>
-          <div class="form-control">
-            <label class="label cursor-pointer gap-4">
-              <span class="label-text">High Contrast</span>
-              <input type="radio" name="theme-radios" class="radio theme-controller" value="acid"/>
-            </label>
+    <main class="p-8">
+        <!-- Page Title -->
+        <h1 class="text-3xl font-bold mb-4">Accessibility Settings</h1>
+        <!-- Theme Options -->
+        <div class="grid gap-4">
+            <!-- Light Theme Option -->
+            <div class="form-control">
+                <label class="cursor-pointer flex items-center gap-2">
+                    <input type="radio" name="theme-radios" class="radio theme-controller" value="light"/>
+                    <span class="label-text text-lg">Light Theme</span>
+                </label>
+            </div>
+            <!-- Dark Theme Option -->
+            <div class="form-control">
+                <label class="cursor-pointer flex items-center gap-2">
+                    <input type="radio" name="theme-radios" class="radio theme-controller" value="dark"/>
+                    <span class="label-text text-lg">Dark Theme</span>
+                </label>
+            </div>
+            <!-- High Contrast Theme Option -->
+            <div class="form-control">
+                <label class="cursor-pointer flex items-center gap-2">
+                    <input type="radio" name="theme-radios" class="radio theme-controller" value="cyberpunk"/>
+                    <span class="label-text text-lg">High Contrast Theme</span>
+                </label>
+            </div>
+        </div>
     </main>
 {% endblock body %}
