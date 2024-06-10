@@ -145,6 +145,26 @@ msgstr "BOD: "
 msgid "temp1"
 msgstr "Temperature (°C): "
 
-#: template/public/home.html:57
-msgid "block-body-1"
-msgstr "hello"
+#: .\template\public\home.html:59
+msgid "Sanitization"
+msgstr "Sanitization"
+
+#: .\template\public\home.html:61
+msgid "Sanitization info"
+msgstr "Hand Washing: Always wash hands with soap before touching water or food. \n \n Clean Containers: Use clean containers to store and collect water. \n \n Proper Waste Disposal: Keep animal and human waste away from water sources."
+
+#: .\template\public\home.html:66
+msgid "Purification Techniques"
+msgstr "Water Purification Techniques"
+
+#: .\template\public\home.html:68
+msgid "Purification Techniques info"
+msgstr "Boiling: \n \n How to Do It: Boil water for at least 1 minute. \n \n Benefits: Kills most germs and bacteria, making water safe to drink. \n \n Filtering: \n \n How to Do It: Use a clean cloth or a simple filter to remove dirt and particles. \n \n Benefits: Removes physical impurities, making water clearer and cleaner. \n \n Using Chlorine Tablets: \n \n How to Do It: Add a chlorine tablet to a container of water and wait for 30 minutes. \n \n Benefits: Kills bacteria and viruses, making water safe for drinking. \n \n Solar Disinfection (SODIS): \n \n How to Do It: Fill a clear plastic bottle with water and leave it in direct sunlight for at least 6 hours. \n \n Benefits: Sunlight kills germs and bacteria, making water safer to drink. \n \n Sand Filtration: \n \n How to Do It: Pour water through a container filled with layers of sand and gravel. \n \n Benefits: Removes particles and some bacteria, making water cleaner."
+
+#: .\template\public\home.html:73
+msgid "Contaminated Water"
+msgstr "Why Clean Water is Important"
+
+#: .\template\public\home.html:75
+msgid "Contaminated Water info"
+msgstr "Health Benefits: Clean water keeps us healthy. It helps to prevent diseases like diarrhea, cholera, and typhoid. \n \n Daily Use: We use water for drinking, cooking, cleaning, and bathing. It's important to ensure the water is clean to avoid getting sick."
