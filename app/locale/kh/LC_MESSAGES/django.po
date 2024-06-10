@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-10 16:19+0000\n"
+"POT-Creation-Date: 2024-06-10 15:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,133 +17,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: app/settings.py:139
+#: .\app\settings.py:143
 msgid "English"
 msgstr ""
 
-#: app/settings.py:140
+#: .\app\settings.py:144
 msgid "Khmer"
 msgstr ""
 
-#: manager/views.py:19
-msgid "Timestamp"
-msgstr "សំគាល់ពេល"
+#: .\template\public\home.html:59
+msgid "Sanitization"
+msgstr "អំពីអនាម័យ"
 
-#: manager/views.py:73
-#, python-brace-format
-msgid "Temperature for {sensor_name}"
-msgstr "សីតុណ្ហភាពសម្រាប់ {sensor_name}"
+#: .\template\public\home.html:61
+msgid "Sanitization info"
+msgstr "ការលាងដៃ: តែងតែលាងដៃជាមួយសាប៊ូមុនពេលប៉ះទឹកឬអាហារ។ \n ប្រអប់ស្អាត: ប្រើប្រអប់ស្អាតដើម្បីផ្ទុកនិងប្រមូលទឹក។ \n ការបំផ្លាញសំណល់ត្រឹមត្រូវ: រក្សាសំណល់សត្វនិងមនុស្សឱ្យឆ្ងាយពីប្រភពទឹក។"
 
-#: manager/views.py:74
-msgid "Temperature (°C)"
-msgstr "សីតុណ្ហភាព (មើលលម្អិត)"
+#: .\template\public\home.html:66
+msgid "Purification Techniques"
+msgstr "បច្ចេកទេសបន្សុទ្ធទឹក។"
 
-#: manager/views.py:78
-#, python-brace-format
-msgid "Water Level for {sensor_name}"
-msgstr "ម្រិតទឹកសម្រាប់ {sensor_name}"
+#: .\template\public\home.html:68
+msgid "Purification Techniques info"
+msgstr "ការឆ្កូតទឹក:\n ធ្វើដូចម្តេច: ដាំទឹកឱ្យពុះយ៉ាងហោចណាស់១នាទី។ \n អត្ថប្រយោជន៍: សម្លាប់មេរោគនិងបាក់តេរីភាគច្រើន, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n ការច្រោះទឹក: \n ធ្វើដូចម្តេច: ប្រើក្រណាត់ស្អាតឬឧបករណ៍ច្រោះដើម្បីយកដីនិងភាគល្អិតចេញ។ \n អត្ថប្រយោជន៍: យកសារធាតុកខ្វក់ចេញ, ធ្វើឱ្យទឹកស្អាតនិងច្បាស់។ \n ប្រើគ្រាប់គ្លរុញ: \n ធ្វើដូចម្តេច: បន្ថែមគ្រាប់គ្លរុញទៅក្នុងទឹកនិងរង់ចាំ៣០នាទី។ \n អត្ថប្រយោជន៍: សម្លាប់បាក់តេរីនិងមេរោគ, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n ការប្រើប្រាស់ពន្លឺព្រះអាទិត្យ (SODIS): \n ធ្វើដូចម្តេច: ដាក់ទឹកក្នុងដបទឹកប្លាស្ទិក និងដាក់នៅក្រោមពន្លឺព្រះអាទិត្យយ៉ាងហោចណាស់ ៦ម៉ោង។ \n អត្ថប្រយោជន៍: ពន្លឺព្រះអាទិត្យសម្លាប់មេរោគនិងបាក់តេរី, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n ការច្រោះតាមខ្សាច់: \n ធ្វើដូចម្តេច: ចាក់ទឹកឆ្លងកាត់បង្ហុកដែលមានបញ្ចូលខ្សាច់និងថ្ម។ \n អត្ថប្រយោជន៍: យកភាគល្អិតនិងមេរោគខ្លះចេញ, ធ្វើឱ្យទឹកស្អាតជាងមុន។"
 
-#: manager/views.py:78
-msgid "Level (m)"
-msgstr "ម្រិតទឹកសម្រាប់ (ម៉ែត្រ)"
+#: .\template\public\home.html:73
+msgid "Contaminated Water"
+msgstr "ហេតុអ្វីបានជាទឹកស្អាតមានសារៈសំខាន់"
 
-#: manager/views.py:82
-#, python-brace-format
-msgid "ORP for {sensor_name}"
-msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម សម្រាប់ {sensor_name}"
-
-#: manager/views.py:82
-msgid "ORP (mV)"
-msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម (មីលីវ៉ុល)"
-
-#: manager/views.py:85
-#, python-brace-format
-msgid "pH for {sensor_name}"
-msgstr "ទំហ សម្រាប់ {sensor_name}"
-
-#: manager/views.py:85
-msgid "pH"
-msgstr "ទំហ"
-
-#: manager/views.py:87
-#, python-brace-format
-msgid "BOD for {sensor_name}"
-msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី {sensor_name}"
-
-#: manager/views.py:87
-msgid "BOD"
-msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី សម្រាប់"
-
-#: template/manager/dashboard.html:4
-#, fuzzy
-#| msgid "dashboard-head"
-msgid "dashboard-title"
-msgstr "អ្នកគ្រប់គ្រង"
-
-#: template/manager/dashboard.html:16
-msgid "dashboard-head"
-msgstr "ផ្ទាំងគ្រប់គ្រងអ្នកគ្រប់គ្រង"
-
-#: template/manager/dashboard.html:21
-msgid "add-sensor"
-msgstr "បន្ថែមឧបករណ៍ចាប់សញ្ញា"
-
-#: template/manager/dashboard.html:24
-msgid "logout"
-msgstr "ចាកចេញ"
-
-#: template/manager/dashboard.html:34
-msgid "sensors"
-msgstr "ឧបករណ៍ចាប់សញ្ញា"
-
-#: template/manager/dashboard.html:36
-msgid "water-level"
-msgstr "កម្រិត​ទឹក (ម៉ែត្រ)"
-
-#: template/manager/dashboard.html:38
-msgid "orp"
-msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម (មីលីវ៉ុល)"
-
-#: template/manager/dashboard.html:40
-msgid "ph"
-msgstr "ទំហ"
-
-#: template/manager/dashboard.html:42
-msgid "bod"
-msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី"
-
-#: template/manager/dashboard.html:59
-msgid "view"
-msgstr "មើលលម្អិត"
-
-#: template/manager/dashboard.html:62
-msgid "the-sensor-name-1"
-msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា: "
-
-#: template/manager/dashboard.html:64
-msgid "details"
-msgstr "ព័ត៌មានលម្អិតអំពីឧបករណ៍ចាប់សញ្ញានេះ។"
-
-#: template/manager/dashboard.html:70
-msgid "level1"
-msgstr "កម្រិត​ទឹក: "
-
-#: template/manager/dashboard.html:77
-msgid "phh-1"
-msgstr "ទំហ: "
-
-#: template/manager/dashboard.html:84
-msgid "orp1"
-msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម (មីលីវ៉ុល): "
-
-#: template/manager/dashboard.html:91
-msgid "bod1"
-msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី: "
-
-#: template/manager/dashboard.html:98
-msgid "temp1"
-msgstr "សីតុណ្ហភាព (មើលលម្អិត): "
-
-#: template/public/home.html:57
-msgid "block-body-1"
-msgstr "konichiwa"
+#: .\template\public\home.html:75
+msgid "Contaminated Water info"
+msgstr "អត្ថប្រយោជន៍សុខភាព: ទឹកស្អាតរក្សាសុខភាពរបស់យើង។ វាជួយការពារជំងឺដូចជា ឃ្លៀន, ជំងឺកូឡារ៉ា, និងជំងឺថ្លង់លើស។ \n ការប្រើប្រាស់ប្រចាំថ្ងៃ: យើងប្រើទឹកសម្រាប់ផឹក, ដាំម្ហូប, សម្អាត, និងងូតទឹក។ វាសំខាន់ណាស់ក្នុងការប្រើប្រាស់ទឹកស្អាតដើម្បីជៀសវាងការចម្លងជំងឺ។"
