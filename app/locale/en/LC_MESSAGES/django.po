@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-10 15:31+0100\n"
+"POT-Creation-Date: 2024-06-10 16:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,34 +18,133 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\app\settings.py:143
+#: app/settings.py:139
 msgid "English"
 msgstr ""
 
-#: .\app\settings.py:144
+#: app/settings.py:140
 msgid "Khmer"
 msgstr ""
 
-#: .\template\public\home.html:59
-msgid "Sanitization"
-msgstr "Sanitization"
+#: manager/views.py:19
+msgid "Timestamp"
+msgstr "Timestamp"
 
-#: .\template\public\home.html:61
-msgid "Sanitization info"
-msgstr "Hand Washing: Always wash hands with soap before touching water or food. \n \n Clean Containers: Use clean containers to store and collect water. \n \n Proper Waste Disposal: Keep animal and human waste away from water sources."
+#: manager/views.py:73
+#, python-brace-format
+msgid "Temperature for {sensor_name}"
+msgstr "Temperature for {sensor_name}"
 
-#: .\template\public\home.html:66
-msgid "Purification Techniques"
-msgstr "Water Purification Techniques"
+#: manager/views.py:74
+msgid "Temperature (°C)"
+msgstr "Temperature (°C)"
 
-#: .\template\public\home.html:68
-msgid "Purification Techniques info"
-msgstr "Boiling: \n \n How to Do It: Boil water for at least 1 minute. \n \n Benefits: Kills most germs and bacteria, making water safe to drink. \n \n Filtering: \n \n How to Do It: Use a clean cloth or a simple filter to remove dirt and particles. \n \n Benefits: Removes physical impurities, making water clearer and cleaner. \n \n Using Chlorine Tablets: \n \n How to Do It: Add a chlorine tablet to a container of water and wait for 30 minutes. \n \n Benefits: Kills bacteria and viruses, making water safe for drinking. \n \n Solar Disinfection (SODIS): \n \n How to Do It: Fill a clear plastic bottle with water and leave it in direct sunlight for at least 6 hours. \n \n Benefits: Sunlight kills germs and bacteria, making water safer to drink. \n \n Sand Filtration: \n \n How to Do It: Pour water through a container filled with layers of sand and gravel. \n \n Benefits: Removes particles and some bacteria, making water cleaner."
+#: manager/views.py:78
+#, python-brace-format
+msgid "Water Level for {sensor_name}"
+msgstr "Water Level for {sensor_name}"
 
-#: .\template\public\home.html:73
-msgid "Contaminated Water"
-msgstr "Why Clean Water is Important"
+#: manager/views.py:78
+msgid "Level (m)"
+msgstr "Level (m)"
 
-#: .\template\public\home.html:75
-msgid "Contaminated Water info"
-msgstr "Health Benefits: Clean water keeps us healthy. It helps to prevent diseases like diarrhea, cholera, and typhoid. \n \n Daily Use: We use water for drinking, cooking, cleaning, and bathing. It's important to ensure the water is clean to avoid getting sick."
+#: manager/views.py:82
+#, python-brace-format
+msgid "ORP for {sensor_name}"
+msgstr "ORP for {sensor_name}"
+
+#: manager/views.py:82
+msgid "ORP (mV)"
+msgstr "ORP (mV)"
+
+#: manager/views.py:85
+#, python-brace-format
+msgid "pH for {sensor_name}"
+msgstr "pH for {sensor_name}"
+
+#: manager/views.py:85
+msgid "pH"
+msgstr "pH"
+
+#: manager/views.py:87
+#, python-brace-format
+msgid "BOD for {sensor_name}"
+msgstr "BOD for {sensor_name}"
+
+#: manager/views.py:87
+msgid "BOD"
+msgstr "BOD"
+
+#: template/manager/dashboard.html:4
+#, fuzzy
+#| msgid "dashboard-head"
+msgid "dashboard-title"
+msgstr "Manager"
+
+#: template/manager/dashboard.html:16
+msgid "dashboard-head"
+msgstr "Manager Dashboard"
+
+#: template/manager/dashboard.html:21
+msgid "add-sensor"
+msgstr "Add sensor"
+
+#: template/manager/dashboard.html:24
+msgid "logout"
+msgstr "Logout"
+
+#: template/manager/dashboard.html:34
+msgid "sensors"
+msgstr "Sensors"
+
+#: template/manager/dashboard.html:36
+msgid "water-level"
+msgstr "Water Level (m)"
+
+#: template/manager/dashboard.html:38
+msgid "orp"
+msgstr "ORP (mV)"
+
+#: template/manager/dashboard.html:40
+msgid "ph"
+msgstr "pH"
+
+#: template/manager/dashboard.html:42
+msgid "bod"
+msgstr "BOD"
+
+#: template/manager/dashboard.html:59
+msgid "view"
+msgstr "view detail"
+
+#: template/manager/dashboard.html:62
+msgid "the-sensor-name-1"
+msgstr "Sensor name: "
+
+#: template/manager/dashboard.html:64
+msgid "details"
+msgstr "Details about the sensor"
+
+#: template/manager/dashboard.html:70
+msgid "level1"
+msgstr "Water level (m): "
+
+#: template/manager/dashboard.html:77
+msgid "phh-1"
+msgstr "pH: "
+
+#: template/manager/dashboard.html:84
+msgid "orp1"
+msgstr "ORP (mV): "
+
+#: template/manager/dashboard.html:91
+msgid "bod1"
+msgstr "BOD: "
+
+#: template/manager/dashboard.html:98
+msgid "temp1"
+msgstr "Temperature (°C): "
+
+#: template/public/home.html:57
+msgid "block-body-1"
+msgstr "hello"
