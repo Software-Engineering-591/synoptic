@@ -75,26 +75,44 @@ def dashboard(request):
             )
 
             sensor_level = generate_graph(
-                readings, 'level', _('Water Level for {sensor_name}').format(sensor_name=sensor.name), _('Level (m)')
+                readings,
+                'level',
+                _('Water Level for {sensor_name}').format(sensor_name=sensor.name),
+                _('Level (m)'),
             )
 
             sensor_orp = generate_graph(
-                readings, 'orp', _('ORP for {sensor_name}').format(sensor_name=sensor.name), _('ORP (mV)')
+                readings,
+                'orp',
+                _('ORP for {sensor_name}').format(sensor_name=sensor.name),
+                _('ORP (mV)'),
             )
 
-            sensor_ph = generate_graph(readings, 'ph', _('pH for {sensor_name}').format(sensor_name=sensor.name), _('pH'))
+            sensor_ph = generate_graph(
+                readings,
+                'ph',
+                _('pH for {sensor_name}').format(sensor_name=sensor.name),
+                _('pH'),
+            )
 
-            sensor_bod = generate_graph(readings, 'bod', _('BOD for {sensor_name}').format(sensor_name=sensor.name), _('BOD'))
+            sensor_bod = generate_graph(
+                readings,
+                'bod',
+                _('BOD for {sensor_name}').format(sensor_name=sensor.name),
+                _('BOD'),
+            )
 
-            sensors_data.append({
-                'sensor': sensor,
-                'level_graph': sensor_level,
-                'orp_graph': sensor_orp,
-                'ph_graph': sensor_ph,
-                'bod_graph': sensor_bod,
-                'temperature_graph': sensor_temperature,
-                'latest': readings.last(),
-            })
+            sensors_data.append(
+                {
+                    'sensor': sensor,
+                    'level_graph': sensor_level,
+                    'orp_graph': sensor_orp,
+                    'ph_graph': sensor_ph,
+                    'bod_graph': sensor_bod,
+                    'temperature_graph': sensor_temperature,
+                    'latest': readings.last(),
+                }
+            )
 
         # if readings.exists():
         #     sensor_temperature = generate_graph(
