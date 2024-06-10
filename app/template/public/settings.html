@@ -3,32 +3,35 @@
     <title>Accessibility Settings</title>
 {% endblock head %}
 {% block body %}
-    <main class="p-8" x-data="{ theme: localStorage.getItem('theme') || 'light' }" x-init="$watch('theme', value => localStorage.setItem('theme', value))">
-        <!-- Page Title -->
-        <h1 class="text-3xl font-bold mb-4">Accessibility Settings</h1>
-        <!-- Theme Options -->
-        <div class="grid gap-4">
-            <!-- Light Theme Option -->
-            <div class="form-control">
-                <label class="cursor-pointer flex items-center gap-2">
-                    <input type="radio" name="theme-radios" class="radio theme-controller" value="light" x-model="theme"/>
-                    <span class="label-text text-lg">Light Theme</span>
-                </label>
-            </div>
-            <!-- Dark Theme Option -->
-            <div class="form-control">
-                <label class="cursor-pointer flex items-center gap-2">
-                    <input type="radio" name="theme-radios" class="radio theme-controller" value="dark" x-model="theme"/>
-                    <span class="label-text text-lg">Dark Theme</span>
-                </label>
-            </div>
-            <!-- High Contrast Theme Option -->
-            <div class="form-control">
-                <label class="cursor-pointer flex items-center gap-2">
-                    <input type="radio" name="theme-radios" class="radio theme-controller" value="cyberpunk" x-model="theme"/>
-                    <span class="label-text text-lg">High Contrast Theme</span>
-                </label>
-            </div>
+<main class="p-8" x-data="{ theme: $persist('light') }">
+    <!-- Page Title -->
+    <h1 class="text-3xl font-bold mb-4">Accessibility Settings</h1>
+    <!-- Theme Options -->
+    <div class="grid gap-4">
+        <!-- Light Theme Option -->
+        <div class="form-control">
+            <label class="cursor-pointer flex items-center gap-2">
+                <input type="radio" name="theme-radios" class="radio theme-controller" value="light"
+                       x-model="theme" @click="document.documentElement.setAttribute('data-theme', 'light'); localStorage.setItem('theme', 'light')" />
+                <span class="label-text text-lg">Light Theme</span>
+            </label>
         </div>
-    </main>
+        <!-- Dark Theme Option -->
+        <div class="form-control">
+            <label class="cursor-pointer flex items-center gap-2">
+                <input type="radio" name="theme-radios" class="radio theme-controller" value="dark"
+                       x-model="theme" @click="document.documentElement.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark')" />
+                <span class="label-text text-lg">Dark Theme</span>
+            </label>
+        </div>
+        <!-- High Contrast Theme Option -->
+        <div class="form-control">
+            <label class="cursor-pointer flex items-center gap-2">
+                <input type="radio" name="theme-radios" class="radio theme-controller" value="cyberpunk"
+                       x-model="theme" @click="document.documentElement.setAttribute('data-theme', 'cyberpunk'); localStorage.setItem('theme', 'cyberpunk')" />
+                <span class="label-text text-lg">High Contrast Theme</span>
+            </label>
+        </div>
+    </div>
+</main>
 {% endblock body %}
