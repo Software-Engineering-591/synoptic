@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-08 02:06+0100\n"
+"POT-Creation-Date: 2024-06-10 16:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,14 +18,133 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\app\settings.py:139
+#: app/settings.py:139
 msgid "English"
 msgstr ""
 
-#: .\app\settings.py:140
+#: app/settings.py:140
 msgid "Khmer"
 msgstr ""
 
-#: .\template\public\home.html:65
+#: manager/views.py:19
+msgid "Timestamp"
+msgstr "Timestamp"
+
+#: manager/views.py:73
+#, python-brace-format
+msgid "Temperature for {sensor_name}"
+msgstr "Temperature for {sensor_name}"
+
+#: manager/views.py:74
+msgid "Temperature (°C)"
+msgstr "Temperature (°C)"
+
+#: manager/views.py:78
+#, python-brace-format
+msgid "Water Level for {sensor_name}"
+msgstr "Water Level for {sensor_name}"
+
+#: manager/views.py:78
+msgid "Level (m)"
+msgstr "Level (m)"
+
+#: manager/views.py:82
+#, python-brace-format
+msgid "ORP for {sensor_name}"
+msgstr "ORP for {sensor_name}"
+
+#: manager/views.py:82
+msgid "ORP (mV)"
+msgstr "ORP (mV)"
+
+#: manager/views.py:85
+#, python-brace-format
+msgid "pH for {sensor_name}"
+msgstr "pH for {sensor_name}"
+
+#: manager/views.py:85
+msgid "pH"
+msgstr "pH"
+
+#: manager/views.py:87
+#, python-brace-format
+msgid "BOD for {sensor_name}"
+msgstr "BOD for {sensor_name}"
+
+#: manager/views.py:87
+msgid "BOD"
+msgstr "BOD"
+
+#: template/manager/dashboard.html:4
+#, fuzzy
+#| msgid "dashboard-head"
+msgid "dashboard-title"
+msgstr "Manager"
+
+#: template/manager/dashboard.html:16
+msgid "dashboard-head"
+msgstr "Manager Dashboard"
+
+#: template/manager/dashboard.html:21
+msgid "add-sensor"
+msgstr "Add sensor"
+
+#: template/manager/dashboard.html:24
+msgid "logout"
+msgstr "Logout"
+
+#: template/manager/dashboard.html:34
+msgid "sensors"
+msgstr "Sensors"
+
+#: template/manager/dashboard.html:36
+msgid "water-level"
+msgstr "Water Level (m)"
+
+#: template/manager/dashboard.html:38
+msgid "orp"
+msgstr "ORP (mV)"
+
+#: template/manager/dashboard.html:40
+msgid "ph"
+msgstr "pH"
+
+#: template/manager/dashboard.html:42
+msgid "bod"
+msgstr "BOD"
+
+#: template/manager/dashboard.html:59
+msgid "view"
+msgstr "view detail"
+
+#: template/manager/dashboard.html:62
+msgid "the-sensor-name-1"
+msgstr "Sensor name: "
+
+#: template/manager/dashboard.html:64
+msgid "details"
+msgstr "Details about the sensor"
+
+#: template/manager/dashboard.html:70
+msgid "level1"
+msgstr "Water level (m): "
+
+#: template/manager/dashboard.html:77
+msgid "phh-1"
+msgstr "pH: "
+
+#: template/manager/dashboard.html:84
+msgid "orp1"
+msgstr "ORP (mV): "
+
+#: template/manager/dashboard.html:91
+msgid "bod1"
+msgstr "BOD: "
+
+#: template/manager/dashboard.html:98
+msgid "temp1"
+msgstr "Temperature (°C): "
+
+#: template/public/home.html:57
 msgid "block-body-1"
 msgstr "hello"
