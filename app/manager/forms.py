@@ -24,7 +24,7 @@ class addSensorForm(ModelForm):
         fields = ['level', 'orp', 'ph', 'bod', 'temperature']
         widgets = {
             'level' : forms.NumberInput(
-                attrs = {'class' : 'w-full h-full', 'placeholder' : 'level', 'max' : '5'}
+                attrs = {'class' : 'w-full h-full', 'placeholder' : 'level'}
             ),
             'orp' : forms.NumberInput(
                 attrs = {'class' : 'w-full h-full', 'placeholder' : 'orp'}

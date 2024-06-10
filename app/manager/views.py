@@ -178,12 +178,12 @@ def adminView(request):
                     ## This should be changed to admin dashboard
                     return redirect('dashboard')
             else:
-                return render(request, 'admin_login.html', {'form' : attempt})
+                return render(request, 'manager/admin_login.html', {'form' : attempt})
         else:
-            return render(request, 'admin_login.html', {'form' : attempt})
+            return render(request, 'manager/admin_login.html', {'form' : attempt})
     else:
         attempt = login_form()
-        return render(request, 'admin_login.html', {'form' : attempt})
+        return render(request, 'manager/admin_login.html', {'form' : attempt})
     
 
 def add_sensor_view(request):
@@ -222,14 +222,14 @@ def add_sensor_view(request):
             )
             ## Saving the new object
             Waterreading.save()
-            return render(request, 'add_sensor.html' , {'form' : form, 'data' : data, 'lat_form' : latform})
+            return redirect('dashboard')
         else:
             form = addSensorForm()
             latform = latandlon()
-            return render(request, 'add_sensor.html', {'form' : form, 'data' : data,
+            return render(request, 'manager/add_sensor.html', {'form' : form, 'data' : data,
                                                         'lat_form' : latform})
     else:
-        return render(request, 'add_sensor.html', {'form' : form, 'data' : data,
+        return render(request, 'manager/add_sensor.html', {'form' : form, 'data' : data,
                                                     'lat_form' : latform})
 
 
