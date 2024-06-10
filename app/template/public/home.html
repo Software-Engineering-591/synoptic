@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load tz_detect %}
 {% block head %}
     <title>Home | Pu Ngao</title>
 {% endblock head %}
@@ -46,33 +47,33 @@
                 </div>
             </div>
             <div>
-                <p class="font-bold ml-auto flex justify-end mr-10 mt-3">Last Updated 12:30 PM</p>
+                <span class="font-bold ml-auto flex justify-end mr-10 mt-3">{% tz_detect %} Last Updated at {% now "H:i" %}</span>
             </div>
         </section>
         <section>
-            <div class="p-8">
+            <div class="p-8 mb-20">
                 <div>
                     <p class="font-bold text-1xl ml-3 mb-3 mt-10">Info</p>
                 </div>
                 <div class="collapse collapse-plus bg-base-200">
                     <input type="radio" name="my-accordion-3" checked="checked" />
-                    <div class="collapse-title text-xl font-medium">Sanitization</div>
+                    <div class="collapse-title text-xl font-medium">{% trans "Sanitization" %}</div>
                     <div class="collapse-content">
-                        <p>{% trans "block-body-1" %}</p>
+                        <p>{% trans "Sanitization info" as local_var %} {{ local_var|linebreaksbr }}</p>
                     </div>
                 </div>
                 <div class="collapse collapse-plus bg-base-200">
                     <input type="radio" name="my-accordion-3" />
-                    <div class="collapse-title text-xl font-medium">Purification Techniques</div>
+                    <div class="collapse-title text-xl font-medium">{% trans "Purification Techniques" %}</div>
                     <div class="collapse-content">
-                        <p>.......</p>
+                        <p>{% trans "Purification Techniques info" as local_var %} {{ local_var|linebreaksbr }}</p>
                     </div>
                 </div>
                 <div class="collapse collapse-plus bg-base-200">
                     <input type="radio" name="my-accordion-3" />
-                    <div class="collapse-title text-xl font-medium">Contanminated Water</div>
+                    <div class="collapse-title text-xl font-medium">{% trans "Contaminated Water" %}</div>
                     <div class="collapse-content">
-                        <p>......</p>
+                        <p>{% trans "Contaminated Water info" as local_var %} {{ local_var|linebreaksbr }}</p>
                     </div>
                 </div>
             </div>
