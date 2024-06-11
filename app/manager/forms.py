@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.forms import ModelForm
-from .models import WaterReading
+from .models import WaterReading, Sensor
 
 class Loginform(AuthenticationForm):
     ## Fields for login form, seems for username, to enforce clientside
@@ -21,7 +21,7 @@ class Loginform(AuthenticationForm):
     class Meta:
         fields = ('username', 'password')
 
-class Addsensorform(ModelForm):
+class Addwaterform(ModelForm):
     class Meta:
         model = WaterReading
         fields = ['level', 'orp', 'ph', 'bod', 'temperature']
@@ -49,3 +49,14 @@ class Latandlon(forms.Form):
     lon = forms.FloatField(
         widget = forms.NumberInput(attrs={'id' : 'lon'})
     )
+
+class Addsensorform(ModelForm):
+    class Meta:
+        model = Sensor
+        fields = ['name']
+        widgets = {
+            'name' : forms.TextInput(
+                attrs = {'class' : 'w-full h-full', 'placeholder' : 'Name', 'id' : 'name'}
+            )
+        }
+        

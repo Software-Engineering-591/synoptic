@@ -18,13 +18,13 @@
             <div class="flex-none">
                 <ul class="menu menu-horizontal px-1">
                     <li>
-                        <a href="{% url 'add_sensor' %}"><button class="btn btn-primary mr-10">{% trans "add-sensor"%}</button></a>
+                        <a class="btn btn-primary mr-10" href="{% url 'add_sensor' %}">{% trans "add-sensor" %}</a>
                     </li>
                     <li>
-                        <form action="{% url 'logout' %}" method="post">
-                            {% csrf_token %}
-                            <button class="btn btn-error">{% trans "logout"%}</button>
-                        </form>
+                        <a class="btn btn-primary mr-10" href="{% url 'add_water' %}">Add water reading</a>
+                    </li>
+                    <li>
+                        <button hx-post="{% url 'logout' %}" class="btn btn-error">{% trans "logout" %}</button>
                     </li>
                 </ul>
             </div>
@@ -34,15 +34,15 @@
                 <!-- head -->
                 <thead>
                     <tr>
-                        <th>{% trans "sensors"%}</th>
+                        <th>{% trans "sensors" %}</th>
                         <!--col 1-->
-                        <th>{% trans "water-level"%}</th>
+                        <th>{% trans "water-level" %}</th>
                         <!--col 2-->
-                        <th>{% trans "orp"%}</th>
+                        <th>{% trans "orp" %}</th>
                         <!--col 3-->
-                        <th>{% trans "ph"%}</th>
+                        <th>{% trans "ph" %}</th>
                         <!--col 4-->
-                        <th>{% trans "bod"%}</th>
+                        <th>{% trans "bod" %}</th>
                         <!--col 5-->
                         <th></th>
                         <!--col 6-->
@@ -59,7 +59,9 @@
                             <td>{{ sensor.latest.bod }}</td>
                             <td class="w-56">
                                 <button class="btn btn-primary hover:bg-secondary"
-                                        onmousedown="modal_{{ sensor.sensor.id }}.showModal()">{% trans "view"%}</button>
+                                        onmousedown="modal_{{ sensor.sensor.id }}.showModal()">
+                                    {% trans "view" %}
+                                </button>
                                 <dialog id="modal_{{ sensor.sensor.id }}" class="modal w-full">
                                     <div class="modal-box">
                                         <h3 class="font-bold text-lg">{% trans "the-sensor-name-1" %} {{ sensor.sensor.name }}</h3>
@@ -77,28 +79,28 @@
                                             </div>
                                             <div class="py-4">
                                                 <!-- pH shows here-->
-                                                <strong>{% trans "phh-1"%}</strong> {{ sensor.latest.ph }}
+                                                <strong>{% trans "phh-1" %}</strong> {{ sensor.latest.ph }}
                                                 <img src="data:image/png;base64,{{ sensor.ph_graph }}"
                                                      alt="pH Graph"
                                                      class="w-full h-fit" />
                                             </div>
                                             <div class="py-4">
                                                 <!-- orp shows here-->
-                                                <strong>{% trans "orp1"%}</strong> {{ sensor.latest.orp }}
+                                                <strong>{% trans "orp1" %}</strong> {{ sensor.latest.orp }}
                                                 <img src="data:image/png;base64,{{ sensor.orp_graph }}"
                                                      alt="ORP Graph"
                                                      class="w-full h-fit" />
                                             </div>
                                             <div class="py-4">
                                                 <!-- BOD shows here-->
-                                                <strong>{% trans "bod1"%}</strong> {{ sensor.latest.bod }}
+                                                <strong>{% trans "bod1" %}</strong> {{ sensor.latest.bod }}
                                                 <img src="data:image/png;base64,{{ sensor.bod_graph }}"
                                                      alt="BOD Graph"
                                                      class="w-full h-fit" />
                                             </div>
                                             <div class="py-4">
                                                 <!-- temperature shows here-->
-                                                <strong>{% trans "temp1"%}</strong> {{ sensor.latest.temperature }}
+                                                <strong>{% trans "temp1" %}</strong> {{ sensor.latest.temperature }}
                                                 <img src="data:image/png;base64,{{ sensor.temperature_graph }}"
                                                      alt="Temperature Graph"
                                                      class="w-full h-fit" />

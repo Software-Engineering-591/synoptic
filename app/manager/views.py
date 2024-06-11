@@ -1,22 +1,26 @@
 import json
 from django.utils import timezone
-from django.shortcuts import render, redirect  # noqa: F401
+from django.shortcuts import render, redirect, reverse  # noqa: F401
 import io
 import base64
 import matplotlib.pyplot as plt
 from django.utils.translation import gettext as _
 from django.contrib.auth import authenticate, login, logout
-from manager.forms import Loginform, Addsensorform, Latandlon
+from manager.forms import Loginform, Addsensorform, Latandlon, Addwaterform
 from django.core.serializers.json import DjangoJSONEncoder
 from .models import WaterReading, Sensor
 from django.contrib.gis.geos import Point
-
+from matplotlib import rcParams
+from django_htmx.http import HttpResponseClientRedirect
+from django.forms import ValidationError
 # Create your views here.
 
 
 # graph
 def generate_graph(readings, parameter, title, ylabel):
     plt.figure(figsize=(6, 4))
+    rcParams['font.family'] = 'sans-serif'
+    rcParams['font.sans-serif'] = ['Noto Sans']
     timestamps = [reading.timestamp for reading in readings]
     values = [getattr(reading, parameter) for reading in readings]
     plt.plot(timestamps, values, marker='o')
@@ -37,7 +41,7 @@ def generate_graph(readings, parameter, title, ylabel):
 
 def dashboard(request):
     if not request.user.is_authenticated:
-         return redirect('login')
+        return redirect('login')
     readings = WaterReading.objects.select_related('sensor').order_by('timestamp')
 
     sensors = Sensor.objects.all()
@@ -164,6 +168,7 @@ def dashboard(request):
         },
     )
 
+
 def admin_view(request):
     if request.method == 'POST':
         attempt = Loginform(request, data=request.POST)
@@ -174,22 +179,22 @@ def admin_view(request):
             user = authenticate(request, username=username1, password=password1)
 
             if user is not None:
-                    ## If the user exists, login the user
-                    login(request, user)
-                    return redirect('dashboard')
+                ## If the user exists, login the user
+                login(request, user)
+                return redirect('dashboard')
             else:
-                return render(request, 'manager/admin_login.html', {'form' : attempt})
+                return render(request, 'manager/admin_login.html', {'form': attempt})
         else:
-            return render(request, 'manager/admin_login.html', {'form' : attempt})
+            return render(request, 'manager/admin_login.html', {'form': attempt})
     else:
         attempt = Loginform()
-        return render(request, 'manager/admin_login.html', {'form' : attempt})
-    
+        return render(request, 'manager/admin_login.html', {'form': attempt})
 
-def add_sensor_view(request):
+
+def add_water_view(request):
     if not request.user.is_authenticated:
-         return redirect('login')
-    form = Addsensorform()
+        return redirect('login')
+    form = Addwaterform()
     latform = Latandlon()
     ## grabbing all of the points into a list and then converting points to json
     points = Sensor.objects.values_list('point', flat=True)
@@ -197,42 +202,72 @@ def add_sensor_view(request):
     points_list = [{'lat': point.y, 'lon': point.x} for point in points]
     ## dumping json converted data
     data = json.dumps(points_list, cls=DjangoJSONEncoder)
-    
+
     fetched_lat = request.GET.get('lat')
     fetched_lon = request.GET.get('longitude')
     ## If the user submits
     if request.method == 'POST':
         ## post forms
-        form = Addsensorform(request.POST)
+        form = Addwaterform(request.POST)
         latform = Latandlon(request.POST)
-        if form.is_valid() and latform.is_valid():  
-            ## Grabbing the latandlon form data to filter sensor later   
+        if form.is_valid() and latform.is_valid():
+            ## Grabbing the latandlon form data to filter sensor later
             fetched_lat = latform.cleaned_data['lat']
             fetched_lon = latform.cleaned_data['lon']
-           
+
             ## Creating new water reading object
             water_reading = WaterReading.objects.create(
-                level = form.cleaned_data['level'],
-                orp = form.cleaned_data['orp'],
-                bod = form.cleaned_data['bod'],
-                ph = form.cleaned_data['ph'],
-                temperature = form.cleaned_data['temperature'],
-                sensor = Sensor.objects.get(point=Point(fetched_lon, fetched_lat)),
-                timestamp = timezone.now()
+                level=form.cleaned_data['level'],
+                orp=form.cleaned_data['orp'],
+                bod=form.cleaned_data['bod'],
+                ph=form.cleaned_data['ph'],
+                temperature=form.cleaned_data['temperature'],
+                sensor=Sensor.objects.get(point=Point(fetched_lon, fetched_lat)),
+                timestamp=timezone.now(),
             )
             ## Saving the new object
             water_reading.save()
             return redirect('dashboard')
         else:
-            form = Addsensorform()
+            form = Addwaterform()
             latform = Latandlon()
-            return render(request, 'manager/add_sensor.html', {'form' : form,
-                                                                'data' : data,
-                                                        'lat_form' : latform})
+            return render(
+                request,
+                'manager/add_water_reading.html',
+                {'form': form, 'data': data, 'lat_form': latform},
+            )
     else:
-        return render(request, 'manager/add_sensor.html', {'form' : form, 'data' : data,
-                                                    'lat_form' : latform})
+        return render(
+            request,
+            'manager/add_water_reading.html',
+            {'form': form, 'data': data, 'lat_form': latform},
+        )
+
+def add_sensor_view(request):
+    latform = Latandlon()
+    sensorform = Addsensorform()
+
+    if request.method == "POST":
+        sensorform = Addsensorform(request.POST)
+        latform = Latandlon(request.POST)
+        if sensorform.is_valid() and latform.is_valid():
+            latitude = latform.cleaned_data['lat']
+            longitude = latform.cleaned_data['lon']
+            new_sensor = Sensor.objects.create(
+                name = sensorform.cleaned_data['name'],
+                point = Point(float(longitude), float(latitude))
+            )
+            print(new_sensor)
+            print(new_sensor.__dict__)
+            new_sensor.save()
+            return redirect('dashboard')
+        else:
+            return render(request, 'manager/add_sensor.html', {'latform' : latform, 'sensorform' : sensorform})
+    else:
+        return render(request, 'manager/add_sensor.html', {'latform' : latform, 'sensorform' : sensorform})
 
 def logout_view(request):
     logout(request)
+    if request.htmx:
+        return HttpResponseClientRedirect(reverse('login'))
     return redirect('login')
