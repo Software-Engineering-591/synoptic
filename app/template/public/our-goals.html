@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block head %}
+    <style>
+         @keyframes slideIn {
+              from {
+                   transform: translaateX(-100px);
+                   opacity: 0;
+              }
+
+              to {
+                   transform: translateX(0);
+                   opacity: 1;
+              }
+         }
+
+         .slideInLeft {
+              animation: slideIn 1s ease-in-out both;
+              transform: translateX(-100px);
+         }
+
+         .slideInRight {
+              animation: slideIn 1s ease-in-out both;
+              transform: translateX(100px);
+         }
+    </style>
+    <title>Our Goals</title>
+{% endblock head %}
+{% block body %}
+    <main>
+        <article class="text-center flex flex-col place-items-center">
+            <div class="hero min-h-full"
+                 style="background-image: url(https://cdn.techwireasia.com/wp-content/uploads/2020/07/shutterstock_1174089538-897x500.jpg)">
+                <div class="hero-overlay bg-opacity-80"></div>
+                <div class="hero-content text-center text-neutral-content">
+                    <div class="slideInLeft max-w-md">
+                        <h1 class=" pt-10 text-5xl font-bold">Our Goal</h1>
+                        <p>
+                            We thrive on helping Cambodia have the same recourses as the rest of our world.
+                            <p>
+                                We belive rural Cambodia should also have a right to clean water,
+                                help with flooding, prediction of environmental changes!
+                            </p>
+                            <h1 class="mb-5 text-5xl pt-20 font-bold">Our Journey</h1>
+                            <p class="pb-10">
+                                We started this journey by creating technology that will help cambodians
+                                to understand when they should expect a flood or drought and allow them
+                                to understand when their rivers have water safe for farming, drinking, washing,
+                                bathing and more.
+                            </p>
+                        </p>
+                        <button class="btn mb-5 btn-primary">click here to find clean water sources</button>
+                        <button class="btn btn-primary">click here to see weather predictions</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero min-h-flull"
+                 style="background-image: url(https://www.wateraid.org/sites/g/files/jkxoof271/files/styles/hero_desktop/public/2016.08%20WaterAid%20Cambodia-208.jpg?itok=tlkVq9Ip)">
+                <div class="hero-overlay bg-opacity-80"></div>
+                <div class="hero-content text-center text-neutral-content">
+                    <div class="slideInRight max-w-md">
+                        <h1 class="mb-5 text-5xl font-bold">Weather</h1>
+                        <p class="mb-5">
+                            Alerts are provided on the weather page for when their is expected to be a drought or flood
+                            dependant on the rainfall and water levels recorded over the past week.
+                            <p class="pb-5">
+                                We want to reduce the effect of school, business and house flooding in Pu Ngaol
+                                by giving them access to warnings of potential future floods allowing them to prepaire early.
+                            </p>
+                            <p class="pb-5">
+                                This also helps farmers to understand when they should begin to prepaire their fields of the season and
+                                also predict their potential yeald to be able to put in specific measures to ensure they can sustain themself and their
+                                families.
+                            </p>
+                            <p class="pb-10">
+                                We also want to help with safety issues by helping to alert residance when they shouldnt use transport such as bikes as
+                                their is an increased likelyhood of a storm which could cause them to get sick or stuck on mud tracks or even potentially
+                                injoured. furthermore this reduces overcrowding in hospitals.
+                            </p>
+                        </p>
+                        <button class="btn btn-primary">Get Weather predictions</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero min-h-full"
+                 style="background-image: url(https://www.wateraid.org/sites/g/files/jkxoof271/files/styles/hero_desktop/public/2016.08%20WaterAid%20Cambodia-277.jpg?h=f2fcf546&itok=Of8j-vwA)">
+                <div class="hero-overlay bg-opacity-80"></div>
+                <div class="hero-content text-center text-neutral-content">
+                    <div class="slideInLeft max-w-md">
+                        <h1 class="text-5xl font-bold">Water</h1>
+                        <p class="mb-5 pb-10">
+                            <h1 class="text-3xl font-bold">Farming and production</h1>
+                            <p>
+                                <li>- allowing crops to grow with safe water leading to less food poisoning</li>
+                                <li>- Growing crops with better quality water oftern leads to increaded yeild</li>
+                                <li>
+                                    - farmers can produce and sell more meaning they will have more disposable income, help their community and provide sufficiently for they families
+                                </li>
+                            </p>
+                            <h1 class="pt-10 text-3xl font-bold">household use</h1>
+                            <li>- cooking, cleaning, baithing, consuming and providing to family</li>
+                            <li>- less worry that wour family and community will get sick</li>
+                            <li>- less hospitalisation</li>
+                            <h1 class=" pt-10 text-3xl font-bold">Trading</h1>
+                            <li>- Allows for trading of better quality water</li>
+                            <li>- Assures clients are less likely to get ill, creating a loyal client base</li>
+                            <li class="pb-10">- improves the economy in the community</li>
+                        </p>
+                        <!-- link to find water source page -->
+                        <button class=" btn btn-primary">Find Clean Water</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+{% endblock body %}
