@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-10 16:19+0000\n"
+"POT-Creation-Date: 2024-06-11 06:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,60 +18,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/settings.py:139
+#: app/settings.py:143
 msgid "English"
 msgstr ""
 
-#: app/settings.py:140
+#: app/settings.py:144
 msgid "Khmer"
 msgstr ""
 
-#: manager/views.py:19
+#: manager/views.py:23
 msgid "Timestamp"
 msgstr "Timestamp"
 
-#: manager/views.py:73
+#: manager/views.py:77
 #, python-brace-format
 msgid "Temperature for {sensor_name}"
 msgstr "Temperature for {sensor_name}"
 
-#: manager/views.py:74
+#: manager/views.py:78
 msgid "Temperature (°C)"
 msgstr "Temperature (°C)"
 
-#: manager/views.py:78
+#: manager/views.py:84
 #, python-brace-format
 msgid "Water Level for {sensor_name}"
 msgstr "Water Level for {sensor_name}"
 
-#: manager/views.py:78
+#: manager/views.py:85
 msgid "Level (m)"
 msgstr "Level (m)"
 
-#: manager/views.py:82
+#: manager/views.py:91
 #, python-brace-format
 msgid "ORP for {sensor_name}"
 msgstr "ORP for {sensor_name}"
 
-#: manager/views.py:82
+#: manager/views.py:92
 msgid "ORP (mV)"
 msgstr "ORP (mV)"
 
-#: manager/views.py:85
+#: manager/views.py:98
 #, python-brace-format
 msgid "pH for {sensor_name}"
 msgstr "pH for {sensor_name}"
 
-#: manager/views.py:85
+#: manager/views.py:99
 msgid "pH"
 msgstr "pH"
 
-#: manager/views.py:87
+#: manager/views.py:105
 #, python-brace-format
 msgid "BOD for {sensor_name}"
 msgstr "BOD for {sensor_name}"
 
-#: manager/views.py:87
+#: manager/views.py:106
 msgid "BOD"
 msgstr "BOD"
 
@@ -145,26 +145,190 @@ msgstr "BOD: "
 msgid "temp1"
 msgstr "Temperature (°C): "
 
-#: .\template\public\home.html:59
+#: template/public/home.html:60
 msgid "Sanitization"
 msgstr "Sanitization"
 
-#: .\template\public\home.html:61
+#: template/public/home.html:62
 msgid "Sanitization info"
-msgstr "Hand Washing: Always wash hands with soap before touching water or food. \n \n Clean Containers: Use clean containers to store and collect water. \n \n Proper Waste Disposal: Keep animal and human waste away from water sources."
+msgstr ""
+"Hand Washing: Always wash hands with soap before touching water or food. \n"
+" \n"
+" Clean Containers: Use clean containers to store and collect water. \n"
+" \n"
+" Proper Waste Disposal: Keep animal and human waste away from water sources."
 
-#: .\template\public\home.html:66
+#: template/public/home.html:67
 msgid "Purification Techniques"
 msgstr "Water Purification Techniques"
 
-#: .\template\public\home.html:68
+#: template/public/home.html:69
 msgid "Purification Techniques info"
-msgstr "Boiling: \n \n How to Do It: Boil water for at least 1 minute. \n \n Benefits: Kills most germs and bacteria, making water safe to drink. \n \n Filtering: \n \n How to Do It: Use a clean cloth or a simple filter to remove dirt and particles. \n \n Benefits: Removes physical impurities, making water clearer and cleaner. \n \n Using Chlorine Tablets: \n \n How to Do It: Add a chlorine tablet to a container of water and wait for 30 minutes. \n \n Benefits: Kills bacteria and viruses, making water safe for drinking. \n \n Solar Disinfection (SODIS): \n \n How to Do It: Fill a clear plastic bottle with water and leave it in direct sunlight for at least 6 hours. \n \n Benefits: Sunlight kills germs and bacteria, making water safer to drink. \n \n Sand Filtration: \n \n How to Do It: Pour water through a container filled with layers of sand and gravel. \n \n Benefits: Removes particles and some bacteria, making water cleaner."
+msgstr ""
+"Boiling: \n"
+" \n"
+" How to Do It: Boil water for at least 1 minute. \n"
+" \n"
+" Benefits: Kills most germs and bacteria, making water safe to drink. \n"
+" \n"
+" Filtering: \n"
+" \n"
+" How to Do It: Use a clean cloth or a simple filter to remove dirt and "
+"particles. \n"
+" \n"
+" Benefits: Removes physical impurities, making water clearer and cleaner. \n"
+" \n"
+" Using Chlorine Tablets: \n"
+" \n"
+" How to Do It: Add a chlorine tablet to a container of water and wait for 30 "
+"minutes. \n"
+" \n"
+" Benefits: Kills bacteria and viruses, making water safe for drinking. \n"
+" \n"
+" Solar Disinfection (SODIS): \n"
+" \n"
+" How to Do It: Fill a clear plastic bottle with water and leave it in direct "
+"sunlight for at least 6 hours. \n"
+" \n"
+" Benefits: Sunlight kills germs and bacteria, making water safer to drink. \n"
+" \n"
+" Sand Filtration: \n"
+" \n"
+" How to Do It: Pour water through a container filled with layers of sand and "
+"gravel. \n"
+" \n"
+" Benefits: Removes particles and some bacteria, making water cleaner."
 
-#: .\template\public\home.html:73
+#: template/public/home.html:74
 msgid "Contaminated Water"
 msgstr "Why Clean Water is Important"
 
-#: .\template\public\home.html:75
+#: template/public/home.html:76
 msgid "Contaminated Water info"
-msgstr "Health Benefits: Clean water keeps us healthy. It helps to prevent diseases like diarrhea, cholera, and typhoid. \n \n Daily Use: We use water for drinking, cooking, cleaning, and bathing. It's important to ensure the water is clean to avoid getting sick."
+msgstr ""
+"Health Benefits: Clean water keeps us healthy. It helps to prevent diseases "
+"like diarrhea, cholera, and typhoid. \n"
+" \n"
+" Daily Use: We use water for drinking, cooking, cleaning, and bathing. It's "
+"important to ensure the water is clean to avoid getting sick."
+
+#: template/public/our-goals.html:26
+msgid "Our-Goals-title"
+msgstr "Our Goals"
+
+#: template/public/our-goals.html:36
+msgid "Our-Goals-heading"
+msgstr "Our Goals"
+
+#: template/public/our-goals.html:38
+msgid "thriving-to-help-cambodia"
+msgstr "We thrive on helping Cambodia have the same resources as the rest of our world."
+
+#: template/public/our-goals.html:39
+msgid "equal-opportunities-for-cambodia"
+msgstr "We believe rural Cambodia should also have a right to clean water,"
+"help with flooding, prediction of environmental changes!"
+
+#: template/public/our-goals.html:40
+msgid "Our-Journey-title"
+msgstr "Our Journey"
+
+#: template/public/our-goals.html:41
+msgid "our-development-journey"
+msgstr "We started this journey by creating technology that will help cambodians"
+"to understand when they should expect a flood or drought and allow them"
+"to understand when their rivers have water safe for farming, drinking, washing, bathing and more"
+
+#: template/public/our-goals.html:43
+msgid "click-to-find-clean-water"
+msgstr "click here to find clean water sources"
+
+#: template/public/our-goals.html:44
+msgid "click-to-find-weather-predictions"
+msgstr "click here to see weather predictions"
+
+#: template/public/our-goals.html:53
+msgid "Weather-section-goal-page-title"
+msgstr "Weather"
+
+#: template/public/our-goals.html:55
+msgid "weather-alert-info"
+msgstr "Alerts are provided on the weather page for when their is expected to be a drought or flood"
+"dependent on the rainfall and water levels recorded over the past week."
+
+#: template/public/our-goals.html:56
+msgid "flooding-weather-alert-info"
+msgstr "We want to reduce the effect of school, business and house flooding in Pu Ngaol"
+"by giving them access to warnings of potential future floods allowing them to prepare early."
+
+#: template/public/our-goals.html:57
+msgid "farming-weather-alert-info"
+msgstr "This also helps farmers to understand when they should begin to prepare their fields of the season and"
+"also predict their potential yield to be able to put in specific measures to ensure they can sustain themself and their"
+"families."
+
+#: template/public/our-goals.html:58
+msgid "transport-safety-weather-alert-info"
+msgstr "We also want to help with safety issues by helping to alert residents when they shouldn't use transport such as bikes as"
+"their is an increased likelihood of a storm which could cause them to get sick or stuck on mud tracks or even potentially"
+"injured. Furthermore, this reduces overcrowding in hospitals."
+
+#: template/public/our-goals.html:60
+msgid "Get-weather-predictions"
+msgstr "Get Weather predictions"
+
+#: template/public/our-goals.html:69
+msgid "water-laybel-in-goal-page"
+msgstr "Water"
+
+#: template/public/our-goals.html:71
+msgid "goals-page-farming-and-production"
+msgstr "Farming and Production"
+
+#: template/public/our-goals.html:73
+msgid "safe-water-leads-to-safer-produce"
+msgstr "allowing crops to grow with safe water leading to less food poisoning"
+
+#: template/public/our-goals.html:74
+msgid "better-quality-water-increases-yeild"
+msgstr "Growing crops with better quality water often leads to increased yield"
+
+#: template/public/our-goals.html:75
+msgid "higher-yeild-increases-economy"
+msgstr "farmers can produce and sell more meaning they will have more disposable income, help their community and provide sufficient resources for their families leading to decreased starvation."
+
+#: template/public/our-goals.html:77
+msgid "Goals-page-water-for-household-use"
+msgstr "household use"
+
+#: template/public/our-goals.html:78
+msgid "what-water-is-used-for"
+msgstr "cooking, cleaning, bathing, consuming and providing to family"
+
+#: template/public/our-goals.html:79
+msgid "safe-water-has-less-fear-of-sickness"
+msgstr "less worry that your family and community will get sick"
+
+#: template/public/our-goals.html:80
+msgid "better-quality-water-decreases-hospital-overcrowding"
+msgstr "less hospitalisation"
+
+#: template/public/our-goals.html:81
+msgid "Goals-page-traiding-of-water"
+msgstr "Trading"
+
+#: template/public/our-goals.html:82
+msgid "trade-better-quality-water"
+msgstr "Allows for trading of better quality water"
+
+#: template/public/our-goals.html:83
+msgid "safe-water-creates-loyal-customer-base"
+msgstr "Assures clients are less likely to get ill, creating a loyal client base"
+
+#: template/public/our-goals.html:84
+msgid "trade-high-quality-improves-economy"
+msgstr "improves the economy in the community"
+
+#: template/public/our-goals.html:87
+msgid "find-clean-water-button"
+msgstr "Find Clean Water"
