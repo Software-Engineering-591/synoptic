@@ -10,10 +10,17 @@
 {% endblock head %}
 {% block body %}
     {% block form %}
+    <title>Add Water Reading</title>
+
         <main class="grid w-screen h-screen place-items-center">
             <div class="flex place-content-center w-2/3 h-3/4 p-4 border-4 border-accent rounded-3xl skeleton">
                 <div class="card flex content-end h-full w-1/4 overflow-x-hidden overflow-y-auto border-none gap-4">
-                    <div class="card-title flex justify-center m-4 gap-2 border-neutral underline">Add water reading</div>
+                    <div>
+                    <div class="card-title flex justify-center m-4 gap-2 border-neutral">
+                        <a href="{% url 'dashboard' %}"><button class="btn btn-error">Back</button></a>    
+                        <p class="underline">Add water reading</p>
+                    </div>
+                    </div>
                     <form method="post" class="grid gap-4">
                         {% csrf_token %}
                         <label class="input input-bordered input-secondary flex items-center gap-2">

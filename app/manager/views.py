@@ -36,6 +36,8 @@ def generate_graph(readings, parameter, title, ylabel):
 
 
 def dashboard(request):
+    if not request.user.is_authenticated:
+         return redirect('login')
     readings = WaterReading.objects.select_related('sensor').order_by('timestamp')
 
     sensors = Sensor.objects.all()
