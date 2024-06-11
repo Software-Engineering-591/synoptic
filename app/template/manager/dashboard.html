@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load leaflet_tags static i18n %}
+{% block head %}
+    <title>{% trans "dashboard-title" %}</title>
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <script>
+         const geo_data = JSON.parse("{{geo_data | escapejs}}")
+    </script>
+    <script src="{% static 'leaflet.js' %}" defer></script>
+{% endblock head %}
+{% block body %}
+    <main>
+        <div class="navbar bg-base-100">
+            <div class="flex-1">
+                <a class="btn btn-ghost text-xl">{% trans "dashboard-head" %}</a>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal px-1">
+                    <li>
+                        <a href="{% url 'add_sensor' %}"><button class="btn btn-primary mr-10">{% trans "add-sensor"%}</button></a>
+                    </li>
+                    <li>
+                        <button class="btn btn-error">{% trans "logout"%}</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="table">
+                <!-- head -->
+                <thead>
+                    <tr>
+                        <th>{% trans "sensors"%}</th>
+                        <!--col 1-->
+                        <th>{% trans "water-level"%}</th>
+                        <!--col 2-->
+                        <th>{% trans "orp"%}</th>
+                        <!--col 3-->
+                        <th>{% trans "ph"%}</th>
+                        <!--col 4-->
+                        <th>{% trans "bod"%}</th>
+                        <!--col 5-->
+                        <th></th>
+                        <!--col 6-->
+                    </tr>
+                </thead>
+                <!-- need to use a for loop here to load the data -->
+                <tbody>
+                    {% for sensor in sensors %}
+                        <tr>
+                            <td>{{ sensor.sensor.name }}</td>
+                            <td>{{ sensor.latest.level }}</td>
+                            <td>{{ sensor.latest.orp }}</td>
+                            <td>{{ sensor.latest.ph }}</td>
+                            <td>{{ sensor.latest.bod }}</td>
+                            <td class="w-56">
+                                <button class="btn btn-primary hover:bg-secondary"
+                                        onmousedown="modal_{{ sensor.sensor.id }}.showModal()">{% trans "view"%}</button>
+                                <dialog id="modal_{{ sensor.sensor.id }}" class="modal w-full">
+                                    <div class="modal-box">
+                                        <h3 class="font-bold text-lg">{% trans "the-sensor-name-1" %} {{ sensor.sensor.name }}</h3>
+                                        <div>
+                                            <p class="py-4">{% trans "details" %}</p>
+                                            <div class="border-4 rounded-lg w-full h-fit">
+                                                <div id="map_{{ sensor.sensor.id }}" class="w-full h-48"></div>
+                                            </div>
+                                            <div class="py-4">
+                                                <!-- water level graph shows here-->
+                                                <strong>{% trans "level1" %}</strong> {{ sensor.latest.level }}
+                                                <img src="data:image/png;base64,{{ sensor.level_graph }}"
+                                                     alt="Water Level Graph"
+                                                     class="w-full h-fit" />
+                                            </div>
+                                            <div class="py-4">
+                                                <!-- pH shows here-->
+                                                <strong>{% trans "phh-1"%}</strong> {{ sensor.latest.ph }}
+                                                <img src="data:image/png;base64,{{ sensor.ph_graph }}"
+                                                     alt="pH Graph"
+                                                     class="w-full h-fit" />
+                                            </div>
+                                            <div class="py-4">
+                                                <!-- orp shows here-->
+                                                <strong>{% trans "orp1"%}</strong> {{ sensor.latest.orp }}
+                                                <img src="data:image/png;base64,{{ sensor.orp_graph }}"
+                                                     alt="ORP Graph"
+                                                     class="w-full h-fit" />
+                                            </div>
+                                            <div class="py-4">
+                                                <!-- BOD shows here-->
+                                                <strong>{% trans "bod1"%}</strong> {{ sensor.latest.bod }}
+                                                <img src="data:image/png;base64,{{ sensor.bod_graph }}"
+                                                     alt="BOD Graph"
+                                                     class="w-full h-fit" />
+                                            </div>
+                                            <div class="py-4">
+                                                <!-- temperature shows here-->
+                                                <strong>{% trans "temp1"%}</strong> {{ sensor.latest.temperature }}
+                                                <img src="data:image/png;base64,{{ sensor.temperature_graph }}"
+                                                     alt="Temperature Graph"
+                                                     class="w-full h-fit" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <form method="dialog" class="modal-backdrop">
+                                        <button>close</button>
+                                    </form>
+                                </dialog>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+{% endblock body %}

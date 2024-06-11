@@ -77,3 +77,7 @@ class AlertView(TemplateView):
 
 class SettingsView(TemplateView):
     template_name = 'public/settings.html'
+
+
+class GoalsView(TemplateView):
+    template_name = 'public/our-goals.html'

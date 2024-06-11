@@ -16,4 +16,5 @@ urlpatterns = [
         views.PartialWeeklyWeatherView.as_view(),
         name='weekly_weather',
     ),
+    path('goals/', views.GoalsView.as_view()),
 ]
