@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-10 16:19+0000\n"
+"POT-Creation-Date: 2024-06-11 06:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,60 +17,60 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: app/settings.py:139
+#: app/settings.py:143
 msgid "English"
 msgstr ""
 
-#: app/settings.py:140
+#: app/settings.py:144
 msgid "Khmer"
 msgstr ""
 
-#: manager/views.py:19
+#: manager/views.py:23
 msgid "Timestamp"
 msgstr "សំគាល់ពេល"
 
-#: manager/views.py:73
+#: manager/views.py:77
 #, python-brace-format
 msgid "Temperature for {sensor_name}"
 msgstr "សីតុណ្ហភាពសម្រាប់ {sensor_name}"
 
-#: manager/views.py:74
+#: manager/views.py:78
 msgid "Temperature (°C)"
 msgstr "សីតុណ្ហភាព (មើលលម្អិត)"
 
-#: manager/views.py:78
+#: manager/views.py:84
 #, python-brace-format
 msgid "Water Level for {sensor_name}"
 msgstr "ម្រិតទឹកសម្រាប់ {sensor_name}"
 
-#: manager/views.py:78
+#: manager/views.py:85
 msgid "Level (m)"
 msgstr "ម្រិតទឹកសម្រាប់ (ម៉ែត្រ)"
 
-#: manager/views.py:82
+#: manager/views.py:91
 #, python-brace-format
 msgid "ORP for {sensor_name}"
 msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម សម្រាប់ {sensor_name}"
 
-#: manager/views.py:82
+#: manager/views.py:92
 msgid "ORP (mV)"
 msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម (មីលីវ៉ុល)"
 
-#: manager/views.py:85
+#: manager/views.py:98
 #, python-brace-format
 msgid "pH for {sensor_name}"
 msgstr "ទំហ សម្រាប់ {sensor_name}"
 
-#: manager/views.py:85
+#: manager/views.py:99
 msgid "pH"
 msgstr "ទំហ"
 
-#: manager/views.py:87
+#: manager/views.py:105
 #, python-brace-format
 msgid "BOD for {sensor_name}"
 msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី {sensor_name}"
 
-#: manager/views.py:87
+#: manager/views.py:106
 msgid "BOD"
 msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី សម្រាប់"
 
@@ -144,27 +144,170 @@ msgstr "តម្រូវការអុកស៊ីសែនជីវគីម
 msgid "temp1"
 msgstr "សីតុណ្ហភាព (មើលលម្អិត): "
 
-
-#: .\template\public\home.html:59
+#: template/public/home.html:60
 msgid "Sanitization"
 msgstr "អំពីអនាម័យ"
 
-#: .\template\public\home.html:61
+#: template/public/home.html:62
 msgid "Sanitization info"
-msgstr "ការលាងដៃ: តែងតែលាងដៃជាមួយសាប៊ូមុនពេលប៉ះទឹកឬអាហារ។ \n ប្រអប់ស្អាត: ប្រើប្រអប់ស្អាតដើម្បីផ្ទុកនិងប្រមូលទឹក។ \n ការបំផ្លាញសំណល់ត្រឹមត្រូវ: រក្សាសំណល់សត្វនិងមនុស្សឱ្យឆ្ងាយពីប្រភពទឹក។"
+msgstr ""
+"ការលាងដៃ: តែងតែលាងដៃជាមួយសាប៊ូមុនពេលប៉ះទឹកឬអាហារ។ \n"
+" ប្រអប់ស្អាត: ប្រើប្រអប់ស្អាតដើម្បីផ្ទុកនិងប្រមូលទឹក។ \n"
+" ការបំផ្លាញសំណល់ត្រឹមត្រូវ: រក្សាសំណល់សត្វនិងមនុស្សឱ្យឆ្ងាយពីប្រភពទឹក។"
 
-#: .\template\public\home.html:66
+#: template/public/home.html:67
 msgid "Purification Techniques"
 msgstr "បច្ចេកទេសបន្សុទ្ធទឹក។"
 
-#: .\template\public\home.html:68
+#: template/public/home.html:69
 msgid "Purification Techniques info"
-msgstr "ការឆ្កូតទឹក:\n ធ្វើដូចម្តេច: ដាំទឹកឱ្យពុះយ៉ាងហោចណាស់១នាទី។ \n អត្ថប្រយោជន៍: សម្លាប់មេរោគនិងបាក់តេរីភាគច្រើន, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n ការច្រោះទឹក: \n ធ្វើដូចម្តេច: ប្រើក្រណាត់ស្អាតឬឧបករណ៍ច្រោះដើម្បីយកដីនិងភាគល្អិតចេញ។ \n អត្ថប្រយោជន៍: យកសារធាតុកខ្វក់ចេញ, ធ្វើឱ្យទឹកស្អាតនិងច្បាស់។ \n ប្រើគ្រាប់គ្លរុញ: \n ធ្វើដូចម្តេច: បន្ថែមគ្រាប់គ្លរុញទៅក្នុងទឹកនិងរង់ចាំ៣០នាទី។ \n អត្ថប្រយោជន៍: សម្លាប់បាក់តេរីនិងមេរោគ, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n ការប្រើប្រាស់ពន្លឺព្រះអាទិត្យ (SODIS): \n ធ្វើដូចម្តេច: ដាក់ទឹកក្នុងដបទឹកប្លាស្ទិក និងដាក់នៅក្រោមពន្លឺព្រះអាទិត្យយ៉ាងហោចណាស់ ៦ម៉ោង។ \n អត្ថប្រយោជន៍: ពន្លឺព្រះអាទិត្យសម្លាប់មេរោគនិងបាក់តេរី, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n ការច្រោះតាមខ្សាច់: \n ធ្វើដូចម្តេច: ចាក់ទឹកឆ្លងកាត់បង្ហុកដែលមានបញ្ចូលខ្សាច់និងថ្ម។ \n អត្ថប្រយោជន៍: យកភាគល្អិតនិងមេរោគខ្លះចេញ, ធ្វើឱ្យទឹកស្អាតជាងមុន។"
+msgstr ""
+"ការឆ្កូតទឹក:\n"
+" ធ្វើដូចម្តេច: ដាំទឹកឱ្យពុះយ៉ាងហោចណាស់១នាទី។ \n"
+" អត្ថប្រយោជន៍: សម្លាប់មេរោគនិងបាក់តេរីភាគច្រើន, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n"
+" ការច្រោះទឹក: \n"
+" ធ្វើដូចម្តេច: ប្រើក្រណាត់ស្អាតឬឧបករណ៍ច្រោះដើម្បីយកដីនិងភាគល្អិតចេញ។ \n"
+" អត្ថប្រយោជន៍: យកសារធាតុកខ្វក់ចេញ, ធ្វើឱ្យទឹកស្អាតនិងច្បាស់។ \n"
+" ប្រើគ្រាប់គ្លរុញ: \n"
+" ធ្វើដូចម្តេច: បន្ថែមគ្រាប់គ្លរុញទៅក្នុងទឹកនិងរង់ចាំ៣០នាទី។ \n"
+" អត្ថប្រយោជន៍: សម្លាប់បាក់តេរីនិងមេរោគ, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n"
+" ការប្រើប្រាស់ពន្លឺព្រះអាទិត្យ (SODIS): \n"
+" ធ្វើដូចម្តេច: ដាក់ទឹកក្នុងដបទឹកប្លាស្ទិក និងដាក់នៅក្រោមពន្លឺព្រះអាទិត្យយ៉ាងហោចណាស់ ៦ម៉ោង។ \n"
+" អត្ថប្រយោជន៍: ពន្លឺព្រះអាទិត្យសម្លាប់មេរោគនិងបាក់តេរី, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n"
+" ការច្រោះតាមខ្សាច់: \n"
+" ធ្វើដូចម្តេច: ចាក់ទឹកឆ្លងកាត់បង្ហុកដែលមានបញ្ចូលខ្សាច់និងថ្ម។ \n"
+" អត្ថប្រយោជន៍: យកភាគល្អិតនិងមេរោគខ្លះចេញ, ធ្វើឱ្យទឹកស្អាតជាងមុន។"
 
-#: .\template\public\home.html:73
+#: template/public/home.html:74
 msgid "Contaminated Water"
 msgstr "ហេតុអ្វីបានជាទឹកស្អាតមានសារៈសំខាន់"
 
-#: .\template\public\home.html:75
+#: template/public/home.html:76
 msgid "Contaminated Water info"
-msgstr "អត្ថប្រយោជន៍សុខភាព: ទឹកស្អាតរក្សាសុខភាពរបស់យើង។ វាជួយការពារជំងឺដូចជា ឃ្លៀន, ជំងឺកូឡារ៉ា, និងជំងឺថ្លង់លើស។ \n ការប្រើប្រាស់ប្រចាំថ្ងៃ: យើងប្រើទឹកសម្រាប់ផឹក, ដាំម្ហូប, សម្អាត, និងងូតទឹក។ វាសំខាន់ណាស់ក្នុងការប្រើប្រាស់ទឹកស្អាតដើម្បីជៀសវាងការចម្លងជំងឺ។"
+msgstr ""
+"អត្ថប្រយោជន៍សុខភាព: ទឹកស្អាតរក្សាសុខភាពរបស់យើង។ វាជួយការពារជំងឺដូចជា ឃ្លៀន, ជំងឺកូឡារ៉ា, "
+"និងជំងឺថ្លង់លើស។ \n"
+" ការប្រើប្រាស់ប្រចាំថ្ងៃ: យើងប្រើទឹកសម្រាប់ផឹក, ដាំម្ហូប, សម្អាត, និងងូតទឹក។ "
+"វាសំខាន់ណាស់ក្នុងការប្រើប្រាស់ទឹកស្អាតដើម្បីជៀសវាងការចម្លងជំងឺ។"
+
+#: template/public/our-goals.html:26
+msgid "Our-Goals-title"
+msgstr "គោលដៅរបស់យើង។"
+
+#: template/public/our-goals.html:36
+msgid "Our-Goals-heading"
+msgstr "គោលដៅរបស់យើង។"
+
+#: template/public/our-goals.html:38
+msgid "thriving-to-help-cambodia"
+msgstr "យើង​ខិតខំ​ប្រឹងប្រែង​ជួយ​កម្ពុជា​ឱ្យ​មាន​ធនធាន​ដូច​ប្រទេស​ដទៃ​ទៀត​នៃ​ពិភពលោក​របស់​យើង។"
+
+#: template/public/our-goals.html:39
+msgid "equal-opportunities-for-cambodia"
+msgstr "យើងជឿថា ជនបទកម្ពុជាក៏គួរតែមានសិទ្ធិប្រើប្រាស់ទឹកស្អាតដែរ យើងជឿថា ជនបទកម្ពុជាក៏គួរតែមានសិទ្ធិប្រើប្រាស់ទឹកស្អាតផងដែរ។"
+"ជួយជាមួយទឹកជំនន់ ការព្យាករណ៍នៃការផ្លាស់ប្តូរបរិស្ថាន"
+
+#: template/public/our-goals.html:40
+msgid "Our-Journey-title"
+msgstr "ដំណើររបស់យើង។"
+
+#: template/public/our-goals.html:41
+msgid "our-development-journey"
+msgstr "យើងបានចាប់ផ្តើមដំណើរនេះដោយបង្កើតបច្ចេកវិទ្យាដែលនឹងជួយប្រជាជនកម្ពុជា។"
+"ដើម្បីយល់ពីពេលដែលពួកគេគួររំពឹងថានឹងមានទឹកជំនន់ ឬគ្រោះរាំងស្ងួត ហើយអនុញ្ញាតឱ្យពួកគេ។"
+"ដើម្បីយល់ពីពេលដែលទន្លេរបស់ពួកគេមានទឹកមានសុវត្ថិភាពសម្រាប់ធ្វើកសិកម្ម ផឹក លាង។"
+"ងូតទឹក និងច្រើនទៀត។"
+
+#: template/public/our-goals.html:43
+msgid "click-to-find-clean-water"
+msgstr "ចុចទីនេះដើម្បីស្វែងរកប្រភពទឹកស្អាត"
+
+#: template/public/our-goals.html:44
+msgid "click-to-find-weather-predictions"
+msgstr "ចុចទីនេះដើម្បីមើលការព្យាករណ៍អាកាសធាតុ"
+
+#: template/public/our-goals.html:53
+msgid "Weather-section-goal-page-title"
+msgstr "អាកាសធាតុ"
+
+#: template/public/our-goals.html:55
+msgid "weather-alert-info"
+msgstr "ការ​ជូន​ដំណឹង​ត្រូវ​បាន​ផ្ដល់​ជូន​នៅ​លើ​ទំព័រ​អាកាសធាតុ​សម្រាប់​ពេល​ដែល​គេ​រំពឹង​ថា​នឹង​មាន​គ្រោះ​រាំង​ស្ងួត ឬ​ទឹកជំនន់"
+"អាស្រ័យ​លើ​ជំនន់​ទឹកភ្លៀង និង​កម្រិត​ទឹក​ដែល​បាន​កត់ត្រា​ក្នុង​សប្តាហ៍​កន្លងមក។"
+
+#: template/public/our-goals.html:56
+msgid "flooding-weather-alert-info"
+msgstr "យើងចង់កាត់បន្ថយឥទ្ធិពលនៃទឹកជំនន់សាលារៀន អាជីវកម្ម និងផ្ទះនៅ Pu Ngaol"
+"ដោយផ្តល់ឱ្យពួកគេនូវលទ្ធភាពទទួលបានការព្រមានអំពីទឹកជំនន់នាពេលអនាគតដែលអាចឱ្យពួកគេរៀបចំបានទាន់ពេលវេលា។"
+
+#: template/public/our-goals.html:57
+msgid "farming-weather-alert-info"
+msgstr "នេះ​ក៏​ជួយ​កសិករ​ឱ្យ​យល់​ពី​ពេលណា​ដែល​ពួកគេ​គួរ​ចាប់ផ្តើម​រៀបចំ​វាលស្រែ​តាម​រដូវ​កាល និង​"
+"ក៏ព្យាករណ៍ពីទិន្នផលសក្តានុពលរបស់ពួកគេ ដើម្បីអាចដាក់វិធានការជាក់លាក់ ដើម្បីធានាថាពួកគេអាចទ្រទ្រង់ខ្លួនឯង និងរបស់ពួកគេ។"
+"គ្រួសារ។"
+
+#: template/public/our-goals.html:58
+msgid "transport-safety-weather-alert-info"
+msgstr "យើង​ក៏​ចង់​ជួយ​បញ្ហា​សុវត្ថិភាព​ដោយ​ជួយ​ប្រាប់​អ្នក​ស្រុក​ពេល​ពួកគេ​មិន​គួរ​ប្រើ​មធ្យោបាយ​ធ្វើ​ដំណើរ​ដូចជា​កង់​ជាដើម។"
+"របស់ពួកគេគឺជាការកើនឡើងនូវលទ្ធភាពនៃព្យុះដែលអាចបណ្តាលឱ្យពួកគេឈឺ ឬជាប់គាំងនៅលើផ្លូវភក់ ឬសូម្បីតែសក្តានុពល។"
+"រងរបួស។ លើស​ពី​នេះ​ទៅ​ទៀត នេះ​កាត់​បន្ថយ​ចំនួន​មនុស្ស​លើស​ចំណុះ​នៅ​ក្នុង​មន្ទីរពេទ្យ។"
+
+#: template/public/our-goals.html:60
+msgid "Get-weather-predictions"
+msgstr "ទទួលបានការព្យាករណ៍អាកាសធាតុ"
+
+#: template/public/our-goals.html:69
+msgid "water-laybel-in-goal-page"
+msgstr "ទឹក។"
+
+#: template/public/our-goals.html:71
+msgid "goals-page-farming-and-production"
+msgstr "កសិកម្មនិងផលិតកម្"
+
+#: template/public/our-goals.html:73
+msgid "safe-water-leads-to-safer-produce"
+msgstr "អនុញ្ញាតឱ្យដំណាំលូតលាស់ដោយទឹកមានសុវត្ថិភាព នាំឱ្យមានការពុលអាហារតិច"
+
+#: template/public/our-goals.html:74
+msgid "better-quality-water-increases-yeild"
+msgstr "ការដាំដុះដំណាំដែលមានទឹកមានគុណភាពល្អ ច្រើនតែនាំអោយមានទិន្នផលកើនឡើង"
+
+#: template/public/our-goals.html:75
+msgid "higher-yeild-increases-economy"
+msgstr "កសិករអាចផលិត និងលក់បានកាន់តែមានន័យ ពួកគេនឹងមានប្រាក់ចំណូលប្រើប្រាស់ច្រើនជាងមុន ជួយសហគមន៍របស់ពួកគេ និងផ្តល់ធនធានគ្រប់គ្រាន់សម្រាប់គ្រួសាររបស់ពួកគេ ដែលនាំឱ្យមានការថយចុះនៃភាពអត់ឃ្លាន។"
+
+#: template/public/our-goals.html:77
+msgid "Goals-page-water-for-household-use"
+msgstr "ការប្រើប្រាស់ក្នុងផ្ទះ"
+
+#: template/public/our-goals.html:78
+msgid "what-water-is-used-for"
+msgstr "ចម្អិនអាហារ សម្អាត ងូតទឹក ប្រើប្រាស់ និងផ្គត់ផ្គង់ដល់គ្រួសារ"
+
+#: template/public/our-goals.html:79
+msgid "safe-water-has-less-fear-of-sickness"
+msgstr "បារម្ភតិចថាគ្រួសារ និងសហគមន៍របស់អ្នកនឹងឈឺ"
+
+#: template/public/our-goals.html:80
+msgid "better-quality-water-decreases-hospital-overcrowding"
+msgstr "សម្រាកនៅមន្ទីរពេទ្យតិច"
+
+#: template/public/our-goals.html:81
+msgid "Goals-page-traiding-of-water"
+msgstr "ការជួញដូរ"
+
+#: template/public/our-goals.html:82
+msgid "trade-better-quality-water"
+msgstr "អនុញ្ញាតឱ្យមានការជួញដូរទឹកដែលមានគុណភាពល្អជាង"
+
+#: template/public/our-goals.html:83
+msgid "safe-water-creates-loyal-customer-base"
+msgstr "ធានាថាអតិថិជនទំនងជាមិនសូវឈឺ បង្កើតមូលដ្ឋានអតិថិជនស្មោះត្រង់"
+
+#: template/public/our-goals.html:84
+msgid "trade-high-quality-improves-economy"
+msgstr "ធ្វើអោយសេដ្ឋកិច្ចក្នុងសហគមន៍មានភាពប្រសើរឡើង"
+
+#: template/public/our-goals.html:87
+msgid "find-clean-water-button"
+msgstr "ស្វែងរកទឹកស្អាត"
