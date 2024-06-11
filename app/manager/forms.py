@@ -21,7 +21,7 @@ class Loginform(AuthenticationForm):
     class Meta:
         fields = ('username', 'password')
 
-class Addensorform(ModelForm):
+class Addsensorform(ModelForm):
     class Meta:
         model = WaterReading
         fields = ['level', 'orp', 'ph', 'bod', 'temperature']

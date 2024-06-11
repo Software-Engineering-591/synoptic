@@ -1,6 +1,6 @@
 const markers = [];
 
-var map = L.map('map').setView([12.577656, 106.935126], 13)
+var map = L.map('map').setView([12.5776539, 106.9323423], 13)
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'

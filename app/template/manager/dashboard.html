@@ -21,7 +21,10 @@
                         <a href="{% url 'add_sensor' %}"><button class="btn btn-primary mr-10">{% trans "add-sensor"%}</button></a>
                     </li>
                     <li>
-                        <button class="btn btn-error">{% trans "logout"%}</button>
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button class="btn btn-error">{% trans "logout"%}</button>
+                        </form>
                     </li>
                 </ul>
             </div>
