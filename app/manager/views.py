@@ -5,7 +5,7 @@ import io
 import base64
 import matplotlib.pyplot as plt
 from django.utils.translation import gettext as _
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from manager.forms import Loginform, Addensorform, Latandlon
 from django.core.serializers.json import DjangoJSONEncoder
 from .models import WaterReading, Sensor
@@ -230,4 +230,6 @@ def add_sensor_view(request):
         return render(request, 'manager/add_sensor.html', {'form' : form, 'data' : data,
                                                     'lat_form' : latform})
 
-
+def logout_view(request):
+    logout(request)
+    return redirect('login')
