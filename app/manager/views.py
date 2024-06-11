@@ -6,7 +6,7 @@ import base64
 import matplotlib.pyplot as plt
 from django.utils.translation import gettext as _
 from django.contrib.auth import authenticate, login, logout
-from manager.forms import Loginform, Addensorform, Latandlon
+from manager.forms import Loginform, Addsensorform, Latandlon
 from django.core.serializers.json import DjangoJSONEncoder
 from .models import WaterReading, Sensor
 from django.contrib.gis.geos import Point
@@ -170,11 +170,12 @@ def admin_view(request):
         if attempt.is_valid():
             username1 = attempt.cleaned_data['username']
             password1 = attempt.cleaned_data['password']
+            ## Authenticating user
             user = authenticate(request, username=username1, password=password1)
 
             if user is not None:
+                    ## If the user exists, login the user
                     login(request, user)
-                    ## This should be changed to admin dashboard
                     return redirect('dashboard')
             else:
                 return render(request, 'manager/admin_login.html', {'form' : attempt})
@@ -188,7 +189,7 @@ def admin_view(request):
 def add_sensor_view(request):
     if not request.user.is_authenticated:
          return redirect('login')
-    form = Addensorform()
+    form = Addsensorform()
     latform = Latandlon()
     ## grabbing all of the points into a list and then converting points to json
     points = Sensor.objects.values_list('point', flat=True)
@@ -202,7 +203,7 @@ def add_sensor_view(request):
     ## If the user submits
     if request.method == 'POST':
         ## post forms
-        form = Addensorform(request.POST)
+        form = Addsensorform(request.POST)
         latform = Latandlon(request.POST)
         if form.is_valid() and latform.is_valid():  
             ## Grabbing the latandlon form data to filter sensor later   
@@ -223,7 +224,7 @@ def add_sensor_view(request):
             water_reading.save()
             return redirect('dashboard')
         else:
-            form = Addensorform()
+            form = Addsensorform()
             latform = Latandlon()
             return render(request, 'manager/add_sensor.html', {'form' : form,
                                                                 'data' : data,
