@@ -3,9 +3,11 @@
     <title>Accessibility Settings</title>
 {% endblock head %}
 {% block body %}
-<main class="p-8" x-data="{ theme: $persist('light') }">
+<main class="p-8" x-data="{ theme: $persist('light'), fontSize: $persist('normal') }">
     <!-- Page Title -->
     <h1 class="text-3xl font-bold mb-4">Accessibility Settings</h1>
+    <!-- Theme Switcher Subheading -->
+    <h2 class="text-xl font-semibold mb-2">Theme Switcher</h2>
     <!-- Theme Options -->
     <div class="grid gap-4">
         <!-- Light Theme Option -->
@@ -30,6 +32,36 @@
                 <input type="radio" name="theme-radios" class="radio theme-controller" value="cyberpunk"
                        x-model="theme" @click="document.documentElement.setAttribute('data-theme', 'cyberpunk'); localStorage.setItem('theme', 'cyberpunk')" />
                 <span class="label-text text-lg">High Contrast Theme</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Font Size Subheading -->
+    <h2 class="text-xl font-semibold mt-8 mb-2">Font Size</h2>
+    <!-- Font Size Options -->
+    <div class="grid gap-4">
+        <!-- Normal Font Size Option -->
+        <div class="form-control">
+            <label class="cursor-pointer flex items-center gap-2">
+                <input type="radio" name="font-size-radios" class="radio font-size-controller" value="normal"
+                       x-model="fontSize" @click="document.documentElement.classList.remove('text-lg', 'text-xl'); localStorage.setItem('font-size', '')" />
+                <span class="label-text text-lg">Normal</span>
+            </label>
+        </div>
+        <!-- Large Font Size Option -->
+        <div class="form-control">
+            <label class="cursor-pointer flex items-center gap-2">
+                <input type="radio" name="font-size-radios" class="radio font-size-controller" value="large"
+                       x-model="fontSize" @click="document.documentElement.classList.remove('text-xl'); document.documentElement.classList.add('text-lg'); localStorage.setItem('font-size', 'text-lg')" />
+                <span class="label-text text-lg">Large</span>
+            </label>
+        </div>
+        <!-- Extra Large Font Size Option -->
+        <div class="form-control">
+            <label class="cursor-pointer flex items-center gap-2">
+                <input type="radio" name="font-size-radios" class="radio font-size-controller" value="extra-large"
+                       x-model="fontSize" @click="document.documentElement.classList.add('text-xl'); localStorage.setItem('font-size', 'text-xl')" />
+                <span class="label-text text-lg">Extra Large</span>
             </label>
         </div>
     </div>
