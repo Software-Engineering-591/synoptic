@@ -1,7 +1,7 @@
 geo_data.forEach((d) => {
+  console.log(d.id);
   var map = L.map(`map_${d.id}`)
     .setView(d.point, 16);
-  
   L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
