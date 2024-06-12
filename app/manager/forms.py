@@ -3,7 +3,6 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.forms import ModelForm
 from .models import WaterReading, Sensor
 from django.utils.translation import gettext_lazy as _
-from django.core.exceptions import NON_FIELD_ERRORS
 
 
 class Loginform(AuthenticationForm):
