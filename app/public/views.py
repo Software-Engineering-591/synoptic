@@ -121,8 +121,7 @@ class AlertView(TemplateView):
         }
 
 
-def alert_graph(sensor):
-    readings = WaterReading.objects.filter(sensor=sensor).order_by('-timestamp')[:2]
+def alert_graph(sensor, reading):
     plt.figure(figsize=(6, 4))
 
     daily_weathers = get_weekly_weather(**settings.WEATHER_INFO, units='metric')
@@ -136,8 +135,8 @@ def alert_graph(sensor):
     plt.xlabel(_('Current Day'))
     plt.ylabel(_('Rainfall(mm)'))
     plt.xticks(days)
-    plt.axhline(y=max(WARNING_LEVEL - readings[0].level, 0) * 100, color='orange')
-    plt.axhline(y=max(DANGER_LEVEL - readings[0].level, 0) * 100, color='red')
+    plt.axhline(y=max(WARNING_LEVEL - reading.level, 0) * 100, color='orange')
+    plt.axhline(y=max(DANGER_LEVEL - reading.level, 0) * 100, color='red')
 
     buffer = io.BytesIO()
     plt.savefig(buffer, format='png', bbox_inches='tight', pad_inches=0.1)
@@ -156,8 +155,13 @@ class AlertGraphView(TemplateView):
     def get_context_data(self, **kwargs):
         id = self.request.GET.get('sensor_id')
         sensor = get_object_or_404(Sensor, id=id)
-        graph = alert_graph(sensor)
-        return {'graph': graph, 'sensor': sensor}
+        reading = WaterReading.objects.filter(sensor=sensor).latest('-timestamp')
+        graph = alert_graph(sensor, reading)
+        return {
+            'graph': graph,
+            'sensor': sensor,
+            'reading': reading,
+        }
 
 
 class SettingsView(TemplateView):
