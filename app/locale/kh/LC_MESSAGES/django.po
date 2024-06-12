@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-12 11:39+0000\n"
+"POT-Creation-Date: 2024-06-12 17:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,29 +25,37 @@ msgstr ""
 msgid "Khmer"
 msgstr ""
 
+#: manager/forms.py:16
+msgid "login-form-username-placeholder"
+msgstr "ឈ្មោះ​អ្នកប្រើប្រាស់"
+
+#: manager/forms.py:24
+msgid "login-form-password-placeholder"
+msgstr "ពាក្យសម្ងាត់"
+
 #: manager/forms.py:40
 msgid "level-for-sensor-individual"
-msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា: "
+msgstr "កម្រិត: "
 
 #: manager/forms.py:46
 msgid "Oxidation-Reduction Potential"
-msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម"
+msgstr "ORP"
 
 #: manager/forms.py:52
 msgid "Biochemical-oxygen-demand"
-msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី"
+msgstr "BOD"
 
 #: manager/forms.py:58
 msgid "temperature-for-sensor-individual"
-msgstr "សីតុណ្ហភាពសម្រាប់ {sensor_name}"
-
-#: manager/forms.py:70
-msgid "latitude-for-form-add-sensor"
-msgstr "បន្ថែមឧបករណ៍ចាប់សញ្ញា"
+msgstr "សីតុណ្ហភាព"
 
 #: manager/forms.py:84
 msgid "sensor-name-individual"
-msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា: "
+msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា៖ "
+
+#: manager/forms.py:91
+msgid "sensor-already-exists"
+msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា"
 
 #: manager/views.py:25
 msgid "Timestamp"
@@ -118,11 +126,17 @@ msgstr "ត្រឡប់មកវិញ"
 msgid "add-sensor-heading-for-sensor-page"
 msgstr "បន្ថែមឧបករណ៍ចាប់សញ្ញា"
 
-#: template/manager/add_sensor.html:41
-msgid "sensor-errors-sensor-page"
-msgstr "{{sensorform.name.errors}}"
+#: template/manager/add_sensor.html:52
+#: template/manager/add_water_reading.html:72
+msgid "lat-placeholder"
+msgstr "រយៈទទឹង"
 
-#: template/manager/add_sensor.html:56
+#: template/manager/add_sensor.html:58
+#: template/manager/add_water_reading.html:78
+msgid "lon-placeholder"
+msgstr "រយៈបណ្តោយ"
+
+#: template/manager/add_sensor.html:60
 msgid "submit-for-sensor-page"
 msgstr "ដាក់ស្នើ"
 
@@ -141,6 +155,22 @@ msgstr "បន្ថែមការអានទឹក។"
 #: template/manager/add_water_reading.html:80
 msgid "submit-button-water-reading"
 msgstr "ដាក់ស្នើ"
+
+#: template/manager/admin_login.html:5
+msgid "admin-login-title"
+msgstr "ចូលគ្រប់គ្រង"
+
+#: template/manager/admin_login.html:13
+msgid "admin-login-header"
+msgstr "ចូលគ្រប់គ្រង"
+
+#: template/manager/admin_login.html:44
+msgid "login-form-error-message"
+msgstr "ឈ្មោះអ្នកប្រើ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ សូមព្យាយាមម្តងទៀត។ ចំណាំ វាលគឺប្រកាន់អក្សរតូចធំ។"
+
+#: template/manager/admin_login.html:47
+msgid "admin-login-button"
+msgstr "ចូល"
 
 #: template/manager/dashboard.html:4
 #, fuzzy
@@ -237,8 +267,6 @@ msgid "Drinkable"
 msgstr "អាចផឹកបាន។"
 
 #: template/public/home.html:39
-#, fuzzy
-#| msgid "Contaminated Water"
 msgid "Contaminated-Sensor"
 msgstr "កខ្វក់"
 
@@ -271,7 +299,6 @@ msgstr ""
 "\n"
 "ការការពារជំងឺ: ការធ្វើឱ្យទឹកស្អាតជួយសម្លាប់មេរោគ និងបាក់តេរីដែលអាចបណ្តាលឱ្យមានជំងឺ។ \n"
 "សុខភាពប្រសើរ: ទឹកស្អាតធ្វើឱ្យសុខភាពទូទៅប្រសើរឡើង និងបន្ថយការចំណាយថ្នាំពេទ្យ, និងបង្កើនផលិតភាព។"
-
 
 #: template/public/home.html:68
 msgid "Purification Techniques"
@@ -309,13 +336,15 @@ msgid "Contaminated Water info"
 msgstr ""
 "អត្ថប្រយោជន៍សុខភាព: ទឹកស្អាតរក្សាសុខភាពរបស់យើង។ វាជួយការពារជំងឺដូចជា ឃ្លៀន, ជំងឺកូឡារ៉ា, "
 "និងជំងឺថ្លង់លើស។ \n"
-" ការប្រើប្រាស់ប្រចាំថ្ងៃ: យើងប្រើទឹកសម្រាប់ផឹក, ដាំម្ហូប, សម្អាត, និងងូតទឹក។ វាសំខាន់ណាស់ក្នុងការប្រើប្រាស់ទឹកស្អាតដើម្បីជៀសវាងការចម្លងជំងឺ។ \n"
+" ការប្រើប្រាស់ប្រចាំថ្ងៃ: យើងប្រើទឹកសម្រាប់ផឹក, ដាំម្ហូប, សម្អាត, និងងូតទឹក។ "
+"វាសំខាន់ណាស់ក្នុងការប្រើប្រាស់ទឹកស្អាតដើម្បីជៀសវាងការចម្លងជំងឺ។ \n"
 "\n"
 "គន្លឹះក្នុងការរក្សាទឹកស្អាត \n"
 "\n"
 "ការសម្អាតប្រចាំ: សម្អាតប្រអប់ផ្ទុកទឹកជាប្រចាំជាមួយសាប៊ូនិងទឹក។ \n"
 "ការជៀសវាងមេរោគ: កុំឱ្យអ្វីដែលកខ្វក់ដូចជាដៃ ឬឧបករណ៍ប៉ះទឹកដែលបានផ្ទុកសម្រាប់ផឹក។ \n"
-"ការប្រមូលទឹកសុវត្ថិភាព: ប្រមូលទឹកពីប្រភពដែលមានសុវត្ថិភាព និងមានការដឹងពីមុន, គួរតែត្រូវបានបន្ថយ ឬច្រោះទឹក។"
+"ការប្រមូលទឹកសុវត្ថិភាព: ប្រមូលទឹកពីប្រភពដែលមានសុវត្ថិភាព និងមានការដឹងពីមុន, គួរតែត្រូវបានបន្ថយ "
+"ឬច្រោះទឹក។"
 
 #: template/public/home.html:84
 msgid "Water Monitoring System"
@@ -450,6 +479,9 @@ msgstr "ធ្វើអោយសេដ្ឋកិច្ចក្នុងសហ
 #: template/public/our-goals.html:89
 msgid "find-clean-water-button"
 msgstr "ស្វែងរកទឹកស្អាត"
+
+#~ msgid "latitude-for-form-add-sensor"
+#~ msgstr "បន្ថែមឧបករណ៍ចាប់សញ្ញា"
 
 #~| msgid "the-sensor-name-1"
 #~ msgid "sensor-name-sensor-page"

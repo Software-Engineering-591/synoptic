@@ -38,20 +38,24 @@
                                      viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
-                                {% trans "sensor-errors-sensor-page" %}{{ sensorform.name.errors }}
+                                {% if sensorform.name.errors %}
+                                    {% for errors in sensorform.name.errors %}
+                                        {{ errors }}
+                                    {% endfor %}
+                                {% endif %}
                             </div>
                         {% endif %}
                         <input type="disabled"
                                class="input input-bordered input-info w-full max-w-xs pointer-events-none"
                                id="lat"
                                name="lat"
-                               placeholder="latitude"
+                               placeholder="{% trans 'lat-placeholder' %}"
                                readonly />
                         <input type="disabled"
                                class="input input-bordered input-info w-full max-w-xs pointer-events-none"
                                id="lon"
                                name="lon"
-                               placeholder="longitude"
+                               placeholder="{% trans 'lon-placeholder' %}"
                                readonly />
                         <button class="btn btn-outline">{% trans "submit-for-sensor-page" %}</button>
                     </div>
