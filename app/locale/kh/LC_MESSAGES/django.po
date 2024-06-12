@@ -225,10 +225,8 @@ msgid "Pu Ngao"
 msgstr "ពូង៉ៅ"
 
 #: template/public/home.html:25
-#, fuzzy
-#| msgid "sensors"
 msgid "Sensor"
-msgstr "ឧបករណ៍ចាប់សញ្ញា "
+msgstr "ឧបករណ៍ចាប់សញ្ញា"
 
 #: template/public/home.html:26
 msgid "Status"

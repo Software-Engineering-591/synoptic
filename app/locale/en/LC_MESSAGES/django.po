@@ -255,7 +255,7 @@ msgstr "Gathering"
 
 #: template/public/home.html:51
 msgid "Last Updated At"
-msgstr "Last Updated At "
+msgstr "Last Updated At"
 
 #: template/public/home.html:57
 msgid "Info"
