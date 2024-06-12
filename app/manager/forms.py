@@ -5,6 +5,7 @@ from .models import WaterReading, Sensor
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import NON_FIELD_ERRORS
 
+
 class Loginform(AuthenticationForm):
     ## Fields for login form, seems for username, to enforce clientside
     # , need a camal cased maxLength html attribute to enforce
@@ -16,16 +17,19 @@ class Loginform(AuthenticationForm):
                 'placeholder': _('login-form-username-placeholder'),
                 'maxLength': '50',
             }
-        )
+        ),
     )
     password = forms.CharField(
         max_length=50,
         widget=forms.PasswordInput(
-            attrs={'class': 'caret-pink-500 w-full', 'placeholder': _('login-form-password-placeholder')}
+            attrs={
+                'class': 'caret-pink-500 w-full',
+                'placeholder': _('login-form-password-placeholder'),
+            }
         ),
     )
-    class Meta:
 
+    class Meta:
         fields = ('username', 'password')
 
 
@@ -65,11 +69,7 @@ class Addwaterform(ModelForm):
 
 
 class Latandlon(forms.Form):
-    lat = forms.FloatField(
-        widget=forms.NumberInput(
-            attrs={'id': 'lat'}
-        )
-    )
+    lat = forms.FloatField(widget=forms.NumberInput(attrs={'id': 'lat'}))
     lon = forms.FloatField(widget=forms.NumberInput(attrs={'id': 'lon'}))
 
 
@@ -86,8 +86,4 @@ class Addsensorform(ModelForm):
                 },
             )
         }
-        error_messages = {
-            'name' :{
-            'unique' : _('sensor-already-exists')
-            }
-        }
+        error_messages = {'name': {'unique': _('sensor-already-exists')}}
