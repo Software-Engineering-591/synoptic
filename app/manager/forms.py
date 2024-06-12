@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.forms import ModelForm
 from .models import WaterReading, Sensor
 from django.utils.translation import gettext_lazy as _
-
+from django.core.exceptions import NON_FIELD_ERRORS
 
 class Loginform(AuthenticationForm):
     ## Fields for login form, seems for username, to enforce clientside
@@ -13,19 +13,19 @@ class Loginform(AuthenticationForm):
         widget=forms.TextInput(
             attrs={
                 'class': 'w-full caret-pink-500',
-                'placeholder': 'username',
+                'placeholder': _('login-form-username-placeholder'),
                 'maxLength': '50',
             }
-        ),
+        )
     )
     password = forms.CharField(
         max_length=50,
         widget=forms.PasswordInput(
-            attrs={'class': 'caret-pink-500 w-full', 'placeholder': 'password'}
+            attrs={'class': 'caret-pink-500 w-full', 'placeholder': _('login-form-password-placeholder')}
         ),
     )
-
     class Meta:
+
         fields = ('username', 'password')
 
 

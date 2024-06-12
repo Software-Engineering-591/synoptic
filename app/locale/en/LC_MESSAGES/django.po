@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-12 01:04+0000\n"
+"POT-Creation-Date: 2024-06-12 17:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,23 +26,29 @@ msgstr ""
 msgid "Khmer"
 msgstr ""
 
+#: manager/forms.py:16
+msgid "login-form-username-placeholder"
+msgstr "Username"
+
+#: manager/forms.py:24
+msgid "login-form-password-placeholder"
+msgstr "Password"
+
 #: manager/forms.py:40
-#, fuzzy
-#| msgid "the-sensor-name-1"
 msgid "level-for-sensor-individual"
-msgstr "Sensor name: "
+msgstr "Level"
 
 #: manager/forms.py:46
 msgid "Oxidation-Reduction Potential"
-msgstr "Oxidation-Reduction Potential"
+msgstr "ORP"
 
 #: manager/forms.py:52
 msgid "Biochemical-oxygen-demand"
-msgstr "Biochemical-oxygen-demand"
+msgstr "BOD"
 
 #: manager/forms.py:58
 msgid "temperature-for-sensor-individual"
-msgstr "Temperature for {sensor_name}"
+msgstr "Temperature (°C)"
 
 #: manager/forms.py:84
 msgid "sensor-name-individual"
@@ -50,7 +56,7 @@ msgstr "Sensor name: "
 
 #: manager/forms.py:91
 msgid "sensor-already-exists"
-msgstr ""
+msgstr "Sensor already exists."
 
 #: manager/views.py:25
 msgid "Timestamp"
@@ -122,12 +128,14 @@ msgid "add-sensor-heading-for-sensor-page"
 msgstr "Add Sensor"
 
 #: template/manager/add_sensor.html:52
+#: template/manager/add_water_reading.html:72
 msgid "lat-placeholder"
-msgstr ""
+msgstr "Latitude"
 
 #: template/manager/add_sensor.html:58
+#: template/manager/add_water_reading.html:78
 msgid "lon-placeholder"
-msgstr ""
+msgstr "Longitude"
 
 #: template/manager/add_sensor.html:60
 msgid "submit-for-sensor-page"
@@ -142,14 +150,28 @@ msgid "back-button-water-reading-page"
 msgstr "Back"
 
 #: template/manager/add_water_reading.html:22
-#: template/manager/add_water_reading.html:22
 msgid "add-water-reading-heading"
 msgstr "Add water reading"
 
 #: template/manager/add_water_reading.html:80
-#: template/manager/add_water_reading.html:80
 msgid "submit-button-water-reading"
 msgstr "Submit"
+
+#: template/manager/admin_login.html:5
+msgid "admin-login-title"
+msgstr "Admin Login"
+
+#: template/manager/admin_login.html:13
+msgid "admin-login-header"
+msgstr "Admin Login"
+
+#: template/manager/admin_login.html:44
+msgid "login-form-error-message"
+msgstr "Username or password is incorrect, please try again. Note, fields are case sensitive."
+
+#: template/manager/admin_login.html:47
+msgid "admin-login-button"
+msgstr "Login"
 
 #: template/manager/dashboard.html:4
 #, fuzzy
@@ -248,8 +270,6 @@ msgid "Drinkable"
 msgstr "Drinkable"
 
 #: template/public/home.html:39
-#, fuzzy
-#| msgid "Contaminated Water"
 msgid "Contaminated-Sensor"
 msgstr "Contaminated"
 
@@ -276,12 +296,15 @@ msgstr ""
 "\n"
 "Clean Containers: Use clean containers to store and collect water. \n"
 "\n"
-"Proper Waste Disposal: Keep animal and human waste away from water sources. \n"
+"Proper Waste Disposal: Keep animal and human waste away from water "
+"sources. \n"
 "\n"
 "Benefits: \n"
 "\n"
-"Prevention of Diseases: Sanitizing water helps to kill harmful germs and bacteria, preventing diseases. \n"
-"Improved Health: Access to clean water improves overall health and wellbeing, reducing medical costs and increasing productivity."
+"Prevention of Diseases: Sanitizing water helps to kill harmful germs and "
+"bacteria, preventing diseases. \n"
+"Improved Health: Access to clean water improves overall health and "
+"wellbeing, reducing medical costs and increasing productivity."
 
 #: template/public/home.html:68
 msgid "Purification Techniques"
@@ -295,7 +318,8 @@ msgstr ""
 " Benefits: Kills most germs and bacteria, making water safe to drink. \n"
 "\n"
 " Filtering: \n"
-" How to Do It: Use a clean cloth or a simple filter to remove dirt and particles. \n"
+" How to Do It: Use a clean cloth or a simple filter to remove dirt and "
+"particles. \n"
 " Benefits: Removes physical impurities, making water clearer and cleaner. \n"
 "\n"
 " Using Chlorine Tablets: \n"
@@ -320,15 +344,19 @@ msgstr "Why Clean Water is Important"
 #: template/public/home.html:77
 msgid "Contaminated Water info"
 msgstr ""
-"Health Benefits: Clean water keeps us healthy. It helps to prevent diseases like diarrhea, cholera, and typhoid. \n"
-"Daily Use: We use water for drinking, cooking, cleaning, and bathing. It's important to ensure the water is clean to avoid getting sick. \n"
+"Health Benefits: Clean water keeps us healthy. It helps to prevent diseases "
+"like diarrhea, cholera, and typhoid. \n"
+"Daily Use: We use water for drinking, cooking, cleaning, and bathing. It's "
+"important to ensure the water is clean to avoid getting sick. \n"
 "\n"
 "Tips for Maintaining Clean Water: \n"
 "\n"
-"Regular Cleaning: Regularly clean water storage containers with soap and water. \n"
-"Avoiding Contaminants: Do not let anything dirty, like hands or utensils, touch the water that is stored for drinking. \n"
-"Safe Collection: Collect water from safe and known sources, preferably treated or filtered sources."
-
+"Regular Cleaning: Regularly clean water storage containers with soap and "
+"water. \n"
+"Avoiding Contaminants: Do not let anything dirty, like hands or utensils, "
+"touch the water that is stored for drinking. \n"
+"Safe Collection: Collect water from safe and known sources, preferably "
+"treated or filtered sources."
 
 #: template/public/home.html:84
 msgid "Water Monitoring System"
@@ -475,9 +503,6 @@ msgstr "Find Clean Water"
 
 #~ msgid "latitude-for-form-add-sensor"
 #~ msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា"
-
-#~ msgid "sensor-errors-sensor-page"
-#~ msgstr "Error: "
 
 #, fuzzy
 #~| msgid "the-sensor-name-1"
