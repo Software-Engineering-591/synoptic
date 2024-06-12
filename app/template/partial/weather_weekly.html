@@ -1,18 +1,20 @@
 {% load i18n tz tz_detect leaflet_tags static unix_time %}
-<table class="table table-sm" id="weather-table">
+<table class="table table-sm table-zebra" id="weather-table">
     <thead>
         <tr>
             <th>Day</th>
             <th>Rainfall(mm)</th>
-            <th>Temperature(°C)</th>
-            <th>Avg Temperature(°C)</th>
+            <th>Temp(°C)</th>
+            <th>Avg Temp(°C)</th>
         </tr>
     </thead>
     <tbody>
         {% for day in days %}
             <tr>
                 <!-- show the day of the week -->
-                <td>{{ day.date | date:"D" }}</td>
+                <td>
+                    <b>{{ day.date | date:"D" }}</b>
+                </td>
                 <td>{{ day.total_rain }}</td>
                 <td>
                     <b>{{ day.min_temp }} - {{ day.max_temp }}</b>

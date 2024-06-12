@@ -1,9 +1,10 @@
 {% load i18n tz tz_detect leaflet_tags static unix_time %}
-<table class="table table-sm" id="weather-table">
+<table class="table table-sm table-zebra" id="weather-table">
     <thead>
         <tr>
             <th>Weather</th>
-            <th>Temperature(°C)</th>
+            <th>Temp(°C)</th>
+            <th>Rainfall(mm)</th>
             <th>Time</th>
         </tr>
     </thead>
@@ -20,14 +21,15 @@
                         </div>
                         <div>
                             <div class="font-bold">{{ weather.weather.0.main }}</div>
-                            <div class="text-sm opacity-50">{{ weather.weather.0.description }}</div>
+                            <div class="text-xs opacity-50">{{ weather.weather.0.description }}</div>
                         </div>
                     </div>
                 </td>
                 <td>
                     <b>{{ weather.main.temp }}</b>
                 </td>
-                <td>{{ weather.dt_txt|timezone:"Asia/Phnom_Penh"|date:"f a" }}</td>
+                <td>{{ weather.rain|default_if_none:"0" }}</td>
+                <td class="text-xs">{{ weather.dt_txt|timezone:"Asia/Phnom_Penh"|date:"f a" }}</td>
             </tr>
         {% endfor %}
     </tbody>

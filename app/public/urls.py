@@ -17,4 +17,5 @@ urlpatterns = [
         name='weekly_weather',
     ),
     path('goals/', views.GoalsView.as_view()),
+    path('alert/graph/', views.AlertGraphView.as_view()),
 ]
