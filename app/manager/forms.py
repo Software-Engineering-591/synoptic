@@ -41,6 +41,7 @@ class Addwaterform(ModelForm):
                 attrs={
                     'class': 'w-full h-full',
                     'placeholder': _('level-for-sensor-individual'),
+                    'min': 0,
                 }
             ),
             'orp': forms.NumberInput(
@@ -62,7 +63,12 @@ class Addwaterform(ModelForm):
                 }
             ),
             'ph': forms.NumberInput(
-                attrs={'class': 'w-full h-full', 'placeholder': 'pH', 'max': '14'}
+                attrs={
+                    'class': 'w-full h-full',
+                    'placeholder': 'pH',
+                    'max': '14',
+                    'min': '0',
+                }
             ),
         }
 
