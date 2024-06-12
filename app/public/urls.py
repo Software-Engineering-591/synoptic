@@ -3,9 +3,9 @@ from . import views
 
 urlpatterns = [
     path('', views.HomeView.as_view(), name='index'),
-    path('weather/', views.WeatherView.as_view()),
-    path('alert/', views.AlertView.as_view()),
-    path('settings', views.SettingsView.as_view()),
+    path('weather/', views.WeatherView.as_view(), name='weather'),
+    path('alert/', views.AlertView.as_view(), name='alert'),
+    path('settings', views.SettingsView.as_view(), name='settings'),
     path(
         'daily_weather/',
         views.PartialDailyWeatherView.as_view(),
@@ -16,5 +16,6 @@ urlpatterns = [
         views.PartialWeeklyWeatherView.as_view(),
         name='weekly_weather',
     ),
-    path('goals/', views.GoalsView.as_view()),
+    path('goals/', views.GoalsView.as_view(), name='goals'),
+    path('alert/graph/', views.AlertGraphView.as_view()),
 ]
