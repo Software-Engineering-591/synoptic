@@ -7,12 +7,10 @@ import matplotlib.pyplot as plt
 from django.utils.translation import gettext as _
 from django.contrib.auth import authenticate, login, logout
 from manager.forms import Loginform, Addsensorform, Latandlon, Addwaterform
-from django.core.serializers.json import DjangoJSONEncoder
 from .models import WaterReading, Sensor
 from django.contrib.gis.geos import Point
 from matplotlib import rcParams
 from django_htmx.http import HttpResponseClientRedirect
-from django.forms import ValidationError
 # Create your views here.
 
 
