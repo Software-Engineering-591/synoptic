@@ -11,7 +11,6 @@ from django.conf import settings
 import io
 import json
 from django.utils.translation import gettext as _
-from django.core.serializers.json import DjangoJSONEncoder
 # Create your views here.
 
 
