@@ -227,7 +227,7 @@ msgstr "Alerts"
 
 #: template/public/home.html:15
 msgid "Pu Ngao"
-msgstr "Pu Ngao"
+msgstr "Pu Ngaol"
 
 #: template/public/home.html:25
 #, fuzzy

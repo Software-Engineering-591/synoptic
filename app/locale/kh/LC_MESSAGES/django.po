@@ -222,7 +222,7 @@ msgstr "ដាស់តឿន"
 
 #: template/public/home.html:15
 msgid "Pu Ngao"
-msgstr "ពូង៉ៅ"
+msgstr "ពូង៉ោល"
 
 #: template/public/home.html:25
 msgid "Sensor"
