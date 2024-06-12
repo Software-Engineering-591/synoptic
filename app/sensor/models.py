@@ -10,4 +10,4 @@ class Sensor(models.Model):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
     def __str__(self):
-        return str(self.id)
+        return self.name

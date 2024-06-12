@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load leaflet_tags static %}
+{% load leaflet_tags static i18n %}
 {% block head %}
     {% leaflet_css %}
     {% leaflet_js %}
@@ -7,28 +7,28 @@
 {% endblock head %}
 {% block body %}
     {% block form %}
-        <title>Add sensor</title>
+        <title>{% trans "add-sensor-title-for-adding-sensor" %}</title>
         <main class="grid w-screen h-screen place-items-center">
             <div class="flex place-content-center w-2/3 h-3/4 p-4 border-4 border-accent rounded-3xl skeleton">
                 <div class="card flex content-end h-full w-1/4 overflow-x-hidden overflow-y-auto border-none gap-4">
                     <div>
                         <div class="card-title flex justify-center m-4 gap-2 border-neutral">
                             <a href="{% url 'dashboard' %}">
-                                <button class="btn btn-error">Back</button>
+                                <button class="btn btn-error">{% trans "back-button-for-sensor-page" %}</button>
                             </a>
-                            <p class="underline">Add sensor</p>
+                            <p class="underline">{% trans "add-sensor-heading-for-sensor-page" %}</p>
                         </div>
                     </div>
                     <form method="post" class="grid gap-4">
                         {% csrf_token %}
-                        <label class="input input-bordered input-secondary flex items-center gap-2">
+                        <label class="input input-bordered input-secondary flex items-center gap-2 overflow-x-hidden" >
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  class="w-4 h-4 opacity-70"
                                  viewBox="0 0 512 512">
                                 <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" d="M400 320c0 88.37-55.63 144-144 144s-144-55.63-144-144c0-94.83 103.23-222.85 134.89-259.88a12 12 0 0 1 18.23 0C296.77 97.15 400 225.17 400 320Z" />
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M344 328a72 72 0 0 1-72 72" />
                             </svg>
-                            {{ sensorform.name }}
+                           {{ sensorform.name }}
                         </label>
                         {% if sensorform.name.errors%}    
                             <div role="alert" class="alert alert-error">
@@ -38,7 +38,7 @@
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
-                                {{ sensorform.name.errors }}
+                                {% trans "sensor-errors-sensor-page" %}{{ sensorform.name.errors }}
                             </div>
                         {% endif %}
                         
@@ -54,7 +54,7 @@
                                name="lon"
                                placeholder="longitude"
                                readonly />
-                        <button class="btn btn-outline">submit</button>
+                        <button class="btn btn-outline">{% trans "submit-for-sensor-page" %}</button>
                  
 
 

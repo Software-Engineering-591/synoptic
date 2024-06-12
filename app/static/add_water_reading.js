@@ -12,7 +12,7 @@ for (i=0; i < data.length; i++) {
     lat = marker.lat;
     lon = marker.lon;
     let this_marker = L.marker([lat, lon]).addTo(map);
-    this_marker.bindPopup("Water sensor:" + lat + " " + lon );
+    this_marker.bindPopup(`Water sensor: ${marker.name}`);
     markers.push(this_marker);
    
 }

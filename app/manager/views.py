@@ -197,11 +197,11 @@ def add_water_view(request):
     form = Addwaterform()
     latform = Latandlon()
     ## grabbing all of the points into a list and then converting points to json
-    points = Sensor.objects.values_list('point', flat=True)
+    sensors = Sensor.objects.all()
     ## Getting point attributes from a list of points from sensor objects
-    points_list = [{'lat': point.y, 'lon': point.x} for point in points]
+    sensor_info = [{'lat': sensor.point.y, 'lon': sensor.point.x, 'name' : sensor.name } for sensor in sensors]
     ## dumping json converted data
-    data = json.dumps(points_list, cls=DjangoJSONEncoder)
+    data = json.dumps(sensor_info)
 
     fetched_lat = request.GET.get('lat')
     fetched_lon = request.GET.get('longitude')

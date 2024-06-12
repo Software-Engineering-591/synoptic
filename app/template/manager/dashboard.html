@@ -21,7 +21,7 @@
                         <a class="btn btn-primary mr-10" href="{% url 'add_sensor' %}">{% trans "add-sensor" %}</a>
                     </li>
                     <li>
-                        <a class="btn btn-primary mr-10" href="{% url 'add_water' %}">Add water reading</a>
+                        <a class="btn btn-primary mr-10" href="{% url 'add_water' %}">{% trans "Add-water-reading-button-dashboard" %}</a>
                     </li>
                     <li>
                         <button hx-post="{% url 'logout' %}" class="btn btn-error">{% trans "logout" %}</button>

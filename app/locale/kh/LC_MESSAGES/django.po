@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-11 06:49+0000\n"
+"POT-Creation-Date: 2024-06-12 00:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,54 +25,114 @@ msgstr ""
 msgid "Khmer"
 msgstr ""
 
-#: manager/views.py:23
+#: manager/forms.py:40
+msgid "level-for-sensor-individual"
+msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា: "
+
+#: manager/forms.py:46
+msgid "Oxidation-Reduction Potential"
+msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម"
+
+#: manager/forms.py:52
+msgid "Biochemical-oxygen-demand"
+msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី"
+
+#: manager/forms.py:58
+msgid "temperature-for-sensor-individual"
+msgstr "សីតុណ្ហភាពសម្រាប់ {sensor_name}"
+
+#: manager/forms.py:70
+msgid "latitude-for-form-add-sensor"
+msgstr "បន្ថែមឧបករណ៍ចាប់សញ្ញា"
+
+#: manager/forms.py:84
+msgid "sensor-name-individual"
+msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា: "
+
+#: manager/views.py:27
 msgid "Timestamp"
 msgstr "សំគាល់ពេល"
 
-#: manager/views.py:77
+#: manager/views.py:83
 #, python-brace-format
 msgid "Temperature for {sensor_name}"
 msgstr "សីតុណ្ហភាពសម្រាប់ {sensor_name}"
 
-#: manager/views.py:78
+#: manager/views.py:84
 msgid "Temperature (°C)"
 msgstr "សីតុណ្ហភាព (មើលលម្អិត)"
 
-#: manager/views.py:84
+#: manager/views.py:90
 #, python-brace-format
 msgid "Water Level for {sensor_name}"
 msgstr "ម្រិតទឹកសម្រាប់ {sensor_name}"
 
-#: manager/views.py:85
+#: manager/views.py:91
 msgid "Level (m)"
 msgstr "ម្រិតទឹកសម្រាប់ (ម៉ែត្រ)"
 
-#: manager/views.py:91
+#: manager/views.py:97
 #, python-brace-format
 msgid "ORP for {sensor_name}"
 msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម សម្រាប់ {sensor_name}"
 
-#: manager/views.py:92
+#: manager/views.py:98
 msgid "ORP (mV)"
 msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម (មីលីវ៉ុល)"
 
-#: manager/views.py:98
+#: manager/views.py:104
 #, python-brace-format
 msgid "pH for {sensor_name}"
 msgstr "ទំហ សម្រាប់ {sensor_name}"
 
-#: manager/views.py:99
+#: manager/views.py:105
 msgid "pH"
 msgstr "ទំហ"
 
-#: manager/views.py:105
+#: manager/views.py:111
 #, python-brace-format
 msgid "BOD for {sensor_name}"
 msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី {sensor_name}"
 
-#: manager/views.py:106
+#: manager/views.py:112
 msgid "BOD"
 msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី សម្រាប់"
+
+#: template/manager/add_sensor.html:10
+msgid "add-sensor-title-for-adding-sensor"
+msgstr "បន្ថែមឧបករណ៍ចាប់សញ្ញា"
+
+#: template/manager/add_sensor.html:17
+msgid "back-button-for-sensor-page"
+msgstr "ត្រឡប់មកវិញ"
+
+#: template/manager/add_sensor.html:19
+msgid "add-sensor-heading-for-sensor-page"
+msgstr "បន្ថែមឧបករណ៍ចាប់សញ្ញា"
+
+#: template/manager/add_sensor.html:41
+msgid "sensor-errors-sensor-page"
+msgstr "{{sensorform.name.errors}}"
+
+#: template/manager/add_sensor.html:57
+msgid "submit-for-sensor-page"
+msgstr "ដាក់ស្នើ"
+
+#: template/manager/add_water_reading.html:13
+msgid "add-water-reading-title"
+msgstr "បន្ថែមការអានទឹក។"
+
+#: template/manager/add_water_reading.html:20
+msgid "back-button-water-reading-page"
+msgstr "ត្រឡប់មកវិញ"
+
+#: template/manager/add_water_reading.html:21
+msgid "add-water-reading-heading"
+msgstr "បន្ថែមការអានទឹក។"
+
+#: template/manager/add_water_reading.html:79
+msgid "submit-button-water-reading"
+msgstr "ដាក់ស្នើ"
 
 #: template/manager/dashboard.html:4
 #, fuzzy
@@ -89,58 +149,62 @@ msgid "add-sensor"
 msgstr "បន្ថែមឧបករណ៍ចាប់សញ្ញា"
 
 #: template/manager/dashboard.html:24
+msgid "Add-water-reading-button-dashboard"
+msgstr "បន្ថែមការអានទឹក។"
+
+#: template/manager/dashboard.html:27
 msgid "logout"
 msgstr "ចាកចេញ"
 
-#: template/manager/dashboard.html:34
+#: template/manager/dashboard.html:39
 msgid "sensors"
 msgstr "ឧបករណ៍ចាប់សញ្ញា"
 
-#: template/manager/dashboard.html:36
+#: template/manager/dashboard.html:41
 msgid "water-level"
 msgstr "កម្រិត​ទឹក (ម៉ែត្រ)"
 
-#: template/manager/dashboard.html:38
+#: template/manager/dashboard.html:43
 msgid "orp"
 msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម (មីលីវ៉ុល)"
 
-#: template/manager/dashboard.html:40
+#: template/manager/dashboard.html:45
 msgid "ph"
 msgstr "ទំហ"
 
-#: template/manager/dashboard.html:42
+#: template/manager/dashboard.html:47
 msgid "bod"
 msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី"
 
-#: template/manager/dashboard.html:59
+#: template/manager/dashboard.html:65
 msgid "view"
 msgstr "មើលលម្អិត"
 
-#: template/manager/dashboard.html:62
+#: template/manager/dashboard.html:69
 msgid "the-sensor-name-1"
 msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា: "
 
-#: template/manager/dashboard.html:64
+#: template/manager/dashboard.html:72
 msgid "details"
 msgstr "ព័ត៌មានលម្អិតអំពីឧបករណ៍ចាប់សញ្ញានេះ។"
 
-#: template/manager/dashboard.html:70
+#: template/manager/dashboard.html:79
 msgid "level1"
 msgstr "កម្រិត​ទឹក: "
 
-#: template/manager/dashboard.html:77
+#: template/manager/dashboard.html:86
 msgid "phh-1"
 msgstr "ទំហ: "
 
-#: template/manager/dashboard.html:84
+#: template/manager/dashboard.html:93
 msgid "orp1"
 msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម (មីលីវ៉ុល): "
 
-#: template/manager/dashboard.html:91
+#: template/manager/dashboard.html:100
 msgid "bod1"
 msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី: "
 
-#: template/manager/dashboard.html:98
+#: template/manager/dashboard.html:107
 msgid "temp1"
 msgstr "សីតុណ្ហភាព (មើលលម្អិត): "
 
@@ -190,124 +254,136 @@ msgstr ""
 " ការប្រើប្រាស់ប្រចាំថ្ងៃ: យើងប្រើទឹកសម្រាប់ផឹក, ដាំម្ហូប, សម្អាត, និងងូតទឹក។ "
 "វាសំខាន់ណាស់ក្នុងការប្រើប្រាស់ទឹកស្អាតដើម្បីជៀសវាងការចម្លងជំងឺ។"
 
-#: template/public/our-goals.html:26
+#: template/public/our-goals.html:27
 msgid "Our-Goals-title"
 msgstr "គោលដៅរបស់យើង។"
 
-#: template/public/our-goals.html:36
+#: template/public/our-goals.html:37
 msgid "Our-Goals-heading"
 msgstr "គោលដៅរបស់យើង។"
 
-#: template/public/our-goals.html:38
+#: template/public/our-goals.html:39
 msgid "thriving-to-help-cambodia"
 msgstr "យើង​ខិតខំ​ប្រឹងប្រែង​ជួយ​កម្ពុជា​ឱ្យ​មាន​ធនធាន​ដូច​ប្រទេស​ដទៃ​ទៀត​នៃ​ពិភពលោក​របស់​យើង។"
 
-#: template/public/our-goals.html:39
-msgid "equal-opportunities-for-cambodia"
-msgstr "យើងជឿថា ជនបទកម្ពុជាក៏គួរតែមានសិទ្ធិប្រើប្រាស់ទឹកស្អាតដែរ យើងជឿថា ជនបទកម្ពុជាក៏គួរតែមានសិទ្ធិប្រើប្រាស់ទឹកស្អាតផងដែរ។"
-"ជួយជាមួយទឹកជំនន់ ការព្យាករណ៍នៃការផ្លាស់ប្តូរបរិស្ថាន"
-
 #: template/public/our-goals.html:40
+msgid "equal-opportunities-for-cambodia"
+msgstr ""
+"យើងជឿថា ជនបទកម្ពុជាក៏គួរតែមានសិទ្ធិប្រើប្រាស់ទឹកស្អាតដែរ យើងជឿថា "
+"ជនបទកម្ពុជាក៏គួរតែមានសិទ្ធិប្រើប្រាស់ទឹកស្អាតផងដែរ។ជួយជាមួយទឹកជំនន់ "
+"ការព្យាករណ៍នៃការផ្លាស់ប្តូរបរិស្ថាន"
+
+#: template/public/our-goals.html:41
 msgid "Our-Journey-title"
 msgstr "ដំណើររបស់យើង។"
 
-#: template/public/our-goals.html:41
+#: template/public/our-goals.html:42
 msgid "our-development-journey"
-msgstr "យើងបានចាប់ផ្តើមដំណើរនេះដោយបង្កើតបច្ចេកវិទ្យាដែលនឹងជួយប្រជាជនកម្ពុជា។"
+msgstr ""
+"យើងបានចាប់ផ្តើមដំណើរនេះដោយបង្កើតបច្ចេកវិទ្យាដែលនឹងជួយប្រជាជនកម្ពុជា។"
 "ដើម្បីយល់ពីពេលដែលពួកគេគួររំពឹងថានឹងមានទឹកជំនន់ ឬគ្រោះរាំងស្ងួត ហើយអនុញ្ញាតឱ្យពួកគេ។"
-"ដើម្បីយល់ពីពេលដែលទន្លេរបស់ពួកគេមានទឹកមានសុវត្ថិភាពសម្រាប់ធ្វើកសិកម្ម ផឹក លាង។"
-"ងូតទឹក និងច្រើនទៀត។"
+"ដើម្បីយល់ពីពេលដែលទន្លេរបស់ពួកគេមានទឹកមានសុវត្ថិភាពសម្រាប់ធ្វើកសិកម្ម ផឹក លាង។ងូតទឹក និងច្រើនទៀត។"
 
-#: template/public/our-goals.html:43
+#: template/public/our-goals.html:44
 msgid "click-to-find-clean-water"
 msgstr "ចុចទីនេះដើម្បីស្វែងរកប្រភពទឹកស្អាត"
 
-#: template/public/our-goals.html:44
+#: template/public/our-goals.html:45
 msgid "click-to-find-weather-predictions"
 msgstr "ចុចទីនេះដើម្បីមើលការព្យាករណ៍អាកាសធាតុ"
 
-#: template/public/our-goals.html:53
+#: template/public/our-goals.html:54
 msgid "Weather-section-goal-page-title"
 msgstr "អាកាសធាតុ"
 
-#: template/public/our-goals.html:55
-msgid "weather-alert-info"
-msgstr "ការ​ជូន​ដំណឹង​ត្រូវ​បាន​ផ្ដល់​ជូន​នៅ​លើ​ទំព័រ​អាកាសធាតុ​សម្រាប់​ពេល​ដែល​គេ​រំពឹង​ថា​នឹង​មាន​គ្រោះ​រាំង​ស្ងួត ឬ​ទឹកជំនន់"
-"អាស្រ័យ​លើ​ជំនន់​ទឹកភ្លៀង និង​កម្រិត​ទឹក​ដែល​បាន​កត់ត្រា​ក្នុង​សប្តាហ៍​កន្លងមក។"
-
 #: template/public/our-goals.html:56
-msgid "flooding-weather-alert-info"
-msgstr "យើងចង់កាត់បន្ថយឥទ្ធិពលនៃទឹកជំនន់សាលារៀន អាជីវកម្ម និងផ្ទះនៅ Pu Ngaol"
-"ដោយផ្តល់ឱ្យពួកគេនូវលទ្ធភាពទទួលបានការព្រមានអំពីទឹកជំនន់នាពេលអនាគតដែលអាចឱ្យពួកគេរៀបចំបានទាន់ពេលវេលា។"
+msgid "weather-alert-info"
+msgstr ""
+"ការ​ជូន​ដំណឹង​ត្រូវ​បាន​ផ្ដល់​ជូន​នៅ​លើ​ទំព័រ​អាកាសធាតុ​សម្រាប់​ពេល​ដែល​គេ​រំពឹង​ថា​នឹង​មាន​គ្រោះ​រាំង​ស្ងួត ឬ​"
+"ទឹកជំនន់អាស្រ័យ​លើ​ជំនន់​ទឹកភ្លៀង និង​កម្រិត​ទឹក​ដែល​បាន​កត់ត្រា​ក្នុង​សប្តាហ៍​កន្លងមក។"
 
 #: template/public/our-goals.html:57
-msgid "farming-weather-alert-info"
-msgstr "នេះ​ក៏​ជួយ​កសិករ​ឱ្យ​យល់​ពី​ពេលណា​ដែល​ពួកគេ​គួរ​ចាប់ផ្តើម​រៀបចំ​វាលស្រែ​តាម​រដូវ​កាល និង​"
-"ក៏ព្យាករណ៍ពីទិន្នផលសក្តានុពលរបស់ពួកគេ ដើម្បីអាចដាក់វិធានការជាក់លាក់ ដើម្បីធានាថាពួកគេអាចទ្រទ្រង់ខ្លួនឯង និងរបស់ពួកគេ។"
-"គ្រួសារ។"
+msgid "flooding-weather-alert-info"
+msgstr ""
+"យើងចង់កាត់បន្ថយឥទ្ធិពលនៃទឹកជំនន់សាលារៀន អាជីវកម្ម និងផ្ទះនៅ Pu "
+"Ngaolដោយផ្តល់ឱ្យពួកគេនូវលទ្ធភាពទទួលបានការព្រមានអំពីទឹកជំនន់នាពេលអនាគតដែលអាចឱ្យពួកគេរៀបចំបានទាន់ពេលវេលា។"
 
 #: template/public/our-goals.html:58
-msgid "transport-safety-weather-alert-info"
-msgstr "យើង​ក៏​ចង់​ជួយ​បញ្ហា​សុវត្ថិភាព​ដោយ​ជួយ​ប្រាប់​អ្នក​ស្រុក​ពេល​ពួកគេ​មិន​គួរ​ប្រើ​មធ្យោបាយ​ធ្វើ​ដំណើរ​ដូចជា​កង់​ជាដើម។"
-"របស់ពួកគេគឺជាការកើនឡើងនូវលទ្ធភាពនៃព្យុះដែលអាចបណ្តាលឱ្យពួកគេឈឺ ឬជាប់គាំងនៅលើផ្លូវភក់ ឬសូម្បីតែសក្តានុពល។"
-"រងរបួស។ លើស​ពី​នេះ​ទៅ​ទៀត នេះ​កាត់​បន្ថយ​ចំនួន​មនុស្ស​លើស​ចំណុះ​នៅ​ក្នុង​មន្ទីរពេទ្យ។"
+msgid "farming-weather-alert-info"
+msgstr ""
+"នេះ​ក៏​ជួយ​កសិករ​ឱ្យ​យល់​ពី​ពេលណា​ដែល​ពួកគេ​គួរ​ចាប់ផ្តើម​រៀបចំ​វាលស្រែ​តាម​រដូវ​កាល និង​"
+"ក៏ព្យាករណ៍ពីទិន្នផលសក្តានុពលរបស់ពួកគេ ដើម្បីអាចដាក់វិធានការជាក់លាក់ "
+"ដើម្បីធានាថាពួកគេអាចទ្រទ្រង់ខ្លួនឯង និងរបស់ពួកគេ។គ្រួសារ។"
 
-#: template/public/our-goals.html:60
+#: template/public/our-goals.html:59
+msgid "transport-safety-weather-alert-info"
+msgstr ""
+"យើង​ក៏​ចង់​ជួយ​បញ្ហា​សុវត្ថិភាព​ដោយ​ជួយ​ប្រាប់​អ្នក​ស្រុក​ពេល​ពួកគេ​មិន​គួរ​ប្រើ​មធ្យោបាយ​ធ្វើ​ដំណើរ​ដូចជា​កង់​ជាដើម។"
+"របស់ពួកគេគឺជាការកើនឡើងនូវលទ្ធភាពនៃព្យុះដែលអាចបណ្តាលឱ្យពួកគេឈឺ ឬជាប់គាំងនៅលើផ្លូវភក់ "
+"ឬសូម្បីតែសក្តានុពល។រងរបួស។ លើស​ពី​នេះ​ទៅ​ទៀត នេះ​កាត់​បន្ថយ​ចំនួន​មនុស្ស​លើស​ចំណុះ​នៅ​ក្នុង​មន្ទីរពេទ្យ។"
+
+#: template/public/our-goals.html:61
 msgid "Get-weather-predictions"
 msgstr "ទទួលបានការព្យាករណ៍អាកាសធាតុ"
 
-#: template/public/our-goals.html:69
+#: template/public/our-goals.html:70
 msgid "water-laybel-in-goal-page"
 msgstr "ទឹក។"
 
-#: template/public/our-goals.html:71
+#: template/public/our-goals.html:72
 msgid "goals-page-farming-and-production"
 msgstr "កសិកម្មនិងផលិតកម្"
 
-#: template/public/our-goals.html:73
+#: template/public/our-goals.html:74
 msgid "safe-water-leads-to-safer-produce"
 msgstr "អនុញ្ញាតឱ្យដំណាំលូតលាស់ដោយទឹកមានសុវត្ថិភាព នាំឱ្យមានការពុលអាហារតិច"
 
-#: template/public/our-goals.html:74
+#: template/public/our-goals.html:75
 msgid "better-quality-water-increases-yeild"
 msgstr "ការដាំដុះដំណាំដែលមានទឹកមានគុណភាពល្អ ច្រើនតែនាំអោយមានទិន្នផលកើនឡើង"
 
-#: template/public/our-goals.html:75
+#: template/public/our-goals.html:76
 msgid "higher-yeild-increases-economy"
-msgstr "កសិករអាចផលិត និងលក់បានកាន់តែមានន័យ ពួកគេនឹងមានប្រាក់ចំណូលប្រើប្រាស់ច្រើនជាងមុន ជួយសហគមន៍របស់ពួកគេ និងផ្តល់ធនធានគ្រប់គ្រាន់សម្រាប់គ្រួសាររបស់ពួកគេ ដែលនាំឱ្យមានការថយចុះនៃភាពអត់ឃ្លាន។"
+msgstr ""
+"កសិករអាចផលិត និងលក់បានកាន់តែមានន័យ ពួកគេនឹងមានប្រាក់ចំណូលប្រើប្រាស់ច្រើនជាងមុន ជួយសហគមន៍របស់ពួកគេ "
+"និងផ្តល់ធនធានគ្រប់គ្រាន់សម្រាប់គ្រួសាររបស់ពួកគេ ដែលនាំឱ្យមានការថយចុះនៃភាពអត់ឃ្លាន។"
 
-#: template/public/our-goals.html:77
+#: template/public/our-goals.html:78
 msgid "Goals-page-water-for-household-use"
 msgstr "ការប្រើប្រាស់ក្នុងផ្ទះ"
 
-#: template/public/our-goals.html:78
+#: template/public/our-goals.html:79
 msgid "what-water-is-used-for"
 msgstr "ចម្អិនអាហារ សម្អាត ងូតទឹក ប្រើប្រាស់ និងផ្គត់ផ្គង់ដល់គ្រួសារ"
 
-#: template/public/our-goals.html:79
+#: template/public/our-goals.html:80
 msgid "safe-water-has-less-fear-of-sickness"
 msgstr "បារម្ភតិចថាគ្រួសារ និងសហគមន៍របស់អ្នកនឹងឈឺ"
 
-#: template/public/our-goals.html:80
+#: template/public/our-goals.html:81
 msgid "better-quality-water-decreases-hospital-overcrowding"
 msgstr "សម្រាកនៅមន្ទីរពេទ្យតិច"
 
-#: template/public/our-goals.html:81
+#: template/public/our-goals.html:82
 msgid "Goals-page-traiding-of-water"
 msgstr "ការជួញដូរ"
 
-#: template/public/our-goals.html:82
+#: template/public/our-goals.html:83
 msgid "trade-better-quality-water"
 msgstr "អនុញ្ញាតឱ្យមានការជួញដូរទឹកដែលមានគុណភាពល្អជាង"
 
-#: template/public/our-goals.html:83
+#: template/public/our-goals.html:84
 msgid "safe-water-creates-loyal-customer-base"
 msgstr "ធានាថាអតិថិជនទំនងជាមិនសូវឈឺ បង្កើតមូលដ្ឋានអតិថិជនស្មោះត្រង់"
 
-#: template/public/our-goals.html:84
+#: template/public/our-goals.html:85
 msgid "trade-high-quality-improves-economy"
 msgstr "ធ្វើអោយសេដ្ឋកិច្ចក្នុងសហគមន៍មានភាពប្រសើរឡើង"
 
-#: template/public/our-goals.html:87
+#: template/public/our-goals.html:88
 msgid "find-clean-water-button"
 msgstr "ស្វែងរកទឹកស្អាត"
+
+#~| msgid "the-sensor-name-1"
+#~ msgid "sensor-name-sensor-page"
+#~ msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា: "
