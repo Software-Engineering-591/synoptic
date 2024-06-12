@@ -1,53 +1,98 @@
 {% extends "base.html" %}
-{% load i18n tz tz_detect %}
+{% load i18n tz tz_detect static leaflet_tags %}
 {% block head %}
     <title>Home | Pu Ngao</title>
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <script>
+         const sensors = JSON.parse('{{ sensors | escapejs }}');
+    </script>
+    <script src="{% static 'public/js/alert_map.js' %}" defer></script>
 {% endblock head %}
 {% block body %}
     {% tz_detect %}
-    <main class="h-screen">
-        <!-- <div class="absolute inset-0 flex justify-center items-center">wtf</div> -->
-        <div class="h-1/4 text-center font-bold">
-            <h1>{{ city.name }}</h1>
-            <h1>{{ weathers.0.main.temp }}°C</h1>
-            <h1>{% now "f a" %}</h1>
+    {% include "public/nav.html" %}
+    {% timezone "Asia/Phnom_Penh" %}
+    <!-- place in the middle of the screen -->
+    <main class="h-screen grid place-items-center">
+        <div tabindex="0"
+             class="z-10 absolute place-self-start collapse bg-primary text-primary-content focus:bg-base-300 focus:text-base-content">
+            <div class="collapse-title flex">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     class="stroke-current shrink-0 w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                    </path>
+                </svg>
+                <span class="text-center flex-grow text-current font-bold">Reasoning for danger</span>
+            </div>
+            <div class="collapse-content">
+                <div id="map" class="h-64"></div>
+                <div id="graph" class="card card-compact w-96 bg-base-100 shadow-xl">
+                    <figure>
+                        <div class="skeleton w-[384] h-[263]" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">No Graph has been loaded</h2>
+                        <p>Tap on a marker to see what we have predicted</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <table class="table table-sm">
-            <thead>
-                <tr>
-                    <th>Weather</th>
-                    <th>Temperature</th>
-                    <th>Time</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for weather in weathers %}
-                    <tr>
-                        <td>
-                            <div class="flex items-center gap-3">
-                                <div class="avatar">
-                                    <div class="mask mask-squircle w-12 h-12">
-                                        <img src="https://openweathermap.org/img/wn/{{ weather.weather.0.icon }}@2x.png"
-                                             alt="" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="font-bold">{{ weather.weather.0.main }}</div>
-                                    <div class="text-sm opacity-50">{{ weather.weather.0.description }}</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <b>{{ weather.main.temp }}°C</b>
-                        </td>
-                        <td>{{ weather.dt_txt|date:"f a" }}</td>
-                        <th>
-                            <button class="btn btn-ghost btn-xs">details</button>
-                        </th>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <br />
+        <!-- Used to space the flexbox -->
+        <div class="grid place-items-center">
+            <!-- define a django variable -->
+            <!-- ring -->
+            <svg viewBox="0 0 24 24"
+                 class="w-3/4 h-3/4 absolute text-{{ level }} drop-shadow-[0_45px_65px_currentColor] drop-shadow-[0_0px_20px_currentColor]"
+                 stroke="currentColor"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            {% if level == 'success' %}
+                <!-- tick -->
+                <svg viewBox="0 -0.5 25 25"
+                     class="w-1/2 h-1/2 absolute text-{{ level }}"
+                     stroke="currentColor"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.5 12.5L10.167 17L19.5 8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <!-- cross -->
+            {% elif level == 'warning' %}
+                <svg viewBox="0 -0.5 25 25"
+                     class="w-1/2 h-1/2 absolute text-{{ level }}"
+                     fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.96967 16.4697C6.67678 16.7626 6.67678 17.2374 6.96967 17.5303C7.26256 17.8232 7.73744 17.8232 8.03033 17.5303L6.96967 16.4697ZM13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697L13.0303 12.5303ZM11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303L11.9697 11.4697ZM18.0303 7.53033C18.3232 7.23744 18.3232 6.76256 18.0303 6.46967C17.7374 6.17678 17.2626 6.17678 16.9697 6.46967L18.0303 7.53033ZM13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303L13.0303 11.4697ZM16.9697 17.5303C17.2626 17.8232 17.7374 17.8232 18.0303 17.5303C18.3232 17.2374 18.3232 16.7626 18.0303 16.4697L16.9697 17.5303ZM11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697L11.9697 12.5303ZM8.03033 6.46967C7.73744 6.17678 7.26256 6.17678 6.96967 6.46967C6.67678 6.76256 6.67678 7.23744 6.96967 7.53033L8.03033 6.46967ZM8.03033 17.5303L13.0303 12.5303L11.9697 11.4697L6.96967 16.4697L8.03033 17.5303ZM13.0303 12.5303L18.0303 7.53033L16.9697 6.46967L11.9697 11.4697L13.0303 12.5303ZM11.9697 12.5303L16.9697 17.5303L18.0303 16.4697L13.0303 11.4697L11.9697 12.5303ZM13.0303 11.4697L8.03033 6.46967L6.96967 7.53033L11.9697 12.5303L13.0303 11.4697Z" />
+                </svg>
+            {% elif level == 'error' %}
+                <svg viewBox="-11 -2 25 25"
+                     fill="currentColor"
+                     class="w-1/2 h-1/2 absolute text-{{ level }}"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.828 15.984A1.328 1.328 0 1 1 1.5 14.657a1.328 1.328 0 0 1 1.328 1.327zM1.5 13.244a1.03 1.03 0 0 1-1.03-1.03V2.668a1.03 1.03 0 0 1 2.06 0v9.548a1.03 1.03 0 0 1-1.03 1.029z" />
+                </svg>
+            {% endif %}
+        </div>
+        <h1 class=" text-{{ level }} font-bold text-2xl text-center p-4 border-4 border-current rounded-lg drop-shadow-[0_45px_65px_currentColor] drop-shadow-[0_0px_20px_currentColor]">
+            {% if level == 'success' %}
+                Safe from flood
+                <br />
+                Have a great day!
+            {% elif level == 'warning' %}
+                Possible Risk of flood
+                <br />
+                Beware!
+            {% elif level == 'error' %}
+                In danger of flood
+                <br />
+                evacutation is advised
+            {% endif %}
+        </h1>
     </main>
+{% endtimezone %}
 {% endblock body %}

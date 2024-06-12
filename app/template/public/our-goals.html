@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block head %}
+    <style>
+         @keyframes slideIn {
+              from {
+                   transform: translaateX(-100px);
+                   opacity: 0;
+              }
+
+              to {
+                   transform: translateX(0);
+                   opacity: 1;
+              }
+         }
+
+         .slideInLeft {
+              animation: slideIn 1s ease-in-out both;
+              transform: translateX(-100px);
+         }
+
+         .slideInRight {
+              animation: slideIn 1s ease-in-out both;
+              transform: translateX(100px);
+         }
+    </style>
+    <title>{% trans "Our-Goals-title" %}</title>
+{% endblock head %}
+{% block body %}
+    {% include "public/nav.html" %}
+    <main>
+        <article class="text-center flex flex-col place-items-center">
+            <div class="hero min-h-full"
+                 style="background-image: url(https://cdn.techwireasia.com/wp-content/uploads/2020/07/shutterstock_1174089538-897x500.jpg)">
+                <div class="hero-overlay bg-opacity-80"></div>
+                <div class="hero-content text-center text-neutral-content">
+                    <div class="slideInLeft max-w-md">
+                        <h1 class=" pt-10 text-5xl font-bold">{% trans "Our-Goals-heading" %}</h1>
+                        <p>
+                            {% trans "thriving-to-help-cambodia" %}
+                            <p>{% blocktranslate %}equal-opportunities-for-cambodia{% endblocktranslate %}</p>
+                            <h1 class="mb-5 text-5xl pt-20 font-bold">{% trans "Our-Journey-title" %}</h1>
+                            <p class="pb-10">{% blocktranslate %}our-development-journey{% endblocktranslate %}</p>
+                        </p>
+                        <button class="btn mb-5 btn-primary">{% trans "click-to-find-clean-water" %}</button>
+                        <button class="btn btn-primary">{% trans "click-to-find-weather-predictions" %}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero min-h-flull"
+                 style="background-image: url(https://www.wateraid.org/sites/g/files/jkxoof271/files/styles/hero_desktop/public/2016.08%20WaterAid%20Cambodia-208.jpg?itok=tlkVq9Ip)">
+                <div class="hero-overlay bg-opacity-80"></div>
+                <div class="hero-content text-center text-neutral-content">
+                    <div class="slideInRight max-w-md">
+                        <h1 class="mb-5 text-5xl font-bold">{% trans "Weather-section-goal-page-title" %}</h1>
+                        <p class="mb-5">
+                            {% blocktranslate %}weather-alert-info{% endblocktranslate %}
+                            <p class="pb-5">{% blocktranslate %}flooding-weather-alert-info{% endblocktranslate %}</p>
+                            <p class="pb-5">{% blocktranslate %}farming-weather-alert-info{% endblocktranslate %}</p>
+                            <p class="pb-10">{% blocktranslate %}transport-safety-weather-alert-info{% endblocktranslate %}</p>
+                        </p>
+                        <button class="btn btn-primary">{% trans "Get-weather-predictions" %}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero min-h-full"
+                 style="background-image: url(https://www.wateraid.org/sites/g/files/jkxoof271/files/styles/hero_desktop/public/2016.08%20WaterAid%20Cambodia-277.jpg?h=f2fcf546&itok=Of8j-vwA)">
+                <div class="hero-overlay bg-opacity-80"></div>
+                <div class="hero-content text-center text-neutral-content">
+                    <div class="slideInLeft max-w-md">
+                        <h1 class="text-5xl font-bold">{% trans "water-laybel-in-goal-page" %}</h1>
+                        <p class="mb-5 pb-10">
+                            <h1 class="text-3xl font-bold">{% trans "goals-page-farming-and-production" %}</h1>
+                            <p>
+                                <li>{% trans "safe-water-leads-to-safer-produce" %}</li>
+                                <li>{% trans "better-quality-water-increases-yeild" %}</li>
+                                <li>{% trans "higher-yeild-increases-economy" %}</li>
+                            </p>
+                            <h1 class="pt-10 text-3xl font-bold">{% trans "Goals-page-water-for-household-use" %}</h1>
+                            <li>{% trans "what-water-is-used-for" %}</li>
+                            <li>{% trans "safe-water-has-less-fear-of-sickness" %}</li>
+                            <li>{% trans "better-quality-water-decreases-hospital-overcrowding" %}</li>
+                            <h1 class=" pt-10 text-3xl font-bold">{% trans "Goals-page-traiding-of-water" %}</h1>
+                            <li>{% trans "trade-better-quality-water" %}</li>
+                            <li>{% trans "safe-water-creates-loyal-customer-base" %}</li>
+                            <li class="pb-10">{% trans "trade-high-quality-improves-economy" %}</li>
+                        </p>
+                        <!-- link to find water source page -->
+                        <button class=" btn btn-primary">{% trans "find-clean-water-button" %}</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+{% endblock body %}

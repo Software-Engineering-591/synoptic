@@ -1,33 +1,25 @@
-const markers = [];
-
-var map = L.map('map').setView([12.577656, 106.935126], 13)
+var map = L.map('map').setView([12.5776539, 106.9323423], 13)
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+let selected = null;
 
-for (i=0; i < data.length; i++) {
-    var marker = data[i];
-    lat = marker.lat;
-    lon = marker.lon;
-    let this_marker = L.marker([lat, lon]).addTo(map);
-    this_marker.bindPopup("Water sensor:" + lat + " " + lon );
-    markers.push(this_marker);
-   
-}
+map.on('click', (e) => {
+    lat = e.latlng.lat
+    longitude = e.latlng.lng
+    if (selected != null){
+        map.removeLayer(selected);
+    }
+    selected = L.marker([lat, longitude]).addTo(map);
 
 
-markers.forEach(element => {
-    element.on('click', (e) =>
-{
-    lat = document.getElementById('lat')
-    lon = document.getElementById('lon')
-    fetch(`?lat=${element.getLatLng().lat}&longitude=${element.getLatLng().lng}`)
-    lat.value = element.getLatLng().lat
-    lon.value = element.getLatLng().lng
-    lon.innerHTML = element.getLatLng().lon
-    
+        fetch(`?lat=${lat}&longitude=${longitude}`)
+        lat_detail = document.getElementById('lat')
+        lon_detail = document.getElementById('lon')
+        lat_detail.value = lat
+        lon_detail.value = longitude
+        console.log(lon_detail)
+  
 })
-})
-    

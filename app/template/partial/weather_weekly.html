@@ -1,0 +1,29 @@
+{% load i18n tz tz_detect leaflet_tags static unix_time %}
+<table class="table table-sm table-zebra" id="weather-table">
+    <thead>
+        <tr>
+            <th>Day</th>
+            <th>Rainfall(mm)</th>
+            <th>Temp(°C)</th>
+            <th>Avg Temp(°C)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for day in days %}
+            <tr>
+                <!-- show the day of the week -->
+                <td>
+                    <b>{{ day.date | date:"D" }}</b>
+                </td>
+                <td>{{ day.total_rain }}</td>
+                <td>
+                    <b>{{ day.min_temp }} - {{ day.max_temp }}</b>
+                </td>
+                <td>
+                    <!-- round to 2 decimal places -->
+                    <b>{{ day.average_temp|floatformat:"2" }}</b>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

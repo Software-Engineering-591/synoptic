@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load i18n tz tz_detect leaflet_tags static unix_time %}
+{% block head %}
+    <title>Home | Pu Ngao</title>
+    {% leaflet_css %}
+    {% leaflet_js %}
+    <script src="{% static 'public/js/weather_map.js' %}" defer></script>
+{% endblock head %}
+{% block body %}
+    {% tz_detect %}
+    {% include "public/nav.html" %}
+    {% timezone "Asia/Phnom_Penh" %}
+    <main class="h-screen flex flex-col">
+        <!-- <div class="absolute inset-0 flex justify-center items-center">wtf</div> -->
+        <div class="hero h-1/4"
+             {% if city.sunrise < now and city.sunset > now %}
+             style="background-image: url('{% static 'public/assets/sunlight.jpg' %}')">
+        {% else %}
+            style="background-image: url('{% static 'public/assets/moonlight.jpg' %}')">
+        {% endif %}
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center font-bold flex flex-col">
+            <h1 class="text-4xl">{{ city.name }}</h1>
+            <!-- <p class="text-2xl">{{ weathers.0.main.temp }}°C</p> -->
+            <p>{% now "f a" %}</p>
+        </div>
+    </div>
+    <div id="map" class="opacity-60 h-1/4"></div>
+    <div class="flex justify-around m-4">
+        <button class="btn btn-primary"
+                hx-get="{% url 'daily_weather' %}"
+                hx-target="#weather-table"
+                hx-swap="outerHTML">Get Hourly Weather</button>
+        <button class="btn btn-secondary"
+                hx-get="{% url 'weekly_weather' %}"
+                hx-target="#weather-table"
+                hx-swap="outerHTML">Get Daily Weather</button>
+    </div>
+    <div hx-get="{% url 'daily_weather' %}"
+         hx-target="this"
+         hx-swap="outerHTML"
+         hx-trigger="load"
+         id="weather-table"></div>
+    <!-- div for sunrise and sunset times -->
+    <div class="flex-grow flex-row flex">
+        <div class="hero"
+             style="background-image: url('{% static 'public/assets/sunrise.jpg' %}')">
+            <div class="hero-overlay bg-opacity-70"></div>
+            <div class="hero-content text-center font-bold flex flex-col">
+                <h1>Sunrise</h1>
+                <p>{{ city.sunrise|unix_to_datetime|timezone:"Asia/Phnom_Penh"|date:"f a" }}</p>
+            </div>
+        </div>
+        <div class="hero"
+             style="background-image: url('{% static 'public/assets/sunset.jpg' %}')">
+            <div class="hero-overlay bg-opacity-70"></div>
+            <div class="hero-content text-center font-bold flex flex-col">
+                <h1>Sunset</h1>
+                <p>{{ city.sunset|unix_to_datetime|timezone:"Asia/Phnom_Penh"|date:"f a" }}</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endtimezone %}
+{% endblock body %}

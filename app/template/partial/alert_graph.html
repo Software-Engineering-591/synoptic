@@ -1,0 +1,9 @@
+<div id="graph" class="card card-compact w-96 bg-base-100 shadow-xl">
+    <figure>
+        <img src="data:image/png;base64,{{ graph }}" class="w-full h-fit" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">Graph for {{ sensor.name }}</h2>
+        <b class="text-primary">Current Water Level: {{ reading.level }}m</b>
+    </div>
+</div>
