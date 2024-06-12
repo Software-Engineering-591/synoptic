@@ -1,19 +1,22 @@
 {% extends "base.html" %}
-<<<<<<< HEAD
-{% load i18n tz tz_detect static %}
-=======
-{% load i18n tz tz_detect %}
->>>>>>> fe353cb7f40b0611a645c974de9b528ba8b4d502
+{% load i18n tz tz_detect static leaflet_tags %}
 {% block head %}
     <title>Home | Pu Ngao</title>
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <script>
+         const sensors = JSON.parse('{{ sensors | escapejs }}');
+    </script>
+    <script src="{% static 'public/js/alert_map.js' %}" defer></script>
 {% endblock head %}
 {% block body %}
     {% tz_detect %}
+    {% include "public/nav.html" %}
     {% timezone "Asia/Phnom_Penh" %}
     <!-- place in the middle of the screen -->
     <main class="h-screen grid place-items-center">
         <div tabindex="0"
-             class="place-self-start collapse bg-primary text-primary-content focus:bg-secondary focus:text-secondary-content">
+             class="z-10 absolute place-self-start collapse bg-primary text-primary-content focus:bg-base-300 focus:text-base-content">
             <div class="collapse-title flex">
                 <svg xmlns="http://www.w3.org/2000/svg"
                      fill="none"
@@ -22,12 +25,23 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
                     </path>
                 </svg>
-                <span class="text-center flex-grow text-primary-content font-bold">Reasoning for danger</span>
+                <span class="text-center flex-grow text-current font-bold">Reasoning for danger</span>
             </div>
             <div class="collapse-content">
-                <p>Unfinished</p>
+                <div id="map" class="h-64"></div>
+                <div id="graph" class="card card-compact w-96 bg-base-100 shadow-xl">
+                    <figure>
+                        <div class="skeleton w-[384] h-[263]" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">No Graph has been loaded</h2>
+                        <p>Tap on a marker to see what we have predicted</p>
+                    </div>
+                </div>
             </div>
         </div>
+        <br />
+        <!-- Used to space the flexbox -->
         <div class="grid place-items-center">
             <!-- define a django variable -->
             <!-- ring -->

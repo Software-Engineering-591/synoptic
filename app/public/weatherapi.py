@@ -3,7 +3,7 @@ from time import time
 from functools import lru_cache
 from typing import Optional
 from pydantic.dataclasses import dataclass
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, AliasPath
 
 
 @dataclass
@@ -49,8 +49,8 @@ class WeatherData:
     pop: float
     sys: G
     dt_txt: datetime
-    cloud: Optional[float] = Field(None, alias='clouds.all')
-    rain: Optional[float] = Field(None, alias='rain.3h')
+    cloud: Optional[float] = Field(None, validation_alias=AliasPath('clouds', 'all'))
+    rain: Optional[float] = Field(None, validation_alias=AliasPath('rain', '3h'))
 
 
 @dataclass
@@ -96,7 +96,9 @@ def _get_weather_data(ttl=None, **params) -> WeatherResponse:
         'https://api.openweathermap.org/data/2.5/forecast',
         params=params,
     )
-    return WeatherResponse.model_validate_json(response.content)
+    return WeatherResponse.model_validate_json(
+        response.content,
+    )
 
 
 def get_ttl(seconds: int = 20) -> int:
@@ -156,6 +158,7 @@ def get_weekly_weather(**params) -> Optional[list[DailyWeather]]:
                     ),
                 )
             )
+            print(current_weather)
             sentinal = weather.dt_txt
             current_weather = []
         current_weather.append(weather)
