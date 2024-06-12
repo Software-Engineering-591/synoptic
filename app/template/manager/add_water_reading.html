@@ -10,16 +10,17 @@
 {% endblock head %}
 {% block body %}
     {% block form %}
-    <title>{% trans "add-water-reading-title" %}</title>
-
+        <title>{% trans "add-water-reading-title" %}</title>
         <main class="grid w-screen h-screen place-items-center">
             <div class="flex place-content-center w-2/3 h-3/4 p-4 border-4 border-accent rounded-3xl skeleton">
                 <div class="card flex content-end h-full w-1/4 overflow-x-hidden overflow-y-auto border-none gap-4">
                     <div>
-                    <div class="card-title flex justify-center m-4 gap-2 border-neutral">
-                        <a href="{% url 'dashboard' %}"><button class="btn btn-error">{% trans "back-button-water-reading-page" %}</button></a>    
-                        <p class="underline">{% trans "add-water-reading-heading" %}</p>
-                    </div>
+                        <div class="card-title flex justify-center m-4 gap-2 border-neutral">
+                            <a href="{% url 'dashboard' %}">
+                                <button class="btn btn-error">{% trans "back-button-water-reading-page" %}</button>
+                            </a>
+                            <p class="underline">{% trans "add-water-reading-heading" %}</p>
+                        </div>
                     </div>
                     <form method="post" class="grid gap-4">
                         {% csrf_token %}

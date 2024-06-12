@@ -199,7 +199,10 @@ def add_water_view(request):
     ## grabbing all of the points into a list and then converting points to json
     sensors = Sensor.objects.all()
     ## Getting point attributes from a list of points from sensor objects
-    sensor_info = [{'lat': sensor.point.y, 'lon': sensor.point.x, 'name' : sensor.name } for sensor in sensors]
+    sensor_info = [
+        {'lat': sensor.point.y, 'lon': sensor.point.x, 'name': sensor.name}
+        for sensor in sensors
+    ]
     ## dumping json converted data
     data = json.dumps(sensor_info)
 
@@ -243,28 +246,38 @@ def add_water_view(request):
             {'form': form, 'data': data, 'lat_form': latform},
         )
 
+
 def add_sensor_view(request):
     latform = Latandlon()
     sensorform = Addsensorform()
 
-    if request.method == "POST":
+    if request.method == 'POST':
         sensorform = Addsensorform(request.POST)
         latform = Latandlon(request.POST)
         if sensorform.is_valid() and latform.is_valid():
             latitude = latform.cleaned_data['lat']
             longitude = latform.cleaned_data['lon']
             new_sensor = Sensor.objects.create(
-                name = sensorform.cleaned_data['name'],
-                point = Point(float(longitude), float(latitude))
+                name=sensorform.cleaned_data['name'],
+                point=Point(float(longitude), float(latitude)),
             )
             print(new_sensor)
             print(new_sensor.__dict__)
             new_sensor.save()
             return redirect('dashboard')
         else:
-            return render(request, 'manager/add_sensor.html', {'latform' : latform, 'sensorform' : sensorform})
+            return render(
+                request,
+                'manager/add_sensor.html',
+                {'latform': latform, 'sensorform': sensorform},
+            )
     else:
-        return render(request, 'manager/add_sensor.html', {'latform' : latform, 'sensorform' : sensorform})
+        return render(
+            request,
+            'manager/add_sensor.html',
+            {'latform': latform, 'sensorform': sensorform},
+        )
+
 
 def logout_view(request):
     logout(request)
