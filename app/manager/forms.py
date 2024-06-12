@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.forms import ModelForm
 from .models import WaterReading, Sensor
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 
 class Loginform(AuthenticationForm):
@@ -67,7 +67,7 @@ class Addwaterform(ModelForm):
 class Latandlon(forms.Form):
     lat = forms.FloatField(
         widget=forms.NumberInput(
-            attrs={'id': 'lat', 'placeholder': _('latitude-for-form-add-sensor')}
+            attrs={'id': 'lat'}
         )
     )
     lon = forms.FloatField(widget=forms.NumberInput(attrs={'id': 'lon'}))
@@ -83,6 +83,11 @@ class Addsensorform(ModelForm):
                     'class': 'w-full h-full',
                     'placeholder': _('sensor-name-individual'),
                     'id': 'name',
-                }
+                },
             )
+        }
+        error_messages = {
+            'name' :{
+            'unique' : _('sensor-already-exists')
+            }
         }
