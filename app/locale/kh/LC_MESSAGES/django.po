@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-12 16:50+0000\n"
+"POT-Creation-Date: 2024-06-12 00:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,50 +50,61 @@ msgid "sensor-already-exists"
 msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា"
 
 #: manager/views.py:25
+#: manager/views.py:25
 msgid "Timestamp"
 msgstr "សំគាល់ពេល"
 
+#: manager/views.py:81
 #: manager/views.py:81
 #, python-brace-format
 msgid "Temperature for {sensor_name}"
 msgstr "សីតុណ្ហភាពសម្រាប់ {sensor_name}"
 
 #: manager/views.py:82
+#: manager/views.py:82
 msgid "Temperature (°C)"
 msgstr "សីតុណ្ហភាព (មើលលម្អិត)"
 
+#: manager/views.py:88
 #: manager/views.py:88
 #, python-brace-format
 msgid "Water Level for {sensor_name}"
 msgstr "ម្រិតទឹកសម្រាប់ {sensor_name}"
 
 #: manager/views.py:89
+#: manager/views.py:89
 msgid "Level (m)"
 msgstr "ម្រិតទឹកសម្រាប់ (ម៉ែត្រ)"
 
+#: manager/views.py:95
 #: manager/views.py:95
 #, python-brace-format
 msgid "ORP for {sensor_name}"
 msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម សម្រាប់ {sensor_name}"
 
 #: manager/views.py:96
+#: manager/views.py:96
 msgid "ORP (mV)"
 msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម (មីលីវ៉ុល)"
 
+#: manager/views.py:102
 #: manager/views.py:102
 #, python-brace-format
 msgid "pH for {sensor_name}"
 msgstr "ទំហ សម្រាប់ {sensor_name}"
 
 #: manager/views.py:103
+#: manager/views.py:103
 msgid "pH"
 msgstr "ទំហ"
 
+#: manager/views.py:109
 #: manager/views.py:109
 #, python-brace-format
 msgid "BOD for {sensor_name}"
 msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី {sensor_name}"
 
+#: manager/views.py:110
 #: manager/views.py:110
 msgid "BOD"
 msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី សម្រាប់"
@@ -220,6 +231,42 @@ msgstr "តម្រូវការអុកស៊ីសែនជីវគីម
 msgid "temp1"
 msgstr "សីតុណ្ហភាព (មើលលម្អិត): "
 
+#: template/public/home.html:12
+msgid "Alert"
+msgstr "ដាស់តឿន"
+
+#: template/public/home.html:15
+msgid "Pu Ngao"
+msgstr "ពូង៉ៅ"
+
+#: template/public/home.html:25
+msgid "Sensor"
+msgstr "ឧបករណ៍ចាប់សញ្ញា"
+
+#: template/public/home.html:26
+msgid "Status"
+msgstr "ស្ថានភាព"
+
+#: template/public/home.html:37
+msgid "Drinkable"
+msgstr "អាចផឹកបាន។"
+
+#: template/public/home.html:39
+msgid "Contaminated-Sensor"
+msgstr "កខ្វក់"
+
+#: template/public/home.html:42
+msgid "Gathering"
+msgstr "ការប្រមូលផ្តុំ"
+
+#: template/public/home.html:51
+msgid "Last Updated At"
+msgstr "អាប់ដេតចុងក្រោយនៅ "
+
+#: template/public/home.html:57
+msgid "Info"
+msgstr "ព័ត៌មាន"
+
 #: template/public/home.html:61
 msgid "Sanitization"
 msgstr "អំពីអនាម័យ"
@@ -228,8 +275,16 @@ msgstr "អំពីអនាម័យ"
 msgid "Sanitization info"
 msgstr ""
 "ការលាងដៃ: តែងតែលាងដៃជាមួយសាប៊ូមុនពេលប៉ះទឹកឬអាហារ។ \n"
-" ប្រអប់ស្អាត: ប្រើប្រអប់ស្អាតដើម្បីផ្ទុកនិងប្រមូលទឹក។ \n"
-" ការបំផ្លាញសំណល់ត្រឹមត្រូវ: រក្សាសំណល់សត្វនិងមនុស្សឱ្យឆ្ងាយពីប្រភពទឹក។"
+"\n"
+"ប្រអប់ស្អាត: ប្រើប្រអប់ស្អាតដើម្បីផ្ទុកនិងប្រមូលទឹក។ \n"
+"\n"
+"ការបំផ្លាញសំណល់ត្រឹមត្រូវ: រក្សាសំណល់សត្វនិងមនុស្សឱ្យឆ្ងាយពីប្រភពទឹក។ \n"
+"\n"
+"អត្ថប្រយោជន៍ \n"
+"\n"
+"ការការពារជំងឺ: ការធ្វើឱ្យទឹកស្អាតជួយសម្លាប់មេរោគ និងបាក់តេរីដែលអាចបណ្តាលឱ្យមានជំងឺ។ \n"
+"សុខភាពប្រសើរ: ទឹកស្អាតធ្វើឱ្យសុខភាពទូទៅប្រសើរឡើង និងបន្ថយការចំណាយថ្នាំពេទ្យ, និងបង្កើនផលិតភាព។"
+
 
 #: template/public/home.html:68
 msgid "Purification Techniques"
@@ -241,15 +296,19 @@ msgstr ""
 "ការឆ្កូតទឹក:\n"
 " ធ្វើដូចម្តេច: ដាំទឹកឱ្យពុះយ៉ាងហោចណាស់១នាទី។ \n"
 " អត្ថប្រយោជន៍: សម្លាប់មេរោគនិងបាក់តេរីភាគច្រើន, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n"
+"\n"
 " ការច្រោះទឹក: \n"
 " ធ្វើដូចម្តេច: ប្រើក្រណាត់ស្អាតឬឧបករណ៍ច្រោះដើម្បីយកដីនិងភាគល្អិតចេញ។ \n"
 " អត្ថប្រយោជន៍: យកសារធាតុកខ្វក់ចេញ, ធ្វើឱ្យទឹកស្អាតនិងច្បាស់។ \n"
+"\n"
 " ប្រើគ្រាប់គ្លរុញ: \n"
 " ធ្វើដូចម្តេច: បន្ថែមគ្រាប់គ្លរុញទៅក្នុងទឹកនិងរង់ចាំ៣០នាទី។ \n"
 " អត្ថប្រយោជន៍: សម្លាប់បាក់តេរីនិងមេរោគ, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n"
+"\n"
 " ការប្រើប្រាស់ពន្លឺព្រះអាទិត្យ (SODIS): \n"
 " ធ្វើដូចម្តេច: ដាក់ទឹកក្នុងដបទឹកប្លាស្ទិក និងដាក់នៅក្រោមពន្លឺព្រះអាទិត្យយ៉ាងហោចណាស់ ៦ម៉ោង។ \n"
 " អត្ថប្រយោជន៍: ពន្លឺព្រះអាទិត្យសម្លាប់មេរោគនិងបាក់តេរី, ធ្វើឱ្យទឹកសុវត្ថិភាពសម្រាប់ផឹក។ \n"
+"\n"
 " ការច្រោះតាមខ្សាច់: \n"
 " ធ្វើដូចម្តេច: ចាក់ទឹកឆ្លងកាត់បង្ហុកដែលមានបញ្ចូលខ្សាច់និងថ្ម។ \n"
 " អត្ថប្រយោជន៍: យកភាគល្អិតនិងមេរោគខ្លះចេញ, ធ្វើឱ្យទឹកស្អាតជាងមុន។"
@@ -263,8 +322,17 @@ msgid "Contaminated Water info"
 msgstr ""
 "អត្ថប្រយោជន៍សុខភាព: ទឹកស្អាតរក្សាសុខភាពរបស់យើង។ វាជួយការពារជំងឺដូចជា ឃ្លៀន, ជំងឺកូឡារ៉ា, "
 "និងជំងឺថ្លង់លើស។ \n"
-" ការប្រើប្រាស់ប្រចាំថ្ងៃ: យើងប្រើទឹកសម្រាប់ផឹក, ដាំម្ហូប, សម្អាត, និងងូតទឹក។ "
-"វាសំខាន់ណាស់ក្នុងការប្រើប្រាស់ទឹកស្អាតដើម្បីជៀសវាងការចម្លងជំងឺ។"
+" ការប្រើប្រាស់ប្រចាំថ្ងៃ: យើងប្រើទឹកសម្រាប់ផឹក, ដាំម្ហូប, សម្អាត, និងងូតទឹក។ វាសំខាន់ណាស់ក្នុងការប្រើប្រាស់ទឹកស្អាតដើម្បីជៀសវាងការចម្លងជំងឺ។ \n"
+"\n"
+"គន្លឹះក្នុងការរក្សាទឹកស្អាត \n"
+"\n"
+"ការសម្អាតប្រចាំ: សម្អាតប្រអប់ផ្ទុកទឹកជាប្រចាំជាមួយសាប៊ូនិងទឹក។ \n"
+"ការជៀសវាងមេរោគ: កុំឱ្យអ្វីដែលកខ្វក់ដូចជាដៃ ឬឧបករណ៍ប៉ះទឹកដែលបានផ្ទុកសម្រាប់ផឹក។ \n"
+"ការប្រមូលទឹកសុវត្ថិភាព: ប្រមូលទឹកពីប្រភពដែលមានសុវត្ថិភាព និងមានការដឹងពីមុន, គួរតែត្រូវបានបន្ថយ ឬច្រោះទឹក។"
+
+#: template/public/home.html:84
+msgid "Water Monitoring System"
+msgstr "ប្រព័ន្ធត្រួតពិនិត្យទឹក។"
 
 #: template/public/our-goals.html:27
 msgid "Our-Goals-title"

@@ -9,10 +9,10 @@
     <main>
         <div class="flex justify-center p-4">
             <a class="btn btn-error btn-wide text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-               href="{% url 'alert' %}">Alert</a>
+               href="{% url 'alert' %}">{% trans "Alert" %}</a>
         </div>
         <div class="flex justify-start">
-            <p class="text-2xl font-bold ml-2 rounded-full p-3 bg-base-200">Pu Ngao</p>
+            <p class="text-2xl font-bold ml-2 rounded-full p-3 bg-base-200">{% trans "Pu Ngao" %}</p>
         </div>
         <section>
             <div class="flex justify-center mt-10 h-auto w-auto place-content-center rounded-lg ml-10 mr-10 bg-base-200">
@@ -22,8 +22,8 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th class="font-bold text-2xl">Sensor</th>
-                                <th class="font-bold text-2xl">Status</th>
+                                <th class="font-bold text-2xl">{% trans "Sensor" %}</th>
+                                <th class="font-bold text-2xl">{% trans "Status" %}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,12 +34,12 @@
                                     <td>{{ sensor }}</td>
                                     {% if current_reading is not None %}
                                         {% if current_reading.clean_condition %}
-                                            <td class="text-success font-bold">Drinkable</td>
+                                            <td class="text-success font-bold">{% trans "Drinkable" %}</td>
                                         {% else %}
-                                            <td class="text-error font-bold">Contaminated</td>
+                                            <td class="text-error font-bold">{% trans "Contaminated-Sensor" %}</td>
                                         {% endif %}
                                     {% else %}
-                                        <td class="text-info font-bold">Gathering</td>
+                                        <td class="text-info font-bold">{% trans "Gathering" %}</td>
                                     {% endif %}
                                 </tr>
                             {% endfor %}
@@ -48,13 +48,13 @@
                 </div>
             </div>
             <div>
-                <span class="font-bold ml-auto flex justify-end mr-10 mt-3">{% tz_detect %} Last Updated at {% now "H:i" %}</span>
+                <span class="font-bold ml-auto flex justify-end mr-10 mt-3">{% tz_detect %}{% trans "Last Updated At" %}{% now "H:i" %}</span>
             </div>
         </section>
         <section>
             <div class="p-8 mb-20">
                 <div>
-                    <p class="font-bold text-1xl ml-3 mb-3 mt-10">Info</p>
+                    <p class="font-bold text-1xl ml-3 mb-3 mt-10">{% trans "Info" %}</p>
                 </div>
                 <div class="collapse collapse-plus bg-base-200">
                     <input type="radio" name="my-accordion-3" checked="checked" />
@@ -81,7 +81,7 @@
         </section>
     </main>
     <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-base-200 border-t shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-base-200 dark:border-gray-600">
-        <span class="text-sm sm:text-center">© 2024 <a href="https://flowbite.com/" class="hover:underline">UEA</a> Water Sensor
+        <span class="text-sm sm:text-center">© 2024 <a href="https://flowbite.com/" class="hover:underline">UEA</a> {% trans "Water Monitoring System" %}
         </span>
         
     </footer>

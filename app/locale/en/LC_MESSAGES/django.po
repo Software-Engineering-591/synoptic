@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-12 16:50+0000\n"
+"POT-Creation-Date: 2024-06-12 01:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -142,9 +142,11 @@ msgid "back-button-water-reading-page"
 msgstr "Back"
 
 #: template/manager/add_water_reading.html:22
+#: template/manager/add_water_reading.html:22
 msgid "add-water-reading-heading"
 msgstr "Add water reading"
 
+#: template/manager/add_water_reading.html:80
 #: template/manager/add_water_reading.html:80
 msgid "submit-button-water-reading"
 msgstr "Submit"
@@ -223,6 +225,46 @@ msgstr "BOD: "
 msgid "temp1"
 msgstr "Temperature (°C): "
 
+#: template/public/home.html:12
+msgid "Alert"
+msgstr "Alerts"
+
+#: template/public/home.html:15
+msgid "Pu Ngao"
+msgstr "Pu Ngao"
+
+#: template/public/home.html:25
+#, fuzzy
+#| msgid "sensors"
+msgid "Sensor"
+msgstr "Sensors"
+
+#: template/public/home.html:26
+msgid "Status"
+msgstr "Status"
+
+#: template/public/home.html:37
+msgid "Drinkable"
+msgstr "Drinkable"
+
+#: template/public/home.html:39
+#, fuzzy
+#| msgid "Contaminated Water"
+msgid "Contaminated-Sensor"
+msgstr "Contaminated"
+
+#: template/public/home.html:42
+msgid "Gathering"
+msgstr "Gathering"
+
+#: template/public/home.html:51
+msgid "Last Updated At"
+msgstr "Last Updated At"
+
+#: template/public/home.html:57
+msgid "Info"
+msgstr "Info"
+
 #: template/public/home.html:61
 msgid "Sanitization"
 msgstr "Sanitization"
@@ -231,10 +273,15 @@ msgstr "Sanitization"
 msgid "Sanitization info"
 msgstr ""
 "Hand Washing: Always wash hands with soap before touching water or food. \n"
-" \n"
-" Clean Containers: Use clean containers to store and collect water. \n"
-" \n"
-" Proper Waste Disposal: Keep animal and human waste away from water sources."
+"\n"
+"Clean Containers: Use clean containers to store and collect water. \n"
+"\n"
+"Proper Waste Disposal: Keep animal and human waste away from water sources. \n"
+"\n"
+"Benefits: \n"
+"\n"
+"Prevention of Diseases: Sanitizing water helps to kill harmful germs and bacteria, preventing diseases. \n"
+"Improved Health: Access to clean water improves overall health and wellbeing, reducing medical costs and increasing productivity."
 
 #: template/public/home.html:68
 msgid "Purification Techniques"
@@ -244,37 +291,26 @@ msgstr "Water Purification Techniques"
 msgid "Purification Techniques info"
 msgstr ""
 "Boiling: \n"
-" \n"
 " How to Do It: Boil water for at least 1 minute. \n"
-" \n"
 " Benefits: Kills most germs and bacteria, making water safe to drink. \n"
-" \n"
+"\n"
 " Filtering: \n"
-" \n"
-" How to Do It: Use a clean cloth or a simple filter to remove dirt and "
-"particles. \n"
-" \n"
+" How to Do It: Use a clean cloth or a simple filter to remove dirt and particles. \n"
 " Benefits: Removes physical impurities, making water clearer and cleaner. \n"
-" \n"
+"\n"
 " Using Chlorine Tablets: \n"
-" \n"
 " How to Do It: Add a chlorine tablet to a container of water and wait for 30 "
 "minutes. \n"
-" \n"
 " Benefits: Kills bacteria and viruses, making water safe for drinking. \n"
-" \n"
+"\n"
 " Solar Disinfection (SODIS): \n"
-" \n"
 " How to Do It: Fill a clear plastic bottle with water and leave it in direct "
 "sunlight for at least 6 hours. \n"
-" \n"
 " Benefits: Sunlight kills germs and bacteria, making water safer to drink. \n"
-" \n"
+"\n"
 " Sand Filtration: \n"
-" \n"
 " How to Do It: Pour water through a container filled with layers of sand and "
 "gravel. \n"
-" \n"
 " Benefits: Removes particles and some bacteria, making water cleaner."
 
 #: template/public/home.html:75
@@ -284,11 +320,19 @@ msgstr "Why Clean Water is Important"
 #: template/public/home.html:77
 msgid "Contaminated Water info"
 msgstr ""
-"Health Benefits: Clean water keeps us healthy. It helps to prevent diseases "
-"like diarrhea, cholera, and typhoid. \n"
-" \n"
-" Daily Use: We use water for drinking, cooking, cleaning, and bathing. It's "
-"important to ensure the water is clean to avoid getting sick."
+"Health Benefits: Clean water keeps us healthy. It helps to prevent diseases like diarrhea, cholera, and typhoid. \n"
+"Daily Use: We use water for drinking, cooking, cleaning, and bathing. It's important to ensure the water is clean to avoid getting sick. \n"
+"\n"
+"Tips for Maintaining Clean Water: \n"
+"\n"
+"Regular Cleaning: Regularly clean water storage containers with soap and water. \n"
+"Avoiding Contaminants: Do not let anything dirty, like hands or utensils, touch the water that is stored for drinking. \n"
+"Safe Collection: Collect water from safe and known sources, preferably treated or filtered sources."
+
+
+#: template/public/home.html:84
+msgid "Water Monitoring System"
+msgstr "Water Monitoring System"
 
 #: template/public/our-goals.html:27
 msgid "Our-Goals-title"
