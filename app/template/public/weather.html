@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n tz tz_detect leaflet_tags static unix_time %}
 {% block head %}
-    <title>Home | Pu Ngao</title>
+    <title>{% trans "Home-|-Pu Ngaol" %}</title>
     {% leaflet_css %}
     {% leaflet_js %}
     <script src="{% static 'public/js/weather_map.js' %}" defer></script>
@@ -30,11 +30,11 @@
         <button class="btn btn-primary"
                 hx-get="{% url 'daily_weather' %}"
                 hx-target="#weather-table"
-                hx-swap="outerHTML">Get Hourly Weather</button>
+                hx-swap="outerHTML">{% trans "Get-Hourly-Weather-button" %}</button>
         <button class="btn btn-secondary"
                 hx-get="{% url 'weekly_weather' %}"
                 hx-target="#weather-table"
-                hx-swap="outerHTML">Get Daily Weather</button>
+                hx-swap="outerHTML">{% trans "Get-Daily-Weather-button" %}</button>
     </div>
     <div hx-get="{% url 'daily_weather' %}"
          hx-target="this"
@@ -47,7 +47,7 @@
              style="background-image: url('{% static 'public/assets/sunrise.jpg' %}')">
             <div class="hero-overlay bg-opacity-70"></div>
             <div class="hero-content text-center font-bold flex flex-col">
-                <h1>Sunrise</h1>
+                <h1>{% trans "weather-page-sunrise-laybel" %}</h1>
                 <p>{{ city.sunrise|unix_to_datetime|timezone:"Asia/Phnom_Penh"|date:"f a" }}</p>
             </div>
         </div>
@@ -55,7 +55,7 @@
              style="background-image: url('{% static 'public/assets/sunset.jpg' %}')">
             <div class="hero-overlay bg-opacity-70"></div>
             <div class="hero-content text-center font-bold flex flex-col">
-                <h1>Sunset</h1>
+                <h1>{% trans "Weather-Page-Sunset-Laybel" %}</h1>
                 <p>{{ city.sunset|unix_to_datetime|timezone:"Asia/Phnom_Penh"|date:"f a" }}</p>
             </div>
         </div>

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n tz tz_detect static leaflet_tags %}
 {% block head %}
-    <title>Home | Pu Ngao</title>
+    <title>{% trans "Home-|-Pu Ngaol" %}</title>
     {% leaflet_js %}
     {% leaflet_css %}
     <script>
@@ -25,7 +25,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
                     </path>
                 </svg>
-                <span class="text-center flex-grow text-current font-bold">Reasoning for danger</span>
+                <span class="text-center flex-grow text-current font-bold">{% trans "Reasoning-for-danger-span" %}</span>
             </div>
             <div class="collapse-content">
                 <div id="map" class="h-64"></div>
@@ -34,8 +34,8 @@
                         <div class="skeleton w-[384] h-[263]" />
                     </figure>
                     <div class="card-body">
-                        <h2 class="card-title">No Graph has been loaded</h2>
-                        <p>Tap on a marker to see what we have predicted</p>
+                        <h2 class="card-title">{% trans "No-Graph-loaded" %}</h2>
+                        <p>{% trans "Tap-marker-to-see-Predictions" %}</p>
                     </div>
                 </div>
             </div>
@@ -80,17 +80,17 @@
         </div>
         <h1 class=" text-{{ level }} font-bold text-2xl text-center p-4 border-4 border-current rounded-lg drop-shadow-[0_45px_65px_currentColor] drop-shadow-[0_0px_20px_currentColor]">
             {% if level == 'success' %}
-                Safe from flood
+                {% trans "Safe-from-flood-status" %}
                 <br />
-                Have a great day!
+                {% trans "Have-a-great-day-message" %}
             {% elif level == 'warning' %}
-                Possible Risk of flood
+                {% trans "possible-risk-of-flood-state" %}
                 <br />
-                Beware!
+                {% trans "Beware-message" %}
             {% elif level == 'error' %}
-                In danger of flood
+                {% trans "Danger-of-flood-state" %}
                 <br />
-                evacutation is advised
+                {% trans "evactuation-advised-message" %}
             {% endif %}
         </h1>
     </main>
