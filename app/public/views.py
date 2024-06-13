@@ -116,10 +116,11 @@ class AlertView(TemplateView):
             'level': max(
                 sensors_data,
                 key=lambda x: x['level'].value,
-            )['level'].name.lower() if sensors_data else "success",
+            )['level'].name.lower()
+            if sensors_data
+            else 'success',
             'sensors': json.dumps(sensors_data, cls=EnhancedJsonEncoder),
         }
-
 
 
 def alert_graph(sensor, reading):
