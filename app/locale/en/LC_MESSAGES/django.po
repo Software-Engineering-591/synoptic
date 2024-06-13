@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-12 11:39+0000\n"
+"POT-Creation-Date: 2024-06-13 06:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,88 +26,92 @@ msgstr ""
 msgid "Khmer"
 msgstr ""
 
-#: manager/forms.py:40
-#, fuzzy
-#| msgid "the-sensor-name-1"
+#: manager/forms.py:16
+msgid "login-form-username-placeholder"
+msgstr "Username"
+
+#: manager/forms.py:26
+msgid "login-form-password-placeholder"
+msgstr "Password"
+
+#: manager/forms.py:43
 msgid "level-for-sensor-individual"
-msgstr "Sensor name: "
+msgstr "Level"
 
-#: manager/forms.py:46
+#: manager/forms.py:50
 msgid "Oxidation-Reduction Potential"
-msgstr "Oxidation-Reduction Potential"
+msgstr "ORP"
 
-#: manager/forms.py:52
+#: manager/forms.py:56
 msgid "Biochemical-oxygen-demand"
-msgstr "Biochemical-oxygen-demand"
+msgstr "BOD"
 
-#: manager/forms.py:58
+#: manager/forms.py:62
 msgid "temperature-for-sensor-individual"
-msgstr "Temperature for {sensor_name}"
+msgstr "Temperature (°C)"
 
-#: manager/forms.py:70
-msgid "latitude-for-form-add-sensor"
-msgstr "Latitude"
-
-#: manager/forms.py:84
-#, fuzzy
-#| msgid "the-sensor-name-1"
+#: manager/forms.py:89
 msgid "sensor-name-individual"
 msgstr "Sensor name: "
 
-#: manager/views.py:25
+#: manager/forms.py:94
+msgid "sensor-already-exists"
+msgstr "Sensor already exists."
+
+#: manager/views.py:29
 msgid "Timestamp"
 msgstr "Timestamp"
 
-#: manager/views.py:81
+#: manager/views.py:84
 #, python-brace-format
 msgid "Temperature for {sensor_name}"
 msgstr "Temperature for {sensor_name}"
 
-#: manager/views.py:82
+#: manager/views.py:85
 msgid "Temperature (°C)"
 msgstr "Temperature (°C)"
 
-#: manager/views.py:88
+#: manager/views.py:91
 #, python-brace-format
 msgid "Water Level for {sensor_name}"
 msgstr "Water Level for {sensor_name}"
 
-#: manager/views.py:89
+#: manager/views.py:92
 msgid "Level (m)"
 msgstr "Level (m)"
 
-#: manager/views.py:95
+#: manager/views.py:98
 #, python-brace-format
 msgid "ORP for {sensor_name}"
 msgstr "ORP for {sensor_name}"
 
-#: manager/views.py:96
+#: manager/views.py:99
 msgid "ORP (mV)"
 msgstr "ORP (mV)"
 
-#: manager/views.py:102
+#: manager/views.py:105
 #, python-brace-format
 msgid "pH for {sensor_name}"
 msgstr "pH for {sensor_name}"
 
-#: manager/views.py:103
+#: manager/views.py:106
 msgid "pH"
 msgstr "pH"
 
-#: manager/views.py:109
+#: manager/views.py:112
 #, python-brace-format
 msgid "BOD for {sensor_name}"
 msgstr "BOD for {sensor_name}"
 
-#: manager/views.py:110
+#: manager/views.py:113
 msgid "BOD"
 msgstr "BOD"
 
-#: public/views.py:134
+#: public/views.py:137
 msgid "Current Day"
 msgstr ""
 
-#: public/views.py:135
+#: public/views.py:138
 msgid "Rainfall(mm)"
 msgstr ""
 
@@ -123,11 +127,17 @@ msgstr "Back"
 msgid "add-sensor-heading-for-sensor-page"
 msgstr "Add Sensor"
 
-#: template/manager/add_sensor.html:41
-msgid "sensor-errors-sensor-page"
-msgstr "{{sensorform.name.errors}}"
+#: template/manager/add_sensor.html:52
+#: template/manager/add_water_reading.html:72
+msgid "lat-placeholder"
+msgstr "Latitude"
 
-#: template/manager/add_sensor.html:56
+#: template/manager/add_sensor.html:58
+#: template/manager/add_water_reading.html:78
+msgid "lon-placeholder"
+msgstr "Longitude"
+
+#: template/manager/add_sensor.html:60
 msgid "submit-for-sensor-page"
 msgstr "Submit"
 
@@ -146,6 +156,24 @@ msgstr "Add water reading"
 #: template/manager/add_water_reading.html:80
 msgid "submit-button-water-reading"
 msgstr "Submit"
+
+#: template/manager/admin_login.html:5
+msgid "admin-login-title"
+msgstr "Admin Login"
+
+#: template/manager/admin_login.html:13
+msgid "admin-login-header"
+msgstr "Admin Login"
+
+#: template/manager/admin_login.html:44
+msgid "login-form-error-message"
+msgstr ""
+"Username or password is incorrect, please try again. Note, fields are case "
+"sensitive."
+
+#: template/manager/admin_login.html:47
+msgid "admin-login-button"
+msgstr "Login"
 
 #: template/manager/dashboard.html:4
 #, fuzzy
@@ -221,6 +249,46 @@ msgstr "BOD: "
 msgid "temp1"
 msgstr "Temperature (°C): "
 
+#: template/public/alert.html:4 template/public/weather.html:4
+msgid "Home | Pu Ngaol"
+msgstr "Pu Ngaol"
+
+#: template/public/alert.html:28
+msgid "Reasoning-for-danger-span"
+msgstr "Reasoning for danger"
+
+#: template/public/alert.html:37
+msgid "No-Graph-loaded"
+msgstr "No Graph has been loaded"
+
+#: template/public/alert.html:38
+msgid "Tap-marker-to-see-Predictions"
+msgstr "Tap on a marker to see what we have predicted"
+
+#: template/public/alert.html:83
+msgid "Safe-from-flood-status"
+msgstr "Safe from flood"
+
+#: template/public/alert.html:85
+msgid "Have-a-great-day-message"
+msgstr "Have a great day!"
+
+#: template/public/alert.html:87
+msgid "possible-risk-of-flood-state"
+msgstr "Possible risk of flood"
+
+#: template/public/alert.html:89
+msgid "Beware-message"
+msgstr "Beware!"
+
+#: template/public/alert.html:91
+msgid "Danger-of-flood-state"
+msgstr "In danger of flood"
+
+#: template/public/alert.html:93
+msgid "evactuation-advised-message"
+msgstr "Evacuation is advised"
+
 #: template/public/home.html:12
 msgid "Alert"
 msgstr "Alerts"
@@ -272,7 +340,8 @@ msgstr ""
 "\n"
 "Clean Containers: Use clean containers to store and collect water. \n"
 "\n"
-"Proper Waste Disposal: Keep animal and human waste away from water sources. \n"
+"Proper Waste Disposal: Keep animal and human waste away from water "
+"sources. \n"
 "\n"
 "Benefits: \n"
 "\n"
@@ -296,7 +365,8 @@ msgstr ""
 " Benefits: Kills most germs and bacteria, making water safe to drink. \n"
 "\n"
 " Filtering: \n"
-" How to Do It: Use a clean cloth or a simple filter to remove dirt and particles. \n"
+" How to Do It: Use a clean cloth or a simple filter to remove dirt and "
+"particles. \n"
 " Benefits: Removes physical impurities, making water clearer and cleaner. \n"
 "\n"
 " Using Chlorine Tablets: \n"
@@ -376,33 +446,37 @@ msgstr ""
 "understand when their rivers have water safe for farming, drinking, washing, "
 "bathing and more"
 
-#: template/public/our-goals.html:45
+#: template/public/our-goals.html:45 template/public/our-goals.html:90
 msgid "click-to-find-clean-water"
 msgstr "click here to find clean water sources"
 
-#: template/public/our-goals.html:46
+#: template/public/our-goals.html:46 template/public/our-goals.html:63
 msgid "click-to-find-weather-predictions"
 msgstr "click here to see weather predictions"
 
-#: template/public/our-goals.html:55
+#: template/public/our-goals.html:47
+msgid "click-to-find-Alerts"
+msgstr "Click here to get alerts"
+
+#: template/public/our-goals.html:56
 msgid "Weather-section-goal-page-title"
 msgstr "Weather"
 
-#: template/public/our-goals.html:57
+#: template/public/our-goals.html:58
 msgid "weather-alert-info"
 msgstr ""
 "Alerts are provided on the weather page for when their is expected to be a "
 "drought or flooddependent on the rainfall and water levels recorded over the "
 "past week."
 
-#: template/public/our-goals.html:58
+#: template/public/our-goals.html:59
 msgid "flooding-weather-alert-info"
 msgstr ""
 "We want to reduce the effect of school, business and house flooding in Pu "
 "Ngaolby giving them access to warnings of potential future floods allowing "
 "them to prepare early."
 
-#: template/public/our-goals.html:59
+#: template/public/our-goals.html:60
 msgid "farming-weather-alert-info"
 msgstr ""
 "This also helps farmers to understand when they should begin to prepare "
@@ -410,7 +484,7 @@ msgstr ""
 "to put in specific measures to ensure they can sustain themself and "
 "theirfamilies."
 
-#: template/public/our-goals.html:60
+#: template/public/our-goals.html:61
 msgid "transport-safety-weather-alert-info"
 msgstr ""
 "We also want to help with safety issues by helping to alert residents when "
@@ -419,69 +493,83 @@ msgstr ""
 "tracks or even potentiallyinjured. Furthermore, this reduces overcrowding in "
 "hospitals."
 
-#: template/public/our-goals.html:62
-msgid "Get-weather-predictions"
-msgstr "Get Weather predictions"
-
-#: template/public/our-goals.html:71
+#: template/public/our-goals.html:72
 msgid "water-laybel-in-goal-page"
 msgstr "Water"
 
-#: template/public/our-goals.html:73
+#: template/public/our-goals.html:74
 msgid "goals-page-farming-and-production"
 msgstr "Farming and Production"
 
-#: template/public/our-goals.html:75
+#: template/public/our-goals.html:76
 msgid "safe-water-leads-to-safer-produce"
 msgstr "allowing crops to grow with safe water leading to less food poisoning"
 
-#: template/public/our-goals.html:76
+#: template/public/our-goals.html:77
 msgid "better-quality-water-increases-yeild"
 msgstr "Growing crops with better quality water often leads to increased yield"
 
-#: template/public/our-goals.html:77
+#: template/public/our-goals.html:78
 msgid "higher-yeild-increases-economy"
 msgstr ""
 "farmers can produce and sell more meaning they will have more disposable "
 "income, help their community and provide sufficient resources for their "
 "families leading to decreased starvation."
 
-#: template/public/our-goals.html:79
+#: template/public/our-goals.html:80
 msgid "Goals-page-water-for-household-use"
 msgstr "household use"
 
-#: template/public/our-goals.html:80
+#: template/public/our-goals.html:81
 msgid "what-water-is-used-for"
 msgstr "cooking, cleaning, bathing, consuming and providing to family"
 
-#: template/public/our-goals.html:81
+#: template/public/our-goals.html:82
 msgid "safe-water-has-less-fear-of-sickness"
 msgstr "less worry that your family and community will get sick"
 
-#: template/public/our-goals.html:82
+#: template/public/our-goals.html:83
 msgid "better-quality-water-decreases-hospital-overcrowding"
 msgstr "less hospitalisation"
 
-#: template/public/our-goals.html:83
+#: template/public/our-goals.html:84
 msgid "Goals-page-traiding-of-water"
 msgstr "Trading"
 
-#: template/public/our-goals.html:84
+#: template/public/our-goals.html:85
 msgid "trade-better-quality-water"
 msgstr "Allows for trading of better quality water"
 
-#: template/public/our-goals.html:85
+#: template/public/our-goals.html:86
 msgid "safe-water-creates-loyal-customer-base"
 msgstr ""
 "Assures clients are less likely to get ill, creating a loyal client base"
 
-#: template/public/our-goals.html:86
+#: template/public/our-goals.html:87
 msgid "trade-high-quality-improves-economy"
 msgstr "improves the economy in the community"
 
-#: template/public/our-goals.html:89
-msgid "find-clean-water-button"
-msgstr "Find Clean Water"
+#: template/public/weather.html:33
+msgid "Get-Hourly-Weather-button"
+msgstr "Get Hourly Weather"
+
+#: template/public/weather.html:37
+msgid "Get-Daily-Weather-button"
+msgstr "Get Daily Weather"
+
+#: template/public/weather.html:50
+msgid "weather-page-sunrise-laybel"
+msgstr "Sunrise"
+
+#: template/public/weather.html:58
+msgid "Weather-Page-Sunset-Laybel"
+msgstr "Sunset"
+
+#~ msgid "find-clean-water-button"
+#~ msgstr "Find Clean Water"
+
+#~ msgid "latitude-for-form-add-sensor"
+#~ msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា"
 
 #, fuzzy
 #~| msgid "the-sensor-name-1"

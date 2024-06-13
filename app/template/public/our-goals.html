@@ -42,8 +42,9 @@
                             <h1 class="mb-5 text-5xl pt-20 font-bold">{% trans "Our-Journey-title" %}</h1>
                             <p class="pb-10">{% blocktranslate %}our-development-journey{% endblocktranslate %}</p>
                         </p>
-                        <button class="btn mb-5 btn-primary">{% trans "click-to-find-clean-water" %}</button>
-                        <button class="btn btn-primary">{% trans "click-to-find-weather-predictions" %}</button>
+                        <a role="button" href="{% url 'index' %}" class="btn mb-5 btn-primary">{% trans "click-to-find-clean-water" %}</a>
+                        <a role="button" href="{% url 'weather' %}" class="btn mb-5 btn-primary">{% trans "click-to-find-weather-predictions" %}</a>
+                        <a role="button" href="{% url 'alert' %}" class="btn mb-5 btn-primary">{% trans "click-to-find-Alerts" %}</a>
                     </div>
                 </div>
             </div>
@@ -59,7 +60,7 @@
                             <p class="pb-5">{% blocktranslate %}farming-weather-alert-info{% endblocktranslate %}</p>
                             <p class="pb-10">{% blocktranslate %}transport-safety-weather-alert-info{% endblocktranslate %}</p>
                         </p>
-                        <button class="btn btn-primary">{% trans "Get-weather-predictions" %}</button>
+                        <a role="button" href="{% url 'weather' %}" class="btn btn-primary">{% trans "click-to-find-weather-predictions" %}</a>
                     </div>
                 </div>
             </div>
@@ -86,7 +87,7 @@
                             <li class="pb-10">{% trans "trade-high-quality-improves-economy" %}</li>
                         </p>
                         <!-- link to find water source page -->
-                        <button class=" btn btn-primary">{% trans "find-clean-water-button" %}</button>
+                        <a role="button" href="{% url 'index' %}" class="btn mb-5 btn-primary">{% trans "click-to-find-clean-water" %}</a>
                     </div>
                 </div>
             </div>

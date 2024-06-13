@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-12 11:39+0000\n"
+"POT-Creation-Date: 2024-06-13 06:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,84 +25,92 @@ msgstr ""
 msgid "Khmer"
 msgstr ""
 
-#: manager/forms.py:40
+#: manager/forms.py:16
+msgid "login-form-username-placeholder"
+msgstr "ឈ្មោះ​អ្នកប្រើប្រាស់"
+
+#: manager/forms.py:26
+msgid "login-form-password-placeholder"
+msgstr "ពាក្យសម្ងាត់"
+
+#: manager/forms.py:43
 msgid "level-for-sensor-individual"
-msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា: "
+msgstr "កម្រិត: "
 
-#: manager/forms.py:46
+#: manager/forms.py:50
 msgid "Oxidation-Reduction Potential"
-msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម"
+msgstr "ORP"
 
-#: manager/forms.py:52
+#: manager/forms.py:56
 msgid "Biochemical-oxygen-demand"
-msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី"
+msgstr "BOD"
 
-#: manager/forms.py:58
+#: manager/forms.py:62
 msgid "temperature-for-sensor-individual"
-msgstr "សីតុណ្ហភាពសម្រាប់ {sensor_name}"
+msgstr "សីតុណ្ហភាព"
 
-#: manager/forms.py:70
-msgid "latitude-for-form-add-sensor"
-msgstr "បន្ថែមឧបករណ៍ចាប់សញ្ញា"
-
-#: manager/forms.py:84
+#: manager/forms.py:89
 msgid "sensor-name-individual"
-msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា: "
+msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា៖ "
 
-#: manager/views.py:25
+#: manager/forms.py:94
+msgid "sensor-already-exists"
+msgstr "ឈ្មោះឧបករណ៍ចាប់សញ្ញា"
+
+#: manager/views.py:29
 msgid "Timestamp"
 msgstr "សំគាល់ពេល"
 
-#: manager/views.py:81
+#: manager/views.py:84
 #, python-brace-format
 msgid "Temperature for {sensor_name}"
 msgstr "សីតុណ្ហភាពសម្រាប់ {sensor_name}"
 
-#: manager/views.py:82
+#: manager/views.py:85
 msgid "Temperature (°C)"
 msgstr "សីតុណ្ហភាព (មើលលម្អិត)"
 
-#: manager/views.py:88
+#: manager/views.py:91
 #, python-brace-format
 msgid "Water Level for {sensor_name}"
 msgstr "ម្រិតទឹកសម្រាប់ {sensor_name}"
 
-#: manager/views.py:89
+#: manager/views.py:92
 msgid "Level (m)"
 msgstr "ម្រិតទឹកសម្រាប់ (ម៉ែត្រ)"
 
-#: manager/views.py:95
+#: manager/views.py:98
 #, python-brace-format
 msgid "ORP for {sensor_name}"
 msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម សម្រាប់ {sensor_name}"
 
-#: manager/views.py:96
+#: manager/views.py:99
 msgid "ORP (mV)"
 msgstr "សក្តានុពលកាត់បន្ថយអុកស៊ីតកម្ម (មីលីវ៉ុល)"
 
-#: manager/views.py:102
+#: manager/views.py:105
 #, python-brace-format
 msgid "pH for {sensor_name}"
 msgstr "ទំហ សម្រាប់ {sensor_name}"
 
-#: manager/views.py:103
+#: manager/views.py:106
 msgid "pH"
 msgstr "ទំហ"
 
-#: manager/views.py:109
+#: manager/views.py:112
 #, python-brace-format
 msgid "BOD for {sensor_name}"
 msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី {sensor_name}"
 
-#: manager/views.py:110
+#: manager/views.py:113
 msgid "BOD"
 msgstr "តម្រូវការអុកស៊ីសែនជីវគីមី សម្រាប់"
 
-#: public/views.py:134
+#: public/views.py:137
 msgid "Current Day"
 msgstr ""
 
-#: public/views.py:135
+#: public/views.py:138
 msgid "Rainfall(mm)"
 msgstr ""
 
@@ -118,11 +126,17 @@ msgstr "ត្រឡប់មកវិញ"
 msgid "add-sensor-heading-for-sensor-page"
 msgstr "បន្ថែមឧបករណ៍ចាប់សញ្ញា"
 
-#: template/manager/add_sensor.html:41
-msgid "sensor-errors-sensor-page"
-msgstr "{{sensorform.name.errors}}"
+#: template/manager/add_sensor.html:52
+#: template/manager/add_water_reading.html:72
+msgid "lat-placeholder"
+msgstr "រយៈទទឹង"
 
-#: template/manager/add_sensor.html:56
+#: template/manager/add_sensor.html:58
+#: template/manager/add_water_reading.html:78
+msgid "lon-placeholder"
+msgstr "រយៈបណ្តោយ"
+
+#: template/manager/add_sensor.html:60
 msgid "submit-for-sensor-page"
 msgstr "ដាក់ស្នើ"
 
@@ -141,6 +155,22 @@ msgstr "បន្ថែមការអានទឹក។"
 #: template/manager/add_water_reading.html:80
 msgid "submit-button-water-reading"
 msgstr "ដាក់ស្នើ"
+
+#: template/manager/admin_login.html:5
+msgid "admin-login-title"
+msgstr "ចូលគ្រប់គ្រង"
+
+#: template/manager/admin_login.html:13
+msgid "admin-login-header"
+msgstr "ចូលគ្រប់គ្រង"
+
+#: template/manager/admin_login.html:44
+msgid "login-form-error-message"
+msgstr "ឈ្មោះអ្នកប្រើ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ សូមព្យាយាមម្តងទៀត។ ចំណាំ វាលគឺប្រកាន់អក្សរតូចធំ។"
+
+#: template/manager/admin_login.html:47
+msgid "admin-login-button"
+msgstr "ចូល"
 
 #: template/manager/dashboard.html:4
 #, fuzzy
@@ -216,6 +246,46 @@ msgstr "តម្រូវការអុកស៊ីសែនជីវគីម
 msgid "temp1"
 msgstr "សីតុណ្ហភាព (មើលលម្អិត): "
 
+#: template/public/alert.html:4 template/public/weather.html:4
+msgid "Home-|-Pu Ngaol"
+msgstr "ហេតុផលសម្រាប់គ្រោះថ្នាក់"
+
+#: template/public/alert.html:28
+msgid "Reasoning-for-danger-span"
+msgstr "ហេតុផលសម្រាប់គ្រោះថ្នាក់"
+
+#: template/public/alert.html:37
+msgid "No-Graph-loaded"
+msgstr "គ្មានក្រាហ្វត្រូវបានផ្ទុកទេ។"
+
+#: template/public/alert.html:38
+msgid "Tap-marker-to-see-Predictions"
+msgstr "ចុចលើសញ្ញាសម្គាល់ដើម្បីមើលអ្វីដែលយើងបានព្យាករណ៍"
+
+#: template/public/alert.html:83
+msgid "Safe-from-flood-status"
+msgstr "មានសុវត្ថិភាពពីទឹកជំនន់"
+
+#: template/public/alert.html:85
+msgid "Have-a-great-day-message"
+msgstr "សូម​ឱ្យ​មាន​ថ្ងៃ​ល្អ!"
+
+#: template/public/alert.html:87
+msgid "possible-risk-of-flood-state"
+msgstr "ហានិភ័យដែលអាចកើតមាននៃទឹកជំនន់"
+
+#: template/public/alert.html:89
+msgid "Beware-message"
+msgstr "ប្រយ័ត្ន"
+
+#: template/public/alert.html:91
+msgid "Danger-of-flood-state"
+msgstr "ស្ថិតក្នុងគ្រោះថ្នាក់ទឹកជំនន់"
+
+#: template/public/alert.html:93
+msgid "evactuation-advised-message"
+msgstr "ការជម្លៀសត្រូវបានណែនាំ"
+
 #: template/public/home.html:12
 msgid "Alert"
 msgstr "ដាស់តឿន"
@@ -276,7 +346,6 @@ msgstr ""
 "ការការពារប្រជាជនដែលខ្សោយ: សំខាន់ជាពិសេសសម្រាប់កុមារ, អ្នកចាស់, និងអ្នកមានប្រព័ន្ធភាពស៊ាំខ្សោយ។ \n"
 "\n"
 "ការបន្ថយការចម្លងមេរោគ: ការលាងដៃជាប្រចាំជួយការពារការចម្លងមេរោគទៅអ្នកផ្សេងទៀត, ធ្វើឱ្យគ្រួសារ និងសហគមន៍មានសុខភាពល្អ។"
-
 
 #: template/public/home.html:68
 msgid "Purification Techniques"
@@ -364,105 +433,123 @@ msgstr ""
 "ដើម្បីយល់ពីពេលដែលពួកគេគួររំពឹងថានឹងមានទឹកជំនន់ ឬគ្រោះរាំងស្ងួត ហើយអនុញ្ញាតឱ្យពួកគេ។"
 "ដើម្បីយល់ពីពេលដែលទន្លេរបស់ពួកគេមានទឹកមានសុវត្ថិភាពសម្រាប់ធ្វើកសិកម្ម ផឹក លាង។ងូតទឹក និងច្រើនទៀត។"
 
-#: template/public/our-goals.html:45
+#: template/public/our-goals.html:45 template/public/our-goals.html:90
 msgid "click-to-find-clean-water"
 msgstr "ចុចទីនេះដើម្បីស្វែងរកប្រភពទឹកស្អាត"
 
-#: template/public/our-goals.html:46
+#: template/public/our-goals.html:46 template/public/our-goals.html:63
 msgid "click-to-find-weather-predictions"
 msgstr "ចុចទីនេះដើម្បីមើលការព្យាករណ៍អាកាសធាតុ"
 
-#: template/public/our-goals.html:55
+#: template/public/our-goals.html:47
+msgid "click-to-find-Alerts"
+msgstr "ចុចទីនេះដើម្បីទទួលបានការជូនដំណឹង"
+
+#: template/public/our-goals.html:56
 msgid "Weather-section-goal-page-title"
 msgstr "អាកាសធាតុ"
 
-#: template/public/our-goals.html:57
+#: template/public/our-goals.html:58
 msgid "weather-alert-info"
 msgstr ""
 "ការ​ជូន​ដំណឹង​ត្រូវ​បាន​ផ្ដល់​ជូន​នៅ​លើ​ទំព័រ​អាកាសធាតុ​សម្រាប់​ពេល​ដែល​គេ​រំពឹង​ថា​នឹង​មាន​គ្រោះ​រាំង​ស្ងួត ឬ​"
 "ទឹកជំនន់អាស្រ័យ​លើ​ជំនន់​ទឹកភ្លៀង និង​កម្រិត​ទឹក​ដែល​បាន​កត់ត្រា​ក្នុង​សប្តាហ៍​កន្លងមក។"
 
-#: template/public/our-goals.html:58
+#: template/public/our-goals.html:59
 msgid "flooding-weather-alert-info"
 msgstr ""
 "យើងចង់កាត់បន្ថយឥទ្ធិពលនៃទឹកជំនន់សាលារៀន អាជីវកម្ម និងផ្ទះនៅ Pu "
 "Ngaolដោយផ្តល់ឱ្យពួកគេនូវលទ្ធភាពទទួលបានការព្រមានអំពីទឹកជំនន់នាពេលអនាគតដែលអាចឱ្យពួកគេរៀបចំបានទាន់ពេលវេលា។"
 
-#: template/public/our-goals.html:59
+#: template/public/our-goals.html:60
 msgid "farming-weather-alert-info"
 msgstr ""
 "នេះ​ក៏​ជួយ​កសិករ​ឱ្យ​យល់​ពី​ពេលណា​ដែល​ពួកគេ​គួរ​ចាប់ផ្តើម​រៀបចំ​វាលស្រែ​តាម​រដូវ​កាល និង​"
 "ក៏ព្យាករណ៍ពីទិន្នផលសក្តានុពលរបស់ពួកគេ ដើម្បីអាចដាក់វិធានការជាក់លាក់ "
 "ដើម្បីធានាថាពួកគេអាចទ្រទ្រង់ខ្លួនឯង និងរបស់ពួកគេ។គ្រួសារ។"
 
-#: template/public/our-goals.html:60
+#: template/public/our-goals.html:61
 msgid "transport-safety-weather-alert-info"
 msgstr ""
 "យើង​ក៏​ចង់​ជួយ​បញ្ហា​សុវត្ថិភាព​ដោយ​ជួយ​ប្រាប់​អ្នក​ស្រុក​ពេល​ពួកគេ​មិន​គួរ​ប្រើ​មធ្យោបាយ​ធ្វើ​ដំណើរ​ដូចជា​កង់​ជាដើម។"
 "របស់ពួកគេគឺជាការកើនឡើងនូវលទ្ធភាពនៃព្យុះដែលអាចបណ្តាលឱ្យពួកគេឈឺ ឬជាប់គាំងនៅលើផ្លូវភក់ "
 "ឬសូម្បីតែសក្តានុពល។រងរបួស។ លើស​ពី​នេះ​ទៅ​ទៀត នេះ​កាត់​បន្ថយ​ចំនួន​មនុស្ស​លើស​ចំណុះ​នៅ​ក្នុង​មន្ទីរពេទ្យ។"
 
-#: template/public/our-goals.html:62
-msgid "Get-weather-predictions"
-msgstr "ទទួលបានការព្យាករណ៍អាកាសធាតុ"
-
-#: template/public/our-goals.html:71
+#: template/public/our-goals.html:72
 msgid "water-laybel-in-goal-page"
 msgstr "ទឹក។"
 
-#: template/public/our-goals.html:73
+#: template/public/our-goals.html:74
 msgid "goals-page-farming-and-production"
 msgstr "កសិកម្មនិងផលិតកម្"
 
-#: template/public/our-goals.html:75
+#: template/public/our-goals.html:76
 msgid "safe-water-leads-to-safer-produce"
 msgstr "អនុញ្ញាតឱ្យដំណាំលូតលាស់ដោយទឹកមានសុវត្ថិភាព នាំឱ្យមានការពុលអាហារតិច"
 
-#: template/public/our-goals.html:76
+#: template/public/our-goals.html:77
 msgid "better-quality-water-increases-yeild"
 msgstr "ការដាំដុះដំណាំដែលមានទឹកមានគុណភាពល្អ ច្រើនតែនាំអោយមានទិន្នផលកើនឡើង"
 
-#: template/public/our-goals.html:77
+#: template/public/our-goals.html:78
 msgid "higher-yeild-increases-economy"
 msgstr ""
 "កសិករអាចផលិត និងលក់បានកាន់តែមានន័យ ពួកគេនឹងមានប្រាក់ចំណូលប្រើប្រាស់ច្រើនជាងមុន ជួយសហគមន៍របស់ពួកគេ "
 "និងផ្តល់ធនធានគ្រប់គ្រាន់សម្រាប់គ្រួសាររបស់ពួកគេ ដែលនាំឱ្យមានការថយចុះនៃភាពអត់ឃ្លាន។"
 
-#: template/public/our-goals.html:79
+#: template/public/our-goals.html:80
 msgid "Goals-page-water-for-household-use"
 msgstr "ការប្រើប្រាស់ក្នុងផ្ទះ"
 
-#: template/public/our-goals.html:80
+#: template/public/our-goals.html:81
 msgid "what-water-is-used-for"
 msgstr "ចម្អិនអាហារ សម្អាត ងូតទឹក ប្រើប្រាស់ និងផ្គត់ផ្គង់ដល់គ្រួសារ"
 
-#: template/public/our-goals.html:81
+#: template/public/our-goals.html:82
 msgid "safe-water-has-less-fear-of-sickness"
 msgstr "បារម្ភតិចថាគ្រួសារ និងសហគមន៍របស់អ្នកនឹងឈឺ"
 
-#: template/public/our-goals.html:82
+#: template/public/our-goals.html:83
 msgid "better-quality-water-decreases-hospital-overcrowding"
 msgstr "សម្រាកនៅមន្ទីរពេទ្យតិច"
 
-#: template/public/our-goals.html:83
+#: template/public/our-goals.html:84
 msgid "Goals-page-traiding-of-water"
 msgstr "ការជួញដូរ"
 
-#: template/public/our-goals.html:84
+#: template/public/our-goals.html:85
 msgid "trade-better-quality-water"
 msgstr "អនុញ្ញាតឱ្យមានការជួញដូរទឹកដែលមានគុណភាពល្អជាង"
 
-#: template/public/our-goals.html:85
+#: template/public/our-goals.html:86
 msgid "safe-water-creates-loyal-customer-base"
 msgstr "ធានាថាអតិថិជនទំនងជាមិនសូវឈឺ បង្កើតមូលដ្ឋានអតិថិជនស្មោះត្រង់"
 
-#: template/public/our-goals.html:86
+#: template/public/our-goals.html:87
 msgid "trade-high-quality-improves-economy"
 msgstr "ធ្វើអោយសេដ្ឋកិច្ចក្នុងសហគមន៍មានភាពប្រសើរឡើង"
 
-#: template/public/our-goals.html:89
-msgid "find-clean-water-button"
-msgstr "ស្វែងរកទឹកស្អាត"
+#: template/public/weather.html:33
+msgid "Get-Hourly-Weather-button"
+msgstr "ទទួលបានអាកាសធាតុប្រចាំម៉ោង"
+
+#: template/public/weather.html:37
+msgid "Get-Daily-Weather-button"
+msgstr "ទទួលបានអាកាសធាតុប្រចាំថ្ងៃ"
+
+#: template/public/weather.html:50
+msgid "weather-page-sunrise-laybel"
+msgstr "ព្រះអាទិត្យរះ"
+
+#: template/public/weather.html:58
+msgid "Weather-Page-Sunset-Laybel"
+msgstr "ថ្ងៃលិច"
+
+#~ msgid "find-clean-water-button"
+#~ msgstr "ស្វែងរកទឹកស្អាត"
+
+#~ msgid "latitude-for-form-add-sensor"
+#~ msgstr "បន្ថែមឧបករណ៍ចាប់សញ្ញា"
 
 #~| msgid "the-sensor-name-1"
 #~ msgid "sensor-name-sensor-page"

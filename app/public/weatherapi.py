@@ -158,7 +158,7 @@ def get_weekly_weather(**params) -> Optional[list[DailyWeather]]:
                     ),
                 )
             )
-            print(current_weather)
+           
             sentinal = weather.dt_txt
             current_weather = []
         current_weather.append(weather)
