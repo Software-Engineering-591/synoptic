@@ -401,9 +401,7 @@ msgstr ""
 "\n"
 "ការប្រមូលទឹកសុវត្ថិភាព: ប្រមូលទឹកពីប្រភពដែលមានសុវត្ថិភាព និងមានការដឹងពីមុន, គួរតែត្រូវបានបន្ថយ ឬច្រោះទឹក។"
 
-#: template/public/home.html:84
-msgid "Water Monitoring System"
-msgstr "ប្រព័ន្ធត្រួតពិនិត្យទឹក។"
+
 
 #: template/public/our-goals.html:27
 msgid "Our-Goals-title"
