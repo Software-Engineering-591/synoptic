@@ -31,8 +31,7 @@ class WeatherView(TemplateView):
 
     def get_context_data(self):
         m = get_weather_data(**settings.WEATHER_INFO, units='metric')
-        print(m.city)
-        print(datetime.now().timestamp())
+       
         if m.is_ok():
             return {'city': m.city, 'now': datetime.now().timestamp()}
         return {'city': None}
@@ -92,6 +91,8 @@ class AlertView(TemplateView):
             readings = WaterReading.objects.filter(sensor=sensor).order_by(
                 '-timestamp'
             )[:2]
+            if not readings.exists():
+                continue
             if readings[0].level > DANGER_LEVEL:
                 level = AlertLevel.ERROR
             elif readings[0].level > WARNING_LEVEL:
@@ -115,7 +116,9 @@ class AlertView(TemplateView):
             'level': max(
                 sensors_data,
                 key=lambda x: x['level'].value,
-            )['level'].name.lower(),
+            )['level'].name.lower()
+            if sensors_data
+            else 'success',
             'sensors': json.dumps(sensors_data, cls=EnhancedJsonEncoder),
         }
 
