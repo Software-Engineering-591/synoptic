@@ -1,5 +1,5 @@
 from django.test import TestCase  # noqa: F401
-
+from django.test import Client
 from .models import WaterReading
 from sensor.models import Sensor
 from django.contrib.gis.geos import Point
@@ -87,3 +87,35 @@ class WaterReadingTest(TestCase):
 
         for water in dirty:
             self.assertFalse(water.clean_condition())
+
+
+# This class tests if the urls in urls.py can be reached
+# In order for self.assertTrue to be valid, status code must equal 200
+class WebpageTest(TestCase):
+    def setUp(self):
+        self.c = Client()
+
+    ## Testing login page status code 200
+    def test_login(self):
+        response = self.c.get('/manager/login', follow=True)
+        self.assertTrue(response.status_code == 200)
+
+    ## Testing logout page status code 200
+    def test_logout(self):
+        response = self.c.get('/manager/logout', follow=True)
+        self.assertTrue(response.status_code == 200)
+
+    ## Testing add_water page status code 200
+    def test_add_water(self):
+        response = self.c.get('/manager/add_water', follow=True)
+        self.assertTrue(response.status_code == 200)
+
+    ## Testing add_sensor page status code 200
+    def test_add_sensor(self):
+        response = self.c.get('/manager/add_sensor', follow=True)
+        self.assertTrue(response.status_code == 200)
+
+    ## Testing dashboard page status code 200
+    def test_dashboard(self):
+        response = self.c.get('', follow=True)
+        self.assertTrue(response.status_code == 200)

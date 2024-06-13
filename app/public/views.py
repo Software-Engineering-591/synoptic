@@ -92,32 +92,34 @@ class AlertView(TemplateView):
             readings = WaterReading.objects.filter(sensor=sensor).order_by(
                 '-timestamp'
             )[:2]
-            if readings[0].level > DANGER_LEVEL:
-                level = AlertLevel.ERROR
-            elif readings[0].level > WARNING_LEVEL:
-                level = AlertLevel.WARNING
-            else:
-                level = AlertLevel.SUCCESS
-            sensors_data.append(
-                {
-                    'sensor': {
-                        'id': sensor.id,
-                        'name': sensor.name,
-                        'point': sensor.point.coords[
-                            ::-1
-                        ],  # reverse the order since the coords is [lat, lng]
-                    },
-                    'level': level,
-                }
-            )
+            if readings.exists():
+                if readings[0].level > DANGER_LEVEL:
+                    level = AlertLevel.ERROR
+                elif readings[0].level > WARNING_LEVEL:
+                    level = AlertLevel.WARNING
+                else:
+                    level = AlertLevel.SUCCESS
+                sensors_data.append(
+                    {
+                        'sensor': {
+                            'id': sensor.id,
+                            'name': sensor.name,
+                            'point': sensor.point.coords[
+                                ::-1
+                            ],  # reverse the order since the coords is [lat, lng]
+                        },
+                        'level': level,
+                    }
+                )
 
         return {
             'level': max(
                 sensors_data,
                 key=lambda x: x['level'].value,
-            )['level'].name.lower(),
+            )['level'].name.lower() if sensors_data else "success",
             'sensors': json.dumps(sensors_data, cls=EnhancedJsonEncoder),
         }
+
 
 
 def alert_graph(sensor, reading):

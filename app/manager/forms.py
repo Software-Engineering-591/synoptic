@@ -5,7 +5,7 @@ from .models import WaterReading, Sensor
 from django.utils.translation import gettext_lazy as _
 
 
-class Loginform(AuthenticationForm):
+class LoginForm(AuthenticationForm):
     ## Fields for login form, seems for username, to enforce clientside
     # , need a camal cased maxLength html attribute to enforce
     username = forms.CharField(
@@ -78,7 +78,7 @@ class Latandlon(forms.Form):
     lon = forms.FloatField(widget=forms.NumberInput(attrs={'id': 'lon'}))
 
 
-class Addsensorform(ModelForm):
+class AddSensorForm(ModelForm):
     class Meta:
         model = Sensor
         fields = ['name']
