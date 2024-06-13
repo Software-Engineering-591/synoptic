@@ -199,7 +199,7 @@ def add_water_view(request):
                 bod=form.cleaned_data['bod'],
                 ph=form.cleaned_data['ph'],
                 temperature=form.cleaned_data['temperature'],
-                # Filtering the point field of sensor objects to match fetched lat and lon
+                # Filtering the point value
                 sensor=Sensor.objects.get(point=Point(fetched_lon, fetched_lat)),
                 timestamp=timezone.now(),
             )
@@ -256,6 +256,7 @@ def add_sensor_view(request):
             'manager/add_sensor.html',
             {'latform': latform, 'sensorform': sensorform},
         )
+
 
 @require_POST
 def logout_view(request):
