@@ -100,11 +100,6 @@ class WebpageTest(TestCase):
         response = self.c.get('/manager/login', follow=True)
         self.assertTrue(response.status_code == 200)
 
-    ## Testing logout page status code 200
-    def test_logout(self):
-        response = self.c.get('/manager/logout', follow=True)
-        self.assertTrue(response.status_code == 200)
-
     ## Testing add_water page status code 200
     def test_add_water(self):
         response = self.c.get('/manager/add_water', follow=True)

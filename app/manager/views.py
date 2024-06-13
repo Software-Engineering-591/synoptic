@@ -5,6 +5,7 @@ import json
 import matplotlib.pyplot as plt
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 from django.contrib.gis.geos import Point
 from django.shortcuts import redirect, render, reverse
 from django.utils import timezone
@@ -241,8 +242,6 @@ def add_sensor_view(request):
                 # Creating new point object and assigning it to new object point
                 point=Point(float(longitude), float(latitude)),
             )
-            print(new_sensor)
-            print(new_sensor.__dict__)
             new_sensor.save()
             return redirect('dashboard')
         else:
@@ -258,7 +257,7 @@ def add_sensor_view(request):
             {'latform': latform, 'sensorform': sensorform},
         )
 
-
+@require_POST
 def logout_view(request):
     """
     Handles logout request by user.

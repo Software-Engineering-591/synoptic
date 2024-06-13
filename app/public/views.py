@@ -31,8 +31,7 @@ class WeatherView(TemplateView):
 
     def get_context_data(self):
         m = get_weather_data(**settings.WEATHER_INFO, units='metric')
-        print(m.city)
-        print(datetime.now().timestamp())
+       
         if m.is_ok():
             return {'city': m.city, 'now': datetime.now().timestamp()}
         return {'city': None}
@@ -92,25 +91,26 @@ class AlertView(TemplateView):
             readings = WaterReading.objects.filter(sensor=sensor).order_by(
                 '-timestamp'
             )[:2]
-            if readings.exists():
-                if readings[0].level > DANGER_LEVEL:
-                    level = AlertLevel.ERROR
-                elif readings[0].level > WARNING_LEVEL:
-                    level = AlertLevel.WARNING
-                else:
-                    level = AlertLevel.SUCCESS
-                sensors_data.append(
-                    {
-                        'sensor': {
-                            'id': sensor.id,
-                            'name': sensor.name,
-                            'point': sensor.point.coords[
-                                ::-1
-                            ],  # reverse the order since the coords is [lat, lng]
-                        },
-                        'level': level,
-                    }
-                )
+            if not readings.exists():
+                continue
+            if readings[0].level > DANGER_LEVEL:
+                level = AlertLevel.ERROR
+            elif readings[0].level > WARNING_LEVEL:
+                level = AlertLevel.WARNING
+            else:
+                level = AlertLevel.SUCCESS
+            sensors_data.append(
+                {
+                    'sensor': {
+                        'id': sensor.id,
+                        'name': sensor.name,
+                        'point': sensor.point.coords[
+                            ::-1
+                        ],  # reverse the order since the coords is [lat, lng]
+                    },
+                    'level': level,
+                }
+            )
 
         return {
             'level': max(
