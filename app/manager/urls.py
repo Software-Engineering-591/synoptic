@@ -7,4 +7,5 @@ urlpatterns = [
     path('add_water/', views.add_water_view, name='add_water'),
     path('add_sensor/', views.add_sensor_view, name='add_sensor'),
     path('', views.dashboard, name='dashboard'),
+    path('graph/<int:sensor_id>/<str:param>/', views.manager_graph, name='manager_graph'),
 ]

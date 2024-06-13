@@ -7,10 +7,12 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.contrib.gis.geos import Point
-from django.shortcuts import redirect, render, reverse
+from django.shortcuts import redirect, render, reverse, get_object_or_404
 from django.utils import timezone
 from django.utils.translation import gettext as _
 from django_htmx.http import HttpResponseClientRedirect
+from django.views.generic import TemplateView
+
 
 from manager.forms import AddSensorForm, Addwaterform, Latandlon, LoginForm
 
@@ -20,7 +22,7 @@ from .models import Sensor, WaterReading
 
 
 # graph
-def generate_graph(readings, parameter, title, ylabel):
+def generate_graph(readings, parameter, title, ylabel, **kwargs):
     plt.figure(figsize=(6, 4))
 
     timestamps = [reading.timestamp for reading in readings]
@@ -39,6 +41,63 @@ def generate_graph(readings, parameter, title, ylabel):
 
     graph = base64.b64encode(image_png).decode('utf-8')
     return graph
+
+
+
+class AlertGraphView(TemplateView):
+    template_name = 'partial/manager_graph.html'
+
+    def get_context_data(self, **kwargs):
+        s = super().get_context_data(**kwargs)
+        id = self.request.GET.get('sensor_id') or 0
+        sensor = get_object_or_404(Sensor, id=id)
+        try:
+            id = int(id)
+        except:
+            return {"graph": ""}
+        readings = WaterReading.objects.filter(sensor=sensor).order_by('timestamp')
+        param = self.request.GET.get('param') or ""
+        print(id, param)
+        print (self.kwargs)
+        title = {
+            'level': _('Water Level'),
+            'orp': _('ORP'),
+            'ph': _('pH'),
+            'bod': _('BOD'),
+            'temperature': _('Temperature'),
+        }
+        ylabel = {
+            'level': _('m'),
+            'orp': _('mV'),
+            'ph': _('pH'),
+            'bod': _('BOD'),
+            'temperature': _('°C'),
+        }
+        graph = generate_graph(readings, param, title.get(param, None), ylabel.get(param, None))
+        return {"graph": graph}
+
+def manager_graph(request, sensor_id, param):
+
+    sensor = get_object_or_404(Sensor, id=sensor_id)
+    readings = WaterReading.objects.filter(sensor=sensor).order_by('timestamp')
+    title = {
+        'level': _('Water Level'),
+        'orp': _('ORP'),
+        'ph': _('pH'),
+        'bod': _('BOD'),
+        'temperature': _('Temperature'),
+    }
+    ylabel = {
+        'level': _('m'),
+        'orp': _('mV'),
+        'ph': _('pH'),
+        'bod': _('BOD'),
+        'temperature': _('°C'),
+    }
+    print(sensor)
+    print(readings)
+    print(f"{param=}")
+    return render(request, 'partial/manager_graph.html', {'graph': generate_graph(readings, param, title.get(param, None), ylabel.get(param, None)),})
 
 
 @login_required(login_url='login')
