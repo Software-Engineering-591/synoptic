@@ -1,88 +1,177 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load tz_detect %}
+{% load static %}
 {% block head %}
     <title>Home | Pu Ngao</title>
 {% endblock head %}
 {% block body %}
-    {% include "public/nav.html" %}
-    <main>
-        <div class="flex justify-center p-4">
-            <a class="btn btn-error btn-wide text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-               href="{% url 'alert' %}">{% trans "Alert" %}</a>
-        </div>
-        <div class="flex justify-start">
-            <p class="text-2xl font-bold ml-2 rounded-full p-3 bg-base-200">{% trans "Pu Ngao" %}</p>
-        </div>
-        <section>
-            <div class="flex justify-center mt-10 h-auto w-auto place-content-center rounded-lg ml-10 mr-10 bg-base-200">
-                <div class="overflow-x-auto ">
-                    <table class="table">
-                        <!-- head -->
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th class="font-bold text-2xl">{% trans "Sensor" %}</th>
-                                <th class="font-bold text-2xl">{% trans "Status" %}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for sensor, current_reading in s_and_wr %}
-                                <!-- row -->
-                                <tr class="hover">
-                                    <th>{{ forloop.counter }}</th>
-                                    <td>{{ sensor }}</td>
-                                    {% if current_reading is not None %}
-                                        {% if current_reading.clean_condition %}
-                                            <td class="text-success font-bold">{% trans "Drinkable" %}</td>
-                                        {% else %}
-                                            <td class="text-error font-bold">{% trans "Contaminated-Sensor" %}</td>
-                                        {% endif %}
-                                    {% else %}
-                                        <td class="text-info font-bold">{% trans "Gathering" %}</td>
-                                    {% endif %}
+    <div class="bg-fixed bg-center bg-cover"
+         style="background-image: url('{% static 'public/assets/water.jpeg' %}')">
+        {% include "public/nav.html" %}
+        <main>
+            <!--Alert Button-->
+            <div class="flex justify-center p-4">
+                <a class="btn btn-error btn-wide text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center relative"
+                   href="{% url 'alert' %}">
+                    <span class="relative flex items-center">
+                        <svg viewBox="0 0 24 24"
+                             class="w-5 h-5 mr-2"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0">
+                            </g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                            </g>
+                            <g id="SVGRepo_iconCarrier">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.29664 4.72727V5.25342C6.60683 6.35644 4.7276 9.97935 4.79579 13.1192L4.79577 14.8631C3.4188 16.6333 3.49982 19.2727 6.93518 19.2727H9.29664C9.29664 19.996 9.57852 20.6897 10.0803 21.2012C10.582 21.7127 11.2625 22 11.9721 22C12.6817 22 13.3622 21.7127 13.8639 21.2012C14.3656 20.6897 14.6475 19.996 14.6475 19.2727H17.0155C20.4443 19.2727 20.494 16.6278 19.1172 14.8576L19.1555 13.1216C19.2248 9.97811 17.3419 6.35194 14.6475 5.25049V4.72727C14.6475 4.00395 14.3656 3.31026 13.8639 2.7988C13.3622 2.28734 12.6817 2 11.9721 2C11.2625 2 10.582 2.28734 10.0803 2.7988C9.57852 3.31026 9.29664 4.00395 9.29664 4.72727ZM12.8639 4.72727C12.8639 4.72727 12.8633 4.76414 12.8622 4.78246C12.5718 4.74603 12.2759 4.72727 11.9757 4.72727C11.673 4.72727 11.3747 4.74634 11.082 4.78335C11.0808 4.76474 11.0803 4.74603 11.0803 4.72727C11.0803 4.48617 11.1742 4.25494 11.3415 4.08445C11.5087 3.91396 11.7356 3.81818 11.9721 3.81818C12.2086 3.81818 12.4354 3.91396 12.6027 4.08445C12.7699 4.25494 12.8639 4.48617 12.8639 4.72727ZM11.0803 19.2727C11.0803 19.5138 11.1742 19.7451 11.3415 19.9156C11.5087 20.086 11.7356 20.1818 11.9721 20.1818C12.2086 20.1818 12.4354 20.086 12.6027 19.9156C12.7699 19.7451 12.8639 19.5138 12.8639 19.2727H11.0803ZM17.0155 17.4545C17.7774 17.4545 18.1884 16.5435 17.6926 15.9538C17.4516 15.6673 17.3233 15.3028 17.3316 14.9286L17.3723 13.0808C17.4404 9.99416 15.0044 6.54545 11.9757 6.54545C8.94765 6.54545 6.51196 9.99301 6.57898 13.0789L6.61916 14.9289C6.62729 15.303 6.49893 15.6674 6.25806 15.9538C5.76221 16.5435 6.17325 17.4545 6.93518 17.4545H17.0155ZM16.9799 3.20202C17.2945 2.74813 17.9176 2.63524 18.3715 2.94988C19.5192 3.74546 20.8956 5.65348 21.6471 7.9126C21.8214 8.43664 21.5379 9.00279 21.0139 9.17712C20.4898 9.35145 19.9237 9.06795 19.7493 8.5439C19.0892 6.55949 17.9221 5.07189 17.2321 4.59358C16.7782 4.27894 16.6653 3.65592 16.9799 3.20202ZM5.4303 2.94988C5.8842 2.63524 6.50722 2.74813 6.82185 3.20202C7.13649 3.65592 7.0236 4.27894 6.56971 4.59358C5.87969 5.07189 4.71256 6.55949 4.05242 8.5439C3.87809 9.06795 3.31194 9.35145 2.78789 9.17712C2.26384 9.00279 1.98034 8.43664 2.15467 7.9126C2.90619 5.65348 4.2826 3.74546 5.4303 2.94988Z" fill="#000000">
+                            </path>
+                            </g>
+                        </svg>
+                        <span class="ml-2">{% trans "Alert" %}</span>
+                    </span>
+                </a>
+            </div>
+            <!--Pu Ngao Symbol-->
+            <div class="flex justify-start items-center bg-accent-content rounded-full p-3 m-2 w-fit">
+                <svg viewBox="0 0 1024 1024"
+                     class="w-8 h-8 mr-2"
+                     version="1.1"
+                     xmlns="http://www.w3.org/2000/svg"
+                     fill="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0">
+                    </g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                    </g>
+                    <g id="SVGRepo_iconCarrier">
+                    <path d="M512 512m-480 0a480 480 0 1 0 960 0 480 480 0 1 0-960 0Z" fill="#E5F1FF"></path>
+                    <path d="M512 179.2c-96 102.4-262.4 236.8-262.4 384s115.2 262.4 262.4 262.4 262.4-115.2 262.4-262.4-160-281.6-262.4-384z" fill="#9FC8FE">
+                    </path>
+                    <path d="M512 684.8c-57.6 0-102.4-44.8-102.4-108.8 0-57.6 64-102.4 102.4-147.2 38.4 44.8 102.4 89.6 102.4 147.2 0 57.6-44.8 108.8-102.4 108.8z" fill="#72AEFD">
+                    </path>
+                    </g>
+                </svg>
+                <p class="text-2xl font-bold flex-shrink-0">{% trans "Pu Ngao" %}</p>
+            </div>
+            <section>
+                <div class="flex justify-center mt-10 h-auto w-auto place-content-center rounded-lg ml-10 mr-10 bg-accent-content">
+                    <div class="overflow-x-auto ">
+                        <table class="table">
+                            <!-- head -->
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="font-bold text-xl font-medium">
+                                        <div class="flex items-center justify-center">
+                                            <svg viewBox="-2 0 20 20"
+                                                 class="w-5 h-5 mr-1"
+                                                 xmlns="http://www.w3.org/2000/svg"
+                                                 fill="#000000">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                                </g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                                </g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                <g id="water" transform="translate(-4 -2)">
+                                                <path id="secondary" fill="#2ca9bc" d="M19,14A7,7,0,1,1,5,14C5,8,12,3,12,3S19,8,19,14Z"></path>
+                                                <path id="primary" d="M19,14A7,7,0,1,1,5,14C5,8,12,3,12,3S19,8,19,14Z" fill="none" stroke="#ebe5e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                                </path>
+                                                </g>
+                                                </g>
+                                            </svg>
+                                            <span>{% trans "Sensor" %}</span>
+                                        </div>
+                                    </th>
+                                    <th class="font-bold text-xl font-medium">
+                                        <div class="flex items-center justify-center">
+                                            <svg fill="#cfc9c9"
+                                                 viewBox="0 0 1000 1000"
+                                                 class="w-5 h-5 mr-1"
+                                                 xmlns="http://www.w3.org/2000/svg"
+                                                 stroke="#cfc9c9">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                                </g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                                </g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                <path d="M500 70q-117 0-217 59-97 57-154 154-59 100-59 217t59 217q57 97 154 154 100 59 217 59t217-59q97-57 154-154 59-100 59-217t-59-217q-57-97-154-154-100-59-217-59zm0 108q79 0 148 36t114.5 99.5T819 455h-69q-12 0-25.5-6.5T704 432l-86-114q-7-10-17.5-10T583 318L417 540q-7 9-17.5 9t-17.5-9l-46-61q-7-10-20.5-17t-24.5-7H181q11-78 56.5-141.5T352 214t148-36zm0 644q-79 0-148-36t-114.5-99.5T181 545h69q12 0 25.5 7t20.5 16l86 115q7 9 17.5 9t17.5-9l166-222q7-10 17.5-10t17.5 10l46 61q7 9 20.5 16t24.5 7h110q-11 78-56.5 141.5T648 786t-148 36z">
+                                                </path>
+                                                </g>
+                                            </svg>
+                                            <span>{% trans "Status" %}</span>
+                                        </div>
+                                    </th>
                                 </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {% for sensor, current_reading in s_and_wr %}
+                                    <!-- row -->
+                                    <tr class="hover">
+                                        <th>{{ forloop.counter }}</th>
+                                        <td>{{ sensor }}</td>
+                                        {% if current_reading is not None %}
+                                            {% if current_reading.clean_condition %}
+                                                <td class="text-success text-xl font-medium">{% trans "Drinkable" %}</td>
+                                            {% else %}
+                                                <td class="text-error text-xl font-medium">{% trans "Contaminated-Sensor" %}</td>
+                                            {% endif %}
+                                        {% else %}
+                                            <td class="text-info text-xl font-medium">{% trans "Gathering" %}</td>
+                                        {% endif %}
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <span class="font-bold ml-auto flex justify-end mr-10 mt-3">{% tz_detect %}{% trans "Last Updated At" %}{% now "H:i" %}</span>
-            </div>
-        </section>
-        <section>
-            <div class="p-8 mb-20">
                 <div>
-                    <p class="font-bold text-1xl ml-3 mb-3 mt-10">{% trans "Info" %}</p>
+                    <span class="font-bold ml-auto flex justify-end mr-10 mt-3">{% tz_detect %}{% trans "Last Updated At" %}{% now "H:i" %}</span>
                 </div>
-                <div class="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" checked="checked" />
-                    <div class="collapse-title text-xl font-medium">{% trans "Sanitization" %}</div>
-                    <div class="collapse-content">
-                        <p>{% trans "Sanitization info" as local_var %} {{ local_var|linebreaksbr }}</p>
+            </section>
+            <section>
+                <div class="p-8 ">
+                    <div>
+                        <p class="font-bold text-1xl ml-3 mb-3 mt-10">{% trans "Info" %}</p>
+                    </div>
+                    <div class="collapse collapse-plus bg-accent-content h-auto w-auto">
+                        <input type="radio" name="my-accordion-3" checked="checked" />
+                        <div class="collapse-title text-2xl font-medium relative bg-auto bg-local bg-center bg-cover"
+                             style="background-image: url('{% static 'public/assets/handwash.png' %}')">
+                            <div class="absolute inset-0 bg-info-content opacity-50"></div>
+                            <p class="relative z-10">{% trans "Sanitization" %}</p>
+                        </div>
+                        <div class="collapse-content">
+                            <p>{% trans "Sanitization info" as local_var %} {{ local_var|linebreaksbr }}</p>
+                        </div>
+                    </div>
+                    <div class="collapse collapse-plus bg-accent-content">
+                        <input type="radio" name="my-accordion-3" />
+                        <div class="collapse-title text-2xl font-medium relative bg-auto bg-local bg-center bg-cover"
+                             style="background-image: url('{% static 'public/assets/purify.webp' %}')">
+                            <div class="absolute inset-0 bg-info-content opacity-50"></div>
+                            <p class="relative z-10">{% trans "Purification Techniques" %}</p>
+                        </div>
+                        <div class="collapse-content">
+                            <p>{% trans "Purification Techniques info" as local_var %} {{ local_var|linebreaksbr }}</p>
+                        </div>
+                    </div>
+                    <div class="collapse collapse-plus bg-accent-content">
+                        <input type="radio" name="my-accordion-3" />
+                        <div class="collapse-title text-2xl font-medium relative bg-auto bg-local bg-center bg-cover"
+                             style="background-image: url('{% static 'public/assets/cleanwater.png' %}')">
+                            <div class="absolute inset-0 bg-info-content opacity-50"></div>
+<<<<<<< HEAD
+                            <p class="relative z-10">{% trans "Contaminated-Water" %}</p>
+=======
+                            <p class="relative z-10">{% trans "Contaminated Water" %}</p>
+>>>>>>> a9e91aa89e865f748f3e224d3e8c69a1cc42df45
+                        </div>
+                        <div class="collapse-content">
+                            <p>{% trans "Contaminated Water info" as local_var %} {{ local_var|linebreaksbr }}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" />
-                    <div class="collapse-title text-xl font-medium">{% trans "Purification Techniques" %}</div>
-                    <div class="collapse-content">
-                        <p>{% trans "Purification Techniques info" as local_var %} {{ local_var|linebreaksbr }}</p>
-                    </div>
-                </div>
-                <div class="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" />
-                    <div class="collapse-title text-xl font-medium">{% trans "Contaminated Water" %}</div>
-                    <div class="collapse-content">
-                        <p>{% trans "Contaminated Water info" as local_var %} {{ local_var|linebreaksbr }}</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-base-200 border-t shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-base-200 dark:border-gray-600">
-        <span class="text-sm sm:text-center">© 2024 <a href="https://flowbite.com/" class="hover:underline">UEA</a> {% trans "Water Monitoring System" %}
-        </span>
-        
-    </footer>
+            </section>
+        </main>
+    </div>
 {% endblock body %}
