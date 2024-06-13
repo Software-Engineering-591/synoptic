@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-13 06:53+0000\n"
+"POT-Creation-Date: 2024-06-13 12:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -250,7 +250,9 @@ msgid "temp1"
 msgstr "Temperature (°C): "
 
 #: template/public/alert.html:4 template/public/weather.html:4
-msgid "Home | Pu Ngaol"
+#, fuzzy
+#| msgid "Home | Pu Ngaol"
+msgid "Home-|-Pu Ngaol"
 msgstr "Pu Ngaol"
 
 #: template/public/alert.html:28
@@ -289,51 +291,51 @@ msgstr "In danger of flood"
 msgid "evactuation-advised-message"
 msgstr "Evacuation is advised"
 
-#: template/public/home.html:12
+#: template/public/home.html:31
 msgid "Alert"
 msgstr "Alerts"
 
-#: template/public/home.html:15
+#: template/public/home.html:54
 msgid "Pu Ngao"
-msgstr "Pu Ngao"
+msgstr "Pu Ngaol"
 
-#: template/public/home.html:25
-#, fuzzy
-#| msgid "sensors"
+#: template/public/home.html:82
 msgid "Sensor"
 msgstr "Sensors"
 
-#: template/public/home.html:26
+#: template/public/home.html:101
 msgid "Status"
 msgstr "Status"
 
-#: template/public/home.html:37
+#: template/public/home.html:114
 msgid "Drinkable"
 msgstr "Drinkable"
 
-#: template/public/home.html:39
+#: template/public/home.html:116
 msgid "Contaminated-Sensor"
 msgstr "Contaminated"
 
-#: template/public/home.html:42
+#: template/public/home.html:119
 msgid "Gathering"
 msgstr "Gathering"
 
-#: template/public/home.html:51
+#: template/public/home.html:128
 msgid "Last Updated At"
-msgstr "Last Updated At"
+msgstr "Last Updated At "
 
-#: template/public/home.html:57
+#: template/public/home.html:134
 msgid "Info"
 msgstr "Info"
 
-#: template/public/home.html:61
+#: template/public/home.html:141
 msgid "Sanitization"
 msgstr "Sanitization"
 
-#: template/public/home.html:63
+#: template/public/home.html:144
 msgid "Sanitization info"
 msgstr ""
+"Practices of Good Sanitization: \n"
+"\n"
 "Hand Washing: Always wash hands with soap before touching water or food. \n"
 "\n"
 "Clean Containers: Use clean containers to store and collect water. \n"
@@ -343,16 +345,20 @@ msgstr ""
 "\n"
 "Benefits: \n"
 "\n"
-"Prevention of Diseases: Sanitizing water helps to kill harmful germs and "
-"bacteria, preventing diseases. \n"
-"Improved Health: Access to clean water improves overall health and "
-"wellbeing, reducing medical costs and increasing productivity."
+"Prevention of Diseases: Sanitizing water helps to kill harmful germs and bacteria, preventing diseases. \n"
+"\n"
+"Improved Health: Access to clean water improves overall health and wellbeing, reducing medical costs and increasing productivity. \n"
+"\n"
+"Protects Vulnerable Groups: Especially important for children, the elderly, and those with weakened immune systems. \n"
+"\n"
+"Reduces Spread of Germs: Regular hand washing helps prevent the spread of germs to others, keeping families and communities healthier."
 
-#: template/public/home.html:68
+
+#: template/public/home.html:152
 msgid "Purification Techniques"
 msgstr "Water Purification Techniques"
 
-#: template/public/home.html:70
+#: template/public/home.html:155
 msgid "Purification Techniques info"
 msgstr ""
 "Boiling: \n"
@@ -379,30 +385,31 @@ msgstr ""
 "gravel. \n"
 " Benefits: Removes particles and some bacteria, making water cleaner."
 
-#: template/public/home.html:75
-msgid "Contaminated Water"
+#: template/public/home.html:163
+msgid "Contaminated-Water"
 msgstr "Why Clean Water is Important"
 
-#: template/public/home.html:77
+#: template/public/home.html:166
 msgid "Contaminated Water info"
 msgstr ""
-"Health Benefits: Clean water keeps us healthy. It helps to prevent diseases "
-"like diarrhea, cholera, and typhoid. \n"
-"Daily Use: We use water for drinking, cooking, cleaning, and bathing. It's "
-"important to ensure the water is clean to avoid getting sick. \n"
+"Health Benefits: \n"
+"\n"
+"Prevents Waterborne Diseases: Clean water is free from harmful bacteria, viruses, and parasites that cause diseases such as diarrhea, cholera, dysentery, typhoid, and hepatitis. Drinking clean water significantly reduces the risk of these illnesses. \n"
+"\n"
+"Daily Use: We use water for drinking, cooking, cleaning, and bathing. It's important to ensure the water is clean to avoid getting sick. \n"
+"\n"
+"Supports Child Development: Children are particularly vulnerable to waterborne diseases. Access to clean water helps to ensure that children grow up healthy and strong, reducing child mortality rates and improving overall development. \n"
+"\n"
+"Enhances Immune System: Consuming clean water supports the immune system, helping the body to fight off infections and maintain overall health. \n"
 "\n"
 "Tips for Maintaining Clean Water: \n"
 "\n"
-"Regular Cleaning: Regularly clean water storage containers with soap and "
-"water. \n"
-"Avoiding Contaminants: Do not let anything dirty, like hands or utensils, "
-"touch the water that is stored for drinking. \n"
-"Safe Collection: Collect water from safe and known sources, preferably "
-"treated or filtered sources."
+"Regular Cleaning: Regularly clean water storage containers with soap and water. \n"
+"\n"
+"Avoiding Contaminants: Do not let anything dirty, like hands or utensils, touch the water that is stored for drinking. \n"
+"\n"
+"Safe Collection: Collect water from safe and known sources, preferably treated or filtered sources."
 
-#: template/public/home.html:84
-msgid "Water Monitoring System"
-msgstr "Water Monitoring System"
 
 #: template/public/our-goals.html:27
 msgid "Our-Goals-title"
@@ -554,6 +561,9 @@ msgstr "Sunrise"
 #: template/public/weather.html:58
 msgid "Weather-Page-Sunset-Laybel"
 msgstr "Sunset"
+
+#~ msgid "Water Monitoring System"
+#~ msgstr "Water Monitoring System"
 
 #~ msgid "find-clean-water-button"
 #~ msgstr "Find Clean Water"
